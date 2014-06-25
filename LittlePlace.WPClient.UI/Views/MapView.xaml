@@ -1,0 +1,55 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="LittlePlace.WPClient.UI.Views.MapView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
+    xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:bindableAppBar="clr-namespace:Caliburn.Micro.BindableAppBar;assembly=Caliburn.Micro.BindableAppBar"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Resources>
+        <converterts:GeoCoordinateConverter x:Name="GeoCoordinateConverter"/>
+        
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"   Background="Transparent">
+        <maps:Map  CredentialsProvider="{Binding Credentials}" Center="{Binding CenterMap.Position,Mode=TwoWay}" ZoomLevel="{Binding ZoomLevel,Mode=TwoWay}" >
+            <maps:MapItemsControl  ItemsSource="{Binding MyPositions,Mode=TwoWay}">
+                <maps:MapItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <maps:Pushpin  Location="{Binding Position}"   Margin="-16,0,0,-5" >
+                            <maps:Pushpin.Template>
+                                <ControlTemplate TargetType="maps:Pushpin">
+                                    <Image Source="{Binding ImagePath,Mode=TwoWay}" Stretch="None" HorizontalAlignment="Left"/>
+                                </ControlTemplate>
+                            </maps:Pushpin.Template>
+                            <!--<i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <triggers:EventToCommand  Command="{Binding ElementName=ContentPanel,Path=DataContext.ZoomSelectedPinCommand}" CommandParameter="{Binding}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>-->
+                        </maps:Pushpin>
+
+                    </DataTemplate>
+                </maps:MapItemsControl.ItemTemplate>
+                </maps:MapItemsControl>
+        </maps:Map>
+        <bindableAppBar:BindableAppBar x:Name="AppBar" BarOpacity="1.0" >
+            <bindableAppBar:BindableAppBarButton x:Name="ZoomIn" IconUri="/Content/Icons/appbar.add.rest.png" Text="приблизить" />
+            <bindableAppBar:BindableAppBarButton x:Name="ZoomOut" IconUri="/Content/Icons/appbar.minus.rest.png" Text="отдалить" />
+            <bindableAppBar:BindableAppBarButton x:Name="CenterMapOnMe"  IconUri="/Content/Icons/navigation.png" Text="местоположение"  IsEnabled="False" />
+        </bindableAppBar:BindableAppBar>
+    </Grid>
+
+
+</phone:PhoneApplicationPage>
