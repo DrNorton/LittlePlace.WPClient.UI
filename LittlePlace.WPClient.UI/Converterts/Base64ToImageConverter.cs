@@ -12,13 +12,21 @@ namespace LittlePlace.WPClient.UI.Converterts
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (value != null)
+
+            try
             {
-                var str = (string) value;
-                var bytes = System.Convert.FromBase64String(str);
-                return ByteArrayToImage(bytes);
+                if (value != null)
+                {
+                    var str = (string) value;
+                    var bytes = System.Convert.FromBase64String(str);
+                    return ByteArrayToImage(bytes);
+                }
+                return null;
             }
-            return null;
+            catch (Exception e)
+            {
+                return "";
+            }
         }
 
         public static BitmapSource ByteArrayToImage(byte[] bytes)

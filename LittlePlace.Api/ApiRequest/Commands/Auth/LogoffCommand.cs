@@ -19,12 +19,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
         public LogoffCommand(HttpClient restClient)
             : base("auth",restClient)
         {
-            FullUrl = String.Format("{0}/{1}", Url, ActionName);
+            
         }
         public async override System.Threading.Tasks.Task<Response<string>> Execute()
         {
-            
-           
             var responseString = await _restClient.GetStringAsync(FullUrl);
             return Response<string>.Deserialize(responseString);
         }

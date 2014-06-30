@@ -10,6 +10,7 @@
     xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:bindableAppBar="clr-namespace:Caliburn.Micro.BindableAppBar;assembly=Caliburn.Micro.BindableAppBar"
+    xmlns:extensions="clr-namespace:LittlePlace.WPClient.UI.Extensions"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -44,11 +45,11 @@
                 </maps:MapItemsControl.ItemTemplate>
                 </maps:MapItemsControl>
         </maps:Map>
-        <bindableAppBar:BindableAppBar x:Name="AppBar" BarOpacity="1.0" >
+        <extensions:EnabledBindableAppBar IsEnabled="{Binding IsAllMenuEnabled,Mode=TwoWay}" x:Name="AppBar" BarOpacity="1.0" >
             <bindableAppBar:BindableAppBarButton x:Name="ZoomIn" IconUri="/Content/Icons/appbar.add.rest.png" Text="приблизить" />
             <bindableAppBar:BindableAppBarButton x:Name="ZoomOut" IconUri="/Content/Icons/appbar.minus.rest.png" Text="отдалить" />
             <bindableAppBar:BindableAppBarButton x:Name="CenterMapOnMe"  IconUri="/Content/Icons/navigation.png" Text="местоположение"  IsEnabled="False" />
-        </bindableAppBar:BindableAppBar>
+        </extensions:EnabledBindableAppBar>
     </Grid>
 
 

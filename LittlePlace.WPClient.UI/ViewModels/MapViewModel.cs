@@ -109,7 +109,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
         protected async override void OnViewReady(object view)
         {
            base.OnViewReady(view);
-           var res=await _littlePlaceApiService.Logon();
+           var res=await _littlePlaceApiService.Logon("DrNorton","rianon");
            var result = await _littlePlaceApiService.GetAllFriendsPosition();
            FriendsLocations = result.Result;
 
@@ -123,6 +123,16 @@ namespace LittlePlace.WPClient.UI.ViewModels
             CenterMap = mapPushpinModel;
 
           base.NotifyOfPropertyChange(() => MyPositions);
+        }
+
+        protected override void DataLoading(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+          
+        }
+
+        protected override void FirstDataLoadedCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            
         }
     }
 }

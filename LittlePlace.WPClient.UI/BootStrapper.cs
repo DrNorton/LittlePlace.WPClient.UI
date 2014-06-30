@@ -4,9 +4,11 @@ using System.Windows;
 using Caliburn.Micro;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.WPClient.UI.Cache;
+using LittlePlace.WPClient.UI.Services;
 using LittlePlace.WPClient.UI.ViewModels;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Controls.Maps;
+using ISettingService = LittlePlace.Api.Infrastructure.ISettingService;
 
 namespace LittlePlace.WPClient.UI
 {
@@ -31,24 +33,42 @@ namespace LittlePlace.WPClient.UI
         protected override void Configure()
         {
             _container = new PhoneContainer();
+            RegisterViewModels();
+            DataRegister();
+            RegisterServices();
+        }
+
+        private void DataRegister()
+        {
+            _dbDataContext = new CacheDataContext(@"Data Source=isostore:/ToDo.sdf");
+
+            if (_dbDataContext.DatabaseExists() == false)
+            {
+                // Create the database.
+                _dbDataContext.CreateDatabase();
+            }
+        }
+
+        private void RegisterServices()
+        {
+            _container.RegisterInstance(typeof (ICacheService), null, new CacheService(_dbDataContext));
+            _container.RegisterSingleton(typeof (ILittlePlaceApiService), null, typeof (LittlePlaceApiService));
+            _container.RegisterPerRequest(typeof (IExecuterService), null, typeof (ExecuterService));
+            _container.RegisterPerRequest(typeof (ISettingService), null, typeof (SettingService));
+            var bingMapProvider =
+                new ApplicationIdCredentialsProvider("Au5Po_aD2JA2igWtvTycQIuz4tyc_7dKgTu8pDr85rlIvxOVzKOR2LrmGj3DlEWt");
+            _container.RegisterInstance(typeof (ApplicationIdCredentialsProvider), null, bingMapProvider);
+        }
+
+        private void RegisterViewModels()
+        {
             _container.RegisterPhoneServices(RootFrame);
             _container.PerRequest<MainViewModel>();
-            _container.PerRequest<FriendsListViewModel>();
+            _container.PerRequest<MyContactDetailViewModel>();
             _container.PerRequest<MapViewModel>();
-            _dbDataContext = new CacheDataContext(@"Data Source=isostore:/ToDo.sdf");
-            
-                if (_dbDataContext.DatabaseExists() == false)
-                {
-                    // Create the database.
-                    _dbDataContext.CreateDatabase();
-                }
-            
-            _container.RegisterInstance(typeof(ICacheService),null,new CacheService(_dbDataContext));
-            _container.RegisterSingleton(typeof(ILittlePlaceApiService),null,typeof(LittlePlaceApiService));
-            _container.RegisterPerRequest(typeof(IExecuterService),null,typeof(ExecuterService));
-            var bingMapProvider = new ApplicationIdCredentialsProvider("Au5Po_aD2JA2igWtvTycQIuz4tyc_7dKgTu8pDr85rlIvxOVzKOR2LrmGj3DlEWt");
-            _container.RegisterInstance(typeof(ApplicationIdCredentialsProvider),null,bingMapProvider);
-
+            _container.PerRequest<ContactsViewModel>();
+            _container.PerRequest<FriendContactDetailViewModel>();
+            _container.PerRequest<ChangePasswordViewModel>();
         }
 
         public void GoTo(string uri)

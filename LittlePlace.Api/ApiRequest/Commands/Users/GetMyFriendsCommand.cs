@@ -6,10 +6,11 @@ using System.Text;
 using LittlePlace.Api.ApiRequest.Commands.Base;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Models;
+using User = LittlePlace.Api.ApiRequest.Commands.Result.User;
 
 namespace LittlePlace.Api.ApiRequest.Commands.Users
 {
-    public class GetMyFriendsCommand : BaseCommand<Response<List<UserResult>>>
+    public class GetMyFriendsCommand : BaseCommand<Response<List<User>>>
     {
 
         public override string ActionName
@@ -21,18 +22,20 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
             :base("user",httpClient)
         {
             this.IsCached = true;
-            FullUrl = String.Format("{0}/{1}", Url, ActionName);
         }
 
-        public async override System.Threading.Tasks.Task<Response<List<UserResult>>> Execute()
+        public async override System.Threading.Tasks.Task<Response<List<User>>> Execute()
         {
             var responseString = await _restClient.GetStringAsync(FullUrl);
-            var userResults=Response<List<UserResult>>.Deserialize(responseString);
+            var userResults=Response<List<User>>.Deserialize(responseString);
             //получаем фоточки по урлу в бинари
             foreach (var user in userResults.Result)
             {
-               user.PhotoRaw =await _restClient.GetByteArrayAsync(user.PhotoUrl);
-               user.RawPhotoString = Convert.ToBase64String(user.PhotoRaw);
+                if (!String.IsNullOrEmpty(user.PhotoUrl))
+                {
+                    user.PhotoRaw = await _restClient.GetByteArrayAsync(user.PhotoUrl);
+                    user.RawPhotoString = Convert.ToBase64String(user.PhotoRaw);
+                }
             }
             return userResults;
 

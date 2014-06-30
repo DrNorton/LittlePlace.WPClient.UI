@@ -12,23 +12,25 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
 
         public string Url
         {
-            get { return String.Format("{0}/{1}", Constants.Host,_methodGroup); }
+            get { return String.Format("{0}/{1}/{2}?client={3}", Constants.Host, _methodGroup,ActionName,"winphone"); }
         }
 
         public string FullUrl { get; set; }
+       
 
         public BaseCommand(string methodGroup, HttpClient restClient)
         {
             _methodGroup = methodGroup;
             _restClient = restClient;
+            FullUrl = Url;
         }
 
         public abstract string ActionName { get; }
         public abstract Task<T> Execute();
 
-        public  string BuildCacheKey()
+        public int BuildCacheKey()
         {
-            return FullUrl.GetHashCode().ToString();
+            return FullUrl.GetHashCode();
         }
 
         public bool IsCached

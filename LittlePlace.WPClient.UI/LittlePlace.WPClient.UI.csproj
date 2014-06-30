@@ -123,6 +123,8 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -136,16 +138,32 @@
     <Compile Include="Converterts\ByteToImageConverter.cs" />
     <Compile Include="Converterts\GeoCoordinateConverter.cs" />
     <Compile Include="EventMessages\NewPositionEventMessage.cs" />
+    <Compile Include="Extensions\AlphaKeyGroup.cs" />
+    <Compile Include="Extensions\EnabledBindableAppBar.cs" />
     <Compile Include="Maps\Models\MapPushpinModel.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="SampleData\FriendViewDataSource\FriendViewDataSource.xaml.cs">
       <DependentUpon>FriendViewDataSource.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\SettingService.cs" />
+    <Compile Include="Controls\TextBoxCaptioned.xaml.cs">
+      <DependentUpon>TextBoxCaptioned.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\Base\LoadingScreen.cs" />
-    <Compile Include="ViewModels\FriendsListViewModel.cs" />
+    <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\ContactsViewModel.cs" />
+    <Compile Include="ViewModels\FriendContactDetailViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
-    <Compile Include="Views\FriendsListView.xaml.cs">
-      <DependentUpon>FriendsListView.xaml</DependentUpon>
+    <Compile Include="ViewModels\MyContactDetailViewModel.cs" />
+    <Compile Include="Views\ChangePasswordView.xaml.cs">
+      <DependentUpon>ChangePasswordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactsView.xaml.cs">
+      <DependentUpon>ContactsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FriendContactDetailView.xaml.cs">
+      <DependentUpon>FriendContactDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -153,6 +171,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\MapView.xaml.cs">
       <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyContactDetailView.xaml.cs">
+      <DependentUpon>MyContactDetailView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -164,7 +185,19 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\FriendsListView.xaml">
+    <Page Include="Controls\TextBoxCaptioned.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ChangePasswordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContactsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FriendContactDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,6 +208,10 @@
     <Page Include="Views\MapView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MyContactDetailView.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +230,7 @@
     <Content Include="Content\Icons\appbar.minus.rest.png" />
     <Content Include="Content\Icons\map_tile.png" />
     <Content Include="Content\Icons\navigation.png" />
+    <Content Include="Content\Icons\password.png" />
     <Content Include="Content\Icons\red-circle.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />
@@ -218,7 +256,11 @@
     <Resource Include="SampleData\FriendViewDataSource\FriendViewDataSource_Files\image04.png" />
     <Resource Include="SampleData\FriendViewDataSource\FriendViewDataSource_Files\image05.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <DesignData Include="SampleData\ContactsViewModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

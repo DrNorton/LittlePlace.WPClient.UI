@@ -20,7 +20,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
         public GetFriendPositionCommand(HttpClient restClient,int friendId)
             :base("position",restClient)
         {
-            FullUrl = String.Format("{0}/{1}?friendId={2}", Url, ActionName, friendId);
+            FullUrl = String.Format("{0}&friendId={1}", Url, friendId);
         }
 
         public async override System.Threading.Tasks.Task<Response<List<UserPosition>>> Execute()

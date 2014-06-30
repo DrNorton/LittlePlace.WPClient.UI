@@ -18,7 +18,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
         public AddMyPositionCommand(HttpClient restClient,double latitude,double longitude)
             :base("position",restClient)
         {
-            FullUrl = String.Format("{0}/{1}?latitude={2}&longitude={3}", Url, ActionName, latitude, longitude);
+            FullUrl = String.Format("{0}&latitude={1}&longitude={2}", Url,  latitude, longitude);
         }
 
         public async override System.Threading.Tasks.Task<Response<string>> Execute()

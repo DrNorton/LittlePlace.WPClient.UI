@@ -18,7 +18,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
             : base("position", httpClient)
         {
             this.IsCached = true;
-            FullUrl = String.Format("{0}/{1}", Url, ActionName);
         }
 
         public async override System.Threading.Tasks.Task<Response<List<FriendPositionResult>>> Execute()

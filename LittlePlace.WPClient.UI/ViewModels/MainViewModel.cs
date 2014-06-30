@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using LittlePlace.Api;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.WPClient.UI.ViewModels.Base;
 
@@ -18,14 +20,29 @@ namespace LittlePlace.WPClient.UI.ViewModels
         {
             _navigationService = navigationService;
             _littlePlaceApiService = littlePlaceApiService;
-           Get();
+
+            AutorityIfNeeded();
+            Get();
+        }
+
+        private async void AutorityIfNeeded()
+        {
+            if (!_littlePlaceApiService.IsAuthorizated)
+            {
+                await _littlePlaceApiService.Logon("DrNorton", "rianon");
+            }
+            //   var ds =await _littlePlaceApiService.Logon("DrNorton", "rianon");
+            var dsd = await _littlePlaceApiService.AddMyPosition(12, 13);
         }
 
         private async void Get()
         {
-            var logResult = await _littlePlaceApiService.Logon();
-            var friends =await _littlePlaceApiService.GetMyFriends();
-            var ds = await _littlePlaceApiService.GetFriendPosition();
+            if (!_littlePlaceApiService.IsAuthorizated)
+            {
+                await _littlePlaceApiService.Logon("DrNorton", "rianon");
+            }
+         //   var ds =await _littlePlaceApiService.Logon("DrNorton", "rianon");
+            var dsd= await _littlePlaceApiService.AddMyPosition(12,13);
         }
 
         public void MapTileTap()
@@ -35,7 +52,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
 
         public void FriendTileTap()
         {
-            _navigationService.UriFor<FriendsListViewModel>().Navigate();
+            _navigationService.UriFor<ContactsViewModel>().Navigate();
         }
 
         public void ProfileTileTap()
@@ -46,6 +63,16 @@ namespace LittlePlace.WPClient.UI.ViewModels
         public void SettingTileTap()
         {
             
+        }
+
+        protected override void DataLoading(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            
+        }
+
+        protected override void FirstDataLoadedCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+       
         }
     }
 }

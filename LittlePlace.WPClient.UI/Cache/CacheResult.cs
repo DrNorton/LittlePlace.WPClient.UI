@@ -10,8 +10,8 @@ namespace LittlePlace.Api.Cache
     public class CacheResult
     {
       private int _cacheRowId;
-      private string _key;
-      private byte[] _resultText;
+      private int _key;
+      private string _resultText;
 
        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
       public int CacheRowId
@@ -20,15 +20,15 @@ namespace LittlePlace.Api.Cache
           set { _cacheRowId = value; }
       }
 
-       [Column]
-      public string Key
+       [Column(DbType = "INT NOT NULL")]
+      public int Key
       {
           get { return _key; }
           set { _key = value; }
       }
 
-       [Column(DbType = "image")]
-      public byte[] ResultText
+       [Column(DbType = "ntext", UpdateCheck = UpdateCheck.Never)]
+      public string ResultText
       {
           get { return _resultText; }
           set { _resultText = value; }

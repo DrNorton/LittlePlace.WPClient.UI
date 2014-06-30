@@ -1,0 +1,171 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="LittlePlace.WPClient.UI.Views.ContactsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+	xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
+	xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
+	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+	xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" d:DataContext="{d:DesignData /SampleData/ContactsViewModelSampleData.xaml}">
+	 <phone:PhoneApplicationPage.Resources>
+        <converterts:ByteToImageConverter x:Key="ByteToImageConverter"/>
+        <converterts:Base64ToImageConverter x:Key="Base64ToImageConverter"/>
+        <DataTemplate x:Key="ItemTemplate">
+            <StackPanel VerticalAlignment="Top"  >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Tap">
+                        <micro:ActionMessage MethodName="NavigateToFriendContactView">
+                            <micro:Parameter Value="{Binding }" />
+                        </micro:ActionMessage>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Grid Margin="17,0,0,17">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="6*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"  Source="{Binding RawPhotoString,Mode=TwoWay,Converter={StaticResource Base64ToImageConverter}}"/>
+                    <StackPanel Grid.Column="1" Margin="12,-6,0,0">
+                        <TextBlock Text="{Binding Login}" TextWrapping="Wrap"
+                            		Foreground="{StaticResource PhoneAccentBrush}"/>
+                        <TextBlock  TextWrapping="Wrap" FontStyle="Italic"
+                            		Foreground="{StaticResource PhoneForegroundBrush}">
+										<Run Text="{Binding FirstName}"/>,
+										<Run Text="{Binding LastName}"/>
+                        </TextBlock>
+                        <TextBlock Text="{Binding TextStatus}" TextWrapping="Wrap" 
+                                       Foreground="{StaticResource PhoneForegroundBrush}" />
+                        <TextBlock Text="Online" TextWrapping="Wrap"
+                                       Foreground="{StaticResource PhoneSubtleBrush}"/>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+        </DataTemplate>
+        <Style TargetType="toolkit:LongListSelector" x:Key="LongListStyle">
+            <Setter Property="Background" Value="{StaticResource PhoneBackgroundBrush}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <toolkitPrimitives:TemplatedListBox x:Name="TemplatedListBox"
+                                             Background="{TemplateBinding Background}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <toolkitPrimitives:TemplatedListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                </Style>
+                            </toolkitPrimitives:TemplatedListBox.ItemContainerStyle>
+                        </toolkitPrimitives:TemplatedListBox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="GroupHeaderTemplate">
+            <Border Background="Transparent" Padding="5">
+                <Border Background="{StaticResource PhoneAccentBrush}" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="2" Width="62"
+     Height="62" Margin="0,0,18,0" HorizontalAlignment="Left">
+                    <TextBlock Text="{Binding Key}" Foreground="{StaticResource PhoneForegroundBrush}" FontSize="48" Padding="6"
+        FontFamily="{StaticResource PhoneFontFamilySemiLight}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Border>
+            </Border>
+        </DataTemplate>
+        <DataTemplate x:Key="GroupItemsTemplateWp7">
+            <Border Background="{StaticResource PhoneAccentBrush}" Margin="{StaticResource PhoneTouchTargetOverhang}" Padding="{StaticResource PhoneTouchTargetOverhang}">
+                <TextBlock  Text="{Binding Key}" Style="{StaticResource PhoneTextLargeStyle}"/>
+            </Border>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="GroupItemsPanelTemplate">
+            <toolkit:WrapPanel Orientation="Horizontal"/>
+        </ItemsPanelTemplate>
+    </phone:PhoneApplicationPage.Resources>
+	   <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator IsIndeterminate="{Binding IsLoading,Mode=TwoWay}" IsVisible="True" />
+    </shell:SystemTray.ProgressIndicator>
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <controls:Panorama Title="LITTLEPLACE.ru">
+
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="Профиль" >
+                <ScrollViewer >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Margin="12,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                            <Grid DataContext="{Binding Profile}" toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ListBoxItem  toolkit:TiltEffect.IsTiltEnabled="True">
+                                <Grid>
+                                    <Image  Height="173" Width="173" Source="{Binding RawPhotoString,Mode=TwoWay,Converter={StaticResource Base64ToImageConverter}}"/>
+                                </Grid>
+                                    
+                                </ListBoxItem>
+                            <ListBoxItem toolkit:TiltEffect.IsTiltEnabled="True" Grid.Column="1" >
+                                <StackPanel Margin="12,-6,0,0">
+									  <TextBlock Text="{Binding Login}" TextWrapping="Wrap"
+                            		Foreground="{StaticResource PhoneAccentBrush}"/>
+                                    <TextBlock  TextWrapping="Wrap" FontStyle="Italic"
+                            		Foreground="{StaticResource PhoneForegroundBrush}">
+										<Run Text="{Binding FirstName}"/>,
+										<Run Text="{Binding LastName}"/>
+										</TextBlock>
+                                    <TextBlock Text="{Binding TextStatus}" TextWrapping="Wrap" 
+                                       Foreground="{StaticResource PhoneForegroundBrush}" />
+                                    <TextBlock Text="Online" TextWrapping="Wrap"
+                                       Foreground="{StaticResource PhoneSubtleBrush}"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </Grid>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <micro:ActionMessage MethodName="NavigateToMyProfileDetail" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Grid>
+                        <toolkit:LongListSelector Style="{StaticResource LongListStyle}"  ScrollViewer.VerticalScrollBarVisibility="Disabled"  Grid.Row="1"
+                  IsFlatList="False"
+                  DisplayAllGroups="False"
+                  ItemsSource="{Binding GroupedUsers}"
+                  Background="Transparent"
+                           IsBouncy="False"  
+                                                  
+                  GroupHeaderTemplate="{StaticResource GroupHeaderTemplate}"
+                  
+                  ItemTemplate="{StaticResource ItemTemplate}" GroupItemTemplate="{StaticResource GroupItemsTemplateWp7}" GroupItemsPanel="{StaticResource GroupItemsPanelTemplate}"
+                 >
+                    
+                        </toolkit:LongListSelector>
+
+
+                    </Grid>
+                </ScrollViewer>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="Новости">
+                <Grid/>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
+
+</phone:PhoneApplicationPage>

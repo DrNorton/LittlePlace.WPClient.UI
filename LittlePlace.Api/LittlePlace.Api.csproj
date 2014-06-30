@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ApiRequest\Commands\Auth\ChangePasswordCommand.cs" />
     <Compile Include="ApiRequest\Commands\Auth\LogoffCommand.cs" />
     <Compile Include="ApiRequest\Commands\Auth\LogonCommand.cs" />
     <Compile Include="ApiRequest\Commands\Auth\RegisterCommand.cs" />
@@ -44,13 +45,18 @@
     <Compile Include="ApiRequest\Commands\Position\GetFriendPositionCommand.cs" />
     <Compile Include="ApiRequest\Commands\Result\FriendPositionResult.cs" />
     <Compile Include="ApiRequest\Commands\Result\RegisterResult.cs" />
-    <Compile Include="ApiRequest\Commands\Result\UserResult.cs" />
+    <Compile Include="ApiRequest\Commands\Result\User.cs" />
     <Compile Include="ApiRequest\Commands\Position\GetAllFriendsPositionCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Upload\UploadAvatarCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Users\GetByUserIdCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Users\GetMeCommand.cs" />
     <Compile Include="ApiRequest\Commands\Users\GetMyFriendsCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Users\UpdateMeCommand.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Infrastructure\ExecuterService.cs" />
     <Compile Include="Infrastructure\ICacheService.cs" />
     <Compile Include="Infrastructure\IExecuterService.cs" />
+    <Compile Include="Infrastructure\ISettingService.cs" />
     <Compile Include="Infrastructure\LittlePlaceApiService.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\UserPosition.cs" />

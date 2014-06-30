@@ -7,6 +7,6 @@ namespace LittlePlace.Api
 {
     public static class Constants
     {
-        public static string Host = "http://10.250.101.201:3000";
+        public static string Host = "http://littleplace.azurewebsites.net/";
     }
 }

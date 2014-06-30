@@ -14,7 +14,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
 {
     public class LogonCommand:BaseCommand<Response<string>>
     {
-      
         public override string ActionName
         {
             get { return "logon"; }
@@ -23,7 +22,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
         public LogonCommand(HttpClient restClient,string login,string pass)
             :base("auth",restClient)
         {
-            FullUrl = String.Format("{0}/{1}?login={2}&pass={3}", Url, ActionName, login, pass);
+            FullUrl = String.Format("{0}&login={1}&pass={2}", Url, login, pass);
         }
 
         public async override Task<Response<string>> Execute()

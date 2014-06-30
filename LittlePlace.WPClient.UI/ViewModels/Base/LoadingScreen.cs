@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Controls;
@@ -8,9 +9,11 @@ using Caliburn.Micro.BindableAppBar;
 
 namespace LittlePlace.WPClient.UI.ViewModels.Base
 {
-    public class LoadingScreen:Screen
+    public abstract class LoadingScreen:Screen
     {
         private bool _isLoading;
+        private bool _isAllMenuEnabled = true;
+        private BackgroundWorker _threadWhoLoadFirstData;
 
         public bool IsLoading
         {
@@ -22,10 +25,36 @@ namespace LittlePlace.WPClient.UI.ViewModels.Base
             }
         }
 
+        public bool IsAllMenuEnabled
+        {
+            get { return _isAllMenuEnabled; }
+            set
+            {
+                _isAllMenuEnabled = value;
+                base.NotifyOfPropertyChange(()=>IsAllMenuEnabled);
+            }
+        }
+
+
         public void ProgressIndicatorStatus(bool status)
         {
             IsLoading = status;
+            IsAllMenuEnabled = !status;
+            _threadWhoLoadFirstData=new BackgroundWorker();
+            _threadWhoLoadFirstData.RunWorkerCompleted += FirstDataLoadedCompleted;
+            _threadWhoLoadFirstData.DoWork+=DataLoading;
+           
         }
+
+        protected void StartDataLoading()
+        {
+            _threadWhoLoadFirstData.RunWorkerAsync();
+        }
+
+        protected abstract void DataLoading(object sender, DoWorkEventArgs e);
+
+        protected abstract void FirstDataLoadedCompleted(object sender, RunWorkerCompletedEventArgs e);
+      
 
         public LoadingScreen()
         {

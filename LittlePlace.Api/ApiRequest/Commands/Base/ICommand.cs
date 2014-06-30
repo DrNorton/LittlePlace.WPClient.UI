@@ -9,6 +9,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
         string ActionName { get; }
         bool IsCached { get; set; }
         Task<T> Execute();
-        string BuildCacheKey();
+        int BuildCacheKey();
     }
 }

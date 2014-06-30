@@ -6,5 +6,6 @@ namespace LittlePlace.Api.Infrastructure
     {
         T GetCachedResult<T>(ICommand<T> command);
         bool SaveCacheResult<T>(ICommand<T> command,T result);
+        bool RemoveCacheResult<T>(ICommand<T> command);
     }
 }

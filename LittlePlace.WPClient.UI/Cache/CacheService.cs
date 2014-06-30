@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 using LittlePlace.Api.ApiRequest.Commands.Base;
 using LittlePlace.Api.Cache;
@@ -24,7 +25,7 @@ namespace LittlePlace.WPClient.UI.Cache
             {
                 return default(T);
             }
-            return JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(result.ResultText,0,result.ResultText.Length));
+            return JsonConvert.DeserializeObject<T>(result.ResultText);
         }
 
         public bool SaveCacheResult<T>(ICommand<T> command,T result)
@@ -32,9 +33,35 @@ namespace LittlePlace.WPClient.UI.Cache
             var cacheKey = command.BuildCacheKey();
             var jsonText = JsonConvert.SerializeObject(result);
             //Вставляем результат
-            _dataContext.CasheResults.InsertOnSubmit(new CacheResult(){Key = cacheKey,ResultText =Encoding.UTF8.GetBytes(jsonText)});
+            _dataContext.CasheResults.InsertOnSubmit(new CacheResult(){Key = cacheKey,ResultText =jsonText});
             _dataContext.SubmitChanges();
             return true;
-        } 
+        }
+
+        public bool RemoveCacheResult<T>(ICommand<T> command)
+        {
+            var cacheKey = command.BuildCacheKey();
+            var deletedCache = _dataContext.CasheResults.FirstOrDefault(x => x.Key == cacheKey);
+            if (deletedCache != null)
+            {
+                _dataContext.CasheResults.DeleteOnSubmit(deletedCache);
+                try
+                {
+                    _dataContext.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    // Make some adjustments. 
+                    // ... 
+                    // Try again.
+                   // db.SubmitChanges();
+                }
+               
+             
+            }
+          
+            return true;
+        }
     }
 }

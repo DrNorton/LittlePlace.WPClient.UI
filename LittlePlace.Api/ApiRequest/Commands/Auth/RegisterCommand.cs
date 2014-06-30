@@ -11,9 +11,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
 {
     public class RegisterCommand:BaseCommand<Response<RegisterResult>>
     {
-       
-     
-
         public override string ActionName
         {
             get { return "register"; }
@@ -22,7 +19,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
         public RegisterCommand(HttpClient restClient,string login,string pass)
             : base("auth",restClient)
         {
-            FullUrl = String.Format("{0}/{1}?login={2}&pass={3}", Url, ActionName, login, pass);
+            FullUrl = String.Format("{0}&login={1}&pass={2}", Url, login, pass);
         }
 
         public async override System.Threading.Tasks.Task<Response<RegisterResult>> Execute()

@@ -1,0 +1,110 @@
+﻿<ViewModels:ContactsViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" xmlns:System="clr-namespace:System;assembly=mscorlib" DisplayName="Lobortis imperdiet orci" IsNotifying="False" IsInitialized="True" IsLoading="True" IsActive="False">
+	<ViewModels:ContactsViewModel.Friends>
+		<Result:User Email="someone@example.com" FirstName="Aaberg, Jesper" LastName="Aaberg, Jesper" Login="Quisque nam praesent" NameWithSurname="Accumsan curae consequat convallis donec" PhotoUrl="Amet aenean bibendum vestibulum adipiscing" RawPhotoString="Vivamus dictumst sed" TelephoneNumber="(111) 555-0100" TextStatus="Lorem mauris morbi" UserId="58">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="user@adventure-works.com" FirstName="Adams, Ellen" LastName="Adams, Ellen" Login="Dolor diam aptent faucibus leo" NameWithSurname="Vestibulum elementum adipiscing" PhotoUrl="Aliquet eget auctor mus congue" RawPhotoString="Facilisis cursus fermentum" TelephoneNumber="(222) 555-0101" TextStatus="Nec fames habitant lectus" UserId="60">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="someone@adventure-works.com" FirstName="Adams, Terry" LastName="Adams, Terry" Login="Adipiscing commodo" NameWithSurname="Interdum per hendrerit" PhotoUrl="Conubia cubilia enim libero" RawPhotoString="Dapibus lobortis" TelephoneNumber="(333) 555-0102" TextStatus="Euismod erat vestibulum" UserId="41">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="user@example.com" FirstName="Adams, Terry" LastName="Adams, Terry" Login="Nascetur imperdiet sem vestibulum nisl" NameWithSurname="Magna sit vestibulum laoreet adipiscing" PhotoUrl="Malesuada vel pharetra" RawPhotoString="Massa penatibus nam" TelephoneNumber="(444) 555-0103" TextStatus="Porttitor morbi tincidunt litora" UserId="13">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="user-2@fabrikam.com" FirstName="Penor, Lori" LastName="Penor, Lori" Login="Magnis potenti nunc" NameWithSurname="Vestibulum senectus" PhotoUrl="Ultricies pretium" RawPhotoString="Dis sociosqu" TelephoneNumber="(111) 555-0104" TextStatus="Sodales netus" UserId="38">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="user-3@fabrikam.com" FirstName="Pfeiffer, Michael" LastName="Pfeiffer, Michael" Login="Aliquam pede suscipit" NameWithSurname="Torquent nulla porta mollis est" PhotoUrl="Montes nostra" RawPhotoString="Purus quam risus velit vitae" TelephoneNumber="(222) 555-0105" TextStatus="Ornare quis" UserId="89">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="user-4@fabrikam.com" FirstName="Philips, Carol" LastName="Philips, Carol" Login="Vestibulum rutrum nec" NameWithSurname="Class vestibulum" PhotoUrl="Sapien ultrices curae" RawPhotoString="Donec semper aliquet" TelephoneNumber="(333) 555-0106" TextStatus="Fusce adipiscing" UserId="91">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="user-5@fabrikam.com" FirstName="Poe, Toni" LastName="Poe, Toni" Login="Tellus vehicula adipiscing cubilia consequat" NameWithSurname="Lorem convallis morbi" PhotoUrl="Per dapibus sed" RawPhotoString="Volutpat dignissim elementum" TelephoneNumber="(444) 555-0107" TextStatus="Parturient tempus eget" UserId="53">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="user-6@fabrikam.com" FirstName="Hicks, Cassie" LastName="Hicks, Cassie" Login="Augue egestas mauris sit" NameWithSurname="Elit enim" PhotoUrl="Vel adipiscing" RawPhotoString="Maecenas praesent accumsan" TelephoneNumber="(555) 555-0108" TextStatus="Feugiat bibendum" UserId="26">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="user-7@fabrikam.com" FirstName="Argentiero, Luca" LastName="Argentiero, Luca" Login="Aptent vestibulum adipiscing sed gravida" NameWithSurname="Felis dis" PhotoUrl="Eros ipsum parturient iaculis fringilla" RawPhotoString="Lacinia laoreet" TelephoneNumber="(111) 555-0109" TextStatus="Facilisi habitasse" UserId="48">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+	</ViewModels:ContactsViewModel.Friends>
+	<ViewModels:ContactsViewModel.Profile>
+		<Result:User Email="user-8@fabrikam.com" FirstName="Perry, Brian" LastName="Perry, Brian" Login="Habitant nisi nisl vestibulum" NameWithSurname="Libero ligula pretium rhoncus nunc" PhotoUrl="Vestibulum adipiscing parturient sodales hendrerit" RawPhotoString="Viverra lorem" TelephoneNumber="(222) 555-0110" TextStatus="Litora interdum hac" UserId="20">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+	</ViewModels:ContactsViewModel.Profile>
+</ViewModels:ContactsViewModel>
