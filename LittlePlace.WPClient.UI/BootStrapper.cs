@@ -69,6 +69,7 @@ namespace LittlePlace.WPClient.UI
             _container.PerRequest<ContactsViewModel>();
             _container.PerRequest<FriendContactDetailViewModel>();
             _container.PerRequest<ChangePasswordViewModel>();
+            _container.PerRequest<SingleNewsViewModel>();
         }
 
         public void GoTo(string uri)

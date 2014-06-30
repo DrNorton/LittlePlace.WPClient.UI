@@ -41,9 +41,12 @@
     <Compile Include="ApiRequest\Commands\Auth\RegisterCommand.cs" />
     <Compile Include="ApiRequest\Commands\Base\BaseCommand.cs" />
     <Compile Include="ApiRequest\Commands\Base\ICommand.cs" />
+    <Compile Include="ApiRequest\Commands\News\GetAllNewsCommand.cs" />
+    <Compile Include="ApiRequest\Commands\News\GetNewsByIdCommand.cs" />
     <Compile Include="ApiRequest\Commands\Position\AddMyPositionCommand.cs" />
     <Compile Include="ApiRequest\Commands\Position\GetFriendPositionCommand.cs" />
     <Compile Include="ApiRequest\Commands\Result\FriendPositionResult.cs" />
+    <Compile Include="ApiRequest\Commands\Result\NewsResult.cs" />
     <Compile Include="ApiRequest\Commands\Result\RegisterResult.cs" />
     <Compile Include="ApiRequest\Commands\Result\User.cs" />
     <Compile Include="ApiRequest\Commands\Position\GetAllFriendsPositionCommand.cs" />
@@ -70,7 +73,7 @@
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net40+sl4+win8+wp71+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\..\Проекты\gkh_wp\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.IO">
       <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\portable-net40+sl4+win8+wp71+wpa81\System.IO.dll</HintPath>

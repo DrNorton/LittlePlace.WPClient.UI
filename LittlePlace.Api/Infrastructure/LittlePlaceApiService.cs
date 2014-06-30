@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using LittlePlace.Api.ApiRequest.Commands.Auth;
+using LittlePlace.Api.ApiRequest.Commands.News;
 using LittlePlace.Api.ApiRequest.Commands.Position;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.ApiRequest.Commands.Upload;
@@ -29,6 +30,8 @@ namespace LittlePlace.Api.Infrastructure
         Task<Response<string>> UpdateMe(User updatedUser);
         Task<Response<User>> GetUserByUserId(int userId);
         Task<Response<string>> ChangePasssword(string oldPass, string newPass);
+        Task<Response<List<NewsResult>>> GetAllNews();
+        Task<Response<NewsResult>> GetNewsById(int newsId);
     }
 
     public class LittlePlaceApiService : ILittlePlaceApiService
@@ -132,6 +135,19 @@ namespace LittlePlace.Api.Infrastructure
             var getMyFriendsCommand = new GetAllFriendsPositionCommand(_httpClient);
             return await _executerService.ExecuteCommand(getMyFriendsCommand, false);
         }
+
+        public async Task<Response<List<NewsResult>>> GetAllNews()
+        {
+            var getMyFriendsCommand = new GetAllNewsCommand(_httpClient);
+            return await _executerService.ExecuteCommand(getMyFriendsCommand, false);
+        }
+
+        public async Task<Response<NewsResult>> GetNewsById(int newsId)
+        {
+            var getnewsById = new GetNewsByIdCommand(_httpClient,newsId);
+            return await _executerService.ExecuteCommand(getnewsById, false);
+        }
+
 
         public async Task<Response<string>> AddMyPosition(double latitude,double longitude)
         {

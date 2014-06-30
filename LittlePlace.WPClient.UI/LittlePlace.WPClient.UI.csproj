@@ -86,7 +86,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Проекты\gkh_wp\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="system.data.linq" />
     <Reference Include="System.Device" />
@@ -137,6 +137,7 @@
     <Compile Include="Converterts\Base64ToImageConverter.cs" />
     <Compile Include="Converterts\ByteToImageConverter.cs" />
     <Compile Include="Converterts\GeoCoordinateConverter.cs" />
+    <Compile Include="Converterts\TextTrimmerConverter.cs" />
     <Compile Include="EventMessages\NewPositionEventMessage.cs" />
     <Compile Include="Extensions\AlphaKeyGroup.cs" />
     <Compile Include="Extensions\EnabledBindableAppBar.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\MyContactDetailViewModel.cs" />
+    <Compile Include="ViewModels\SingleNewsViewModel.cs" />
     <Compile Include="Views\ChangePasswordView.xaml.cs">
       <DependentUpon>ChangePasswordView.xaml</DependentUpon>
     </Compile>
@@ -174,6 +176,9 @@
     </Compile>
     <Compile Include="Views\MyContactDetailView.xaml.cs">
       <DependentUpon>MyContactDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SingleNewsView.xaml.cs">
+      <DependentUpon>SingleNewsView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +217,10 @@
     <Page Include="Views\MyContactDetailView.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SingleNewsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

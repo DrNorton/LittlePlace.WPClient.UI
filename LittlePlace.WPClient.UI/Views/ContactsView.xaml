@@ -19,7 +19,7 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False" d:DataContext="{d:DesignData /SampleData/ContactsViewModelSampleData.xaml}">
 	 <phone:PhoneApplicationPage.Resources>
-        <converterts:ByteToImageConverter x:Key="ByteToImageConverter"/>
+        <converterts:TextTrimmerConverter x:Key="TextTrimmerConverter"/>
         <converterts:Base64ToImageConverter x:Key="Base64ToImageConverter"/>
         <DataTemplate x:Key="ItemTemplate">
             <StackPanel VerticalAlignment="Top"  >
@@ -87,6 +87,7 @@
         <ItemsPanelTemplate x:Key="GroupItemsPanelTemplate">
             <toolkit:WrapPanel Orientation="Horizontal"/>
         </ItemsPanelTemplate>
+        
     </phone:PhoneApplicationPage.Resources>
 	   <shell:SystemTray.ProgressIndicator>
         <shell:ProgressIndicator IsIndeterminate="{Binding IsLoading,Mode=TwoWay}" IsVisible="True" />
@@ -109,27 +110,27 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                            <Grid DataContext="{Binding Profile}" toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
+                            <Grid  toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <ListBoxItem  toolkit:TiltEffect.IsTiltEnabled="True">
                                 <Grid>
-                                    <Image  Height="173" Width="173" Source="{Binding RawPhotoString,Mode=TwoWay,Converter={StaticResource Base64ToImageConverter}}"/>
+                                    <Image  Height="173" Width="173" Source="{Binding Profile.RawPhotoString,Mode=TwoWay,Converter={StaticResource Base64ToImageConverter}}"/>
                                 </Grid>
                                     
                                 </ListBoxItem>
                             <ListBoxItem toolkit:TiltEffect.IsTiltEnabled="True" Grid.Column="1" >
                                 <StackPanel Margin="12,-6,0,0">
-									  <TextBlock Text="{Binding Login}" TextWrapping="Wrap"
+									  <TextBlock Text="{Binding Profile.Login}" TextWrapping="Wrap"
                             		Foreground="{StaticResource PhoneAccentBrush}"/>
                                     <TextBlock  TextWrapping="Wrap" FontStyle="Italic"
                             		Foreground="{StaticResource PhoneForegroundBrush}">
-										<Run Text="{Binding FirstName}"/>,
-										<Run Text="{Binding LastName}"/>
+										<Run Text="{Binding Profile.FirstName}"/>,
+										<Run Text="{Binding Profile.LastName}"/>
 										</TextBlock>
-                                    <TextBlock Text="{Binding TextStatus}" TextWrapping="Wrap" 
+                                    <TextBlock Text="{Binding Profile.TextStatus}" TextWrapping="Wrap" 
                                        Foreground="{StaticResource PhoneForegroundBrush}" />
                                     <TextBlock Text="Online" TextWrapping="Wrap"
                                        Foreground="{StaticResource PhoneSubtleBrush}"/>
@@ -163,7 +164,24 @@
 
             <!--Panorama item two-->
             <controls:PanoramaItem Header="Новости">
-                <Grid/>
+				<ListBox ItemsSource="{Binding News,Mode=TwoWay}">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel >
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <micro:ActionMessage MethodName="NavigateToSingleNews">
+                                            <micro:Parameter Value="{Binding }" />
+                                        </micro:ActionMessage>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <TextBlock TextWrapping="Wrap"  Text="{Binding Title}" Style="{StaticResource PhoneTextAccentStyle}"/>
+				<TextBlock TextWrapping="Wrap"  Text="{Binding Text,Converter={StaticResource TextTrimmerConverter}}"/>
+				<TextBlock TextWrapping="Wrap" HorizontalAlignment="Right"  Text="{Binding CreatedTime}" Style="{StaticResource PhoneTextSubtleStyle}"/>
+				</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
             </controls:PanoramaItem>
         </controls:Panorama>
     </Grid>
