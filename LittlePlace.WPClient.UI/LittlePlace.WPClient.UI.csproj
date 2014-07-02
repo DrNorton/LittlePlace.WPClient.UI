@@ -70,8 +70,8 @@
     </Reference>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Interop" />
@@ -86,7 +86,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Проекты\gkh_wp\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="system.data.linq" />
     <Reference Include="System.Device" />
@@ -105,6 +105,22 @@
     <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Observable" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.0.20823\lib\SL4-WindowsPhone71\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.0.20823\lib\SL4-WindowsPhone71\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.0.20823\lib\SL4-WindowsPhone71\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.0.20823\lib\SL4-WindowsPhone71\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading">
+      <HintPath>..\packages\Rx-Silverlight.2.0.20823\lib\SL4-WindowsPhone71\System.Reactive.Windows.Threading.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime, Version=1.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -125,6 +141,12 @@
     <Reference Include="mscorlib.extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml.Serialization" />
+    <Reference Include="Yandex.Maps">
+      <HintPath>..\packages\Yandex.Maps.1.02.4721.1342\lib\sl4-wp71\Yandex.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib">
+      <HintPath>..\packages\Yandex.Maps.1.02.4721.1342\lib\sl4-wp71\Zlib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -136,11 +158,14 @@
     <Compile Include="Cache\CacheService.cs" />
     <Compile Include="Converterts\Base64ToImageConverter.cs" />
     <Compile Include="Converterts\ByteToImageConverter.cs" />
-    <Compile Include="Converterts\GeoCoordinateConverter.cs" />
+    <Compile Include="Converterts\TextTrimmerConverter.cs" />
     <Compile Include="EventMessages\NewPositionEventMessage.cs" />
     <Compile Include="Extensions\AlphaKeyGroup.cs" />
+    <Compile Include="Extensions\BindingUtility.cs" />
     <Compile Include="Extensions\EnabledBindableAppBar.cs" />
     <Compile Include="Maps\Models\MapPushpinModel.cs" />
+    <Compile Include="Models\MapModels\BasePushpin.cs" />
+    <Compile Include="Models\MapModels\FriendPushpin.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="SampleData\FriendViewDataSource\FriendViewDataSource.xaml.cs">
       <DependentUpon>FriendViewDataSource.xaml</DependentUpon>
@@ -149,6 +174,7 @@
     <Compile Include="Controls\TextBoxCaptioned.xaml.cs">
       <DependentUpon>TextBoxCaptioned.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AuthViewModel.cs" />
     <Compile Include="ViewModels\Base\LoadingScreen.cs" />
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ContactsViewModel.cs" />
@@ -156,6 +182,10 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\MyContactDetailViewModel.cs" />
+    <Compile Include="ViewModels\SingleNewsViewModel.cs" />
+    <Compile Include="Views\AuthView.xaml.cs">
+      <DependentUpon>AuthView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChangePasswordView.xaml.cs">
       <DependentUpon>ChangePasswordView.xaml</DependentUpon>
     </Compile>
@@ -175,6 +205,9 @@
     <Compile Include="Views\MyContactDetailView.xaml.cs">
       <DependentUpon>MyContactDetailView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SingleNewsView.xaml.cs">
+      <DependentUpon>SingleNewsView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -188,6 +221,10 @@
     <Page Include="Controls\TextBoxCaptioned.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AuthView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ChangePasswordView.xaml">
       <SubType>Designer</SubType>
@@ -212,6 +249,10 @@
     <Page Include="Views\MyContactDetailView.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SingleNewsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

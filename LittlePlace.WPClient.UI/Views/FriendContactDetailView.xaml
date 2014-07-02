@@ -21,7 +21,9 @@
         <converterts:ByteToImageConverter x:Key="ByteToImageConverter"/>
         <converterts:Base64ToImageConverter x:Key="Base64ToImageConverter"/>
     </phone:PhoneApplicationPage.Resources>
-    
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator IsIndeterminate="{Binding IsLoading,Mode=TwoWay}" IsVisible="True" />
+    </shell:SystemTray.ProgressIndicator>
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{d:DesignData /SampleData/ContactsViewModelSampleData.xaml}">
         <Grid.RowDefinitions>

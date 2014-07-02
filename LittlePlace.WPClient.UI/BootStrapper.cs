@@ -7,7 +7,7 @@ using LittlePlace.WPClient.UI.Cache;
 using LittlePlace.WPClient.UI.Services;
 using LittlePlace.WPClient.UI.ViewModels;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Controls.Maps;
+
 using ISettingService = LittlePlace.Api.Infrastructure.ISettingService;
 
 namespace LittlePlace.WPClient.UI
@@ -36,6 +36,7 @@ namespace LittlePlace.WPClient.UI
             RegisterViewModels();
             DataRegister();
             RegisterServices();
+
         }
 
         private void DataRegister()
@@ -55,9 +56,7 @@ namespace LittlePlace.WPClient.UI
             _container.RegisterSingleton(typeof (ILittlePlaceApiService), null, typeof (LittlePlaceApiService));
             _container.RegisterPerRequest(typeof (IExecuterService), null, typeof (ExecuterService));
             _container.RegisterPerRequest(typeof (ISettingService), null, typeof (SettingService));
-            var bingMapProvider =
-                new ApplicationIdCredentialsProvider("Au5Po_aD2JA2igWtvTycQIuz4tyc_7dKgTu8pDr85rlIvxOVzKOR2LrmGj3DlEWt");
-            _container.RegisterInstance(typeof (ApplicationIdCredentialsProvider), null, bingMapProvider);
+          
         }
 
         private void RegisterViewModels()
@@ -69,6 +68,8 @@ namespace LittlePlace.WPClient.UI
             _container.PerRequest<ContactsViewModel>();
             _container.PerRequest<FriendContactDetailViewModel>();
             _container.PerRequest<ChangePasswordViewModel>();
+            _container.PerRequest<SingleNewsViewModel>();
+            _container.PerRequest<AuthViewModel>();
         }
 
         public void GoTo(string uri)

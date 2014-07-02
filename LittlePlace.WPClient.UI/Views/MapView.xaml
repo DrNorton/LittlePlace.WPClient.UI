@@ -6,11 +6,16 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
+   
     xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+   
     xmlns:bindableAppBar="clr-namespace:Caliburn.Micro.BindableAppBar;assembly=Caliburn.Micro.BindableAppBar"
     xmlns:extensions="clr-namespace:LittlePlace.WPClient.UI.Extensions"
+
+   
+    xmlns:ymc="clr-namespace:Yandex.Maps;assembly=Yandex.Maps"
+    xmlns:location="clr-namespace:System.Device.Location;assembly=System.Device"
+    xmlns:positioning="clr-namespace:Yandex.Positioning;assembly=Yandex.Maps"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -18,33 +23,46 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
     <phone:PhoneApplicationPage.Resources>
-        <converterts:GeoCoordinateConverter x:Name="GeoCoordinateConverter"/>
+
         
     </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot"   Background="Transparent">
-        <maps:Map  CredentialsProvider="{Binding Credentials}" Center="{Binding CenterMap.Position,Mode=TwoWay}" ZoomLevel="{Binding ZoomLevel,Mode=TwoWay}" >
-            <maps:MapItemsControl  ItemsSource="{Binding MyPositions,Mode=TwoWay}">
-                <maps:MapItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <maps:Pushpin  Location="{Binding Position}"   Margin="-16,0,0,-5" >
-                            <maps:Pushpin.Template>
-                                <ControlTemplate TargetType="maps:Pushpin">
-                                    <Image Source="{Binding ImagePath,Mode=TwoWay}" Stretch="None" HorizontalAlignment="Left"/>
-                                </ControlTemplate>
-                            </maps:Pushpin.Template>
-                            <!--<i:Interaction.Triggers>
-                                <i:EventTrigger EventName="Tap">
-                                    <triggers:EventToCommand  Command="{Binding ElementName=ContentPanel,Path=DataContext.ZoomSelectedPinCommand}" CommandParameter="{Binding}" />
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
-                        </maps:Pushpin>
+        <ymc:Map
+            ZoomLevel="13"
+            DisplayLayers="map"
+            TrafficEnabled="True"
+            UseLocation="True">
+            <ymc:MapLayer>
 
-                    </DataTemplate>
-                </maps:MapItemsControl.ItemTemplate>
-                </maps:MapItemsControl>
-        </maps:Map>
+
+                <ymc:MapItemsControl x:Name="mapItemsControl" ItemsSource="{Binding FriendPushpins,Mode=TwoWay}">
+                    <ymc:MapItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ymc:PushPin
+                                    Visibility="{Binding Visibility}"
+                                    ContentVisibility="{Binding ContentVisibility, Mode=TwoWay}"
+                                    State="{Binding State}"
+                                    ymc:MapLayer.Location="{Binding Position}"
+                                    ymc:MapLayer.Alignment="BottomCenter"
+                                    Canvas.ZIndex="{Binding ZIndex}"
+                                    CacheMode="BitmapCache"
+                                    Content="{Binding User.Login}"
+                            
+                                    ymc:PushPinManagerHelper.GroupKeys="All" 
+                                    >
+                              
+
+                               
+                            </ymc:PushPin>
+                        </DataTemplate>
+                    </ymc:MapItemsControl.ItemTemplate>
+                </ymc:MapItemsControl>
+            </ymc:MapLayer>
+        </ymc:Map>
+
+
         <extensions:EnabledBindableAppBar IsEnabled="{Binding IsAllMenuEnabled,Mode=TwoWay}" x:Name="AppBar" BarOpacity="1.0" >
             <bindableAppBar:BindableAppBarButton x:Name="ZoomIn" IconUri="/Content/Icons/appbar.add.rest.png" Text="приблизить" />
             <bindableAppBar:BindableAppBarButton x:Name="ZoomOut" IconUri="/Content/Icons/appbar.minus.rest.png" Text="отдалить" />

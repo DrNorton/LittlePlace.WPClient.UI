@@ -3,13 +3,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-    xmlns:ui="clr-namespace:LittlePlace.WPClient.UI" 
+    xmlns:ui="clr-namespace:LittlePlace.WPClient.UI"
+    xmlns:maps="clr-namespace:Yandex.Maps;assembly=Yandex.Maps"
     x:Class="LittlePlace.WPClient.UI.App"
     >
 
     <!--Application Resources-->
     <Application.Resources>
     	<ui:BootStrapper x:Key="bootstrapper" />
+        <maps:MapGlobalSettings x:Key="MapGlobalSettings" ApiKey="v7rQ0Pg6AN9xUzWHfLbsoy6zULUsuFfyhjDVFZT2UK1rt9NXi3PaMCETdcMHq5q18SlSMgk8u8KwY7cPEmhgrj27JrM6k1rsqM8ic1F8ad0=" />
     </Application.Resources>
 
    

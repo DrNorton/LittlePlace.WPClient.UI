@@ -20,6 +20,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
 
         private List<AlphaKeyGroup<User>> _groupedUsers = new List<AlphaKeyGroup<User>>();
         private List<User> _friends;
+        private List<NewsResult> _news;
 
         public List<AlphaKeyGroup<User>> GroupedUsers
         {
@@ -71,6 +72,16 @@ namespace LittlePlace.WPClient.UI.ViewModels
             }
         }
 
+        public List<NewsResult> News
+        {
+            get { return _news; }
+            set
+            {
+                _news = value;
+                base.NotifyOfPropertyChange(()=>News);
+            }
+        }
+
         protected override void OnViewReady(object view)
         {
             base.ProgressIndicatorStatus(true);
@@ -82,6 +93,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
         {
             Profile = (await _littlePlaceApiService.GetMe()).Result;
             Friends = (await _littlePlaceApiService.GetMyFriends()).Result;
+            News = (await _littlePlaceApiService.GetAllNews()).Result;
             CreateGroupedList();
         }
 
@@ -92,6 +104,11 @@ namespace LittlePlace.WPClient.UI.ViewModels
                         CultureInfo.CurrentCulture,
                         (User s) => { return s.Login.ElementAt(0).ToString().ToLower(); },
                         true);
+        }
+
+        public void NavigateToSingleNews(NewsResult selectedNews)
+        {
+            _navigationService.UriFor<SingleNewsViewModel>().WithParam(x=>x.NewsId,selectedNews.Id).Navigate();
         }
 
         protected override void FirstDataLoadedCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)

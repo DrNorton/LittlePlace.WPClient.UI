@@ -22,28 +22,17 @@ namespace LittlePlace.WPClient.UI.ViewModels
             _littlePlaceApiService = littlePlaceApiService;
 
             AutorityIfNeeded();
-            Get();
+         
         }
 
         private async void AutorityIfNeeded()
         {
             if (!_littlePlaceApiService.IsAuthorizated)
             {
-                await _littlePlaceApiService.Logon("DrNorton", "rianon");
+                _navigationService.UriFor<AuthViewModel>().Navigate();
             }
-            //   var ds =await _littlePlaceApiService.Logon("DrNorton", "rianon");
-            var dsd = await _littlePlaceApiService.AddMyPosition(12, 13);
         }
 
-        private async void Get()
-        {
-            if (!_littlePlaceApiService.IsAuthorizated)
-            {
-                await _littlePlaceApiService.Logon("DrNorton", "rianon");
-            }
-         //   var ds =await _littlePlaceApiService.Logon("DrNorton", "rianon");
-            var dsd= await _littlePlaceApiService.AddMyPosition(12,13);
-        }
 
         public void MapTileTap()
         {

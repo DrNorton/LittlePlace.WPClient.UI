@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Device.Location;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Windows.Media.Imaging;
 using Caliburn.Micro;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.Api.Models;
 using LittlePlace.WPClient.UI.EventMessages;
-using LittlePlace.WPClient.UI.Maps.Models;
+using LittlePlace.WPClient.UI.Models.MapModels;
 using LittlePlace.WPClient.UI.ViewModels.Base;
-using Microsoft.Phone.Controls.Maps;
-using Microsoft.Phone.Controls.Maps.Platform;
+using Yandex.Positioning;
+
 
 namespace LittlePlace.WPClient.UI.ViewModels
 {
@@ -21,38 +16,31 @@ namespace LittlePlace.WPClient.UI.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly ILittlePlaceApiService _littlePlaceApiService;
-        private readonly ApplicationIdCredentialsProvider _credentials;
+  
         private readonly IEventAggregator _eventAggregator;
         private List<FriendPositionResult> _friendsLocations;
-        private MapPushpinModel _centerMap;
-        private ObservableCollection<MapPushpinModel> _myPositions;
-        private int _zoomLevel = 5;
+        private GeoCoordinate _centerMap;
+        private List<FriendPushpin> _friendPushpins;
 
 
-        public MapViewModel(INavigationService navigationService, ILittlePlaceApiService littlePlaceApiService, ApplicationIdCredentialsProvider credentials,IEventAggregator eventAggregator)
+        public MapViewModel(INavigationService navigationService, ILittlePlaceApiService littlePlaceApiService,IEventAggregator eventAggregator)
         {
             _navigationService = navigationService;
             _littlePlaceApiService = littlePlaceApiService;
-            _credentials = credentials;
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);
-            _centerMap = new MapPushpinModel();
-            _centerMap.Position.Latitude = 37.609218;
-            _centerMap.Position.Longitude = 55.753559;
-            MyPositions = new ObservableCollection<MapPushpinModel>();
+            ConfigureCenterMap();
+
         }
 
-        public List<FriendPositionResult> FriendsLocations
+        private void ConfigureCenterMap()
         {
-            get { return _friendsLocations; }
-            set
-            {
-                _friendsLocations = value;
-                base.NotifyOfPropertyChange(()=>FriendsLocations);
-            }
+           CenterMap=new GeoCoordinate();
+           CenterMap.Latitude = 53.905153;
+           CenterMap.Longitude = 27.558230;
         }
 
-        public MapPushpinModel CenterMap
+        public GeoCoordinate CenterMap
         {
             get { return _centerMap; }
             set
@@ -62,67 +50,39 @@ namespace LittlePlace.WPClient.UI.ViewModels
             }
         }
 
-        public ApplicationIdCredentialsProvider Credentials
+        public List<FriendPushpin> FriendPushpins
         {
-            get { return _credentials; }
-        }
-
-        public int ZoomLevel
-        {
-            get { return _zoomLevel; }
+            get { return _friendPushpins; }
             set
             {
-                if (value >= 0)
-                {
-                    _zoomLevel = value;
-                }
-
-                base.NotifyOfPropertyChange(() => ZoomLevel);
+                _friendPushpins = value;
+                base.NotifyOfPropertyChange(()=>FriendPushpins);
             }
         }
 
-        public void ZoomOut()
-        {
-            ZoomLevel--;
-        }
-
-        public void ZoomIn()
-        {
-            ZoomLevel++;
-        }
-
-        public void CenterMapOnMe()
-        {
-            CenterMap = MyPositions.FirstOrDefault();
-        }
-
-        public ObservableCollection<MapPushpinModel> MyPositions
-        {
-            get { return _myPositions; }
-            set
-            {
-                _myPositions = value;
-                base.NotifyOfPropertyChange(()=>MyPositions);
-            }
-        }
 
         protected async override void OnViewReady(object view)
         {
            base.OnViewReady(view);
-           var res=await _littlePlaceApiService.Logon("DrNorton","rianon");
-           var result = await _littlePlaceApiService.GetAllFriendsPosition();
-           FriendsLocations = result.Result;
+           var positions = (await _littlePlaceApiService.GetAllFriendsPosition());
+           var friends = (await _littlePlaceApiService.GetMyFriends()).Result;
+           FriendPushpins=CreateFriendPositionList(positions.Result,friends);
+        }
 
+        private List<FriendPushpin> CreateFriendPositionList(IEnumerable<FriendPositionResult> positions, IEnumerable<User> friends)
+        {
+            var friendPositionList = new List<FriendPushpin>();
+            foreach (var friendPosition in positions)
+            {
+                var friend=friends.FirstOrDefault(x => x.UserId == friendPosition.FriendId);
+                friendPositionList.Add(new FriendPushpin(friend,friendPosition));
+            }
+            return friendPositionList;
         }
 
         public void Handle(NewPositionEventMessage message)
         {
-            var location = new GeoCoordinate(){Latitude = message.Latitude,Longitude = message.Longitude};
-            var mapPushpinModel = new MapPushpinModel(){Position = location,Time = DateTime.Now,ImagePath = new BitmapImage(new Uri(@"/Content\Icons\red-circle.png",UriKind.Relative))};
-            _myPositions.Add(mapPushpinModel);
-            CenterMap = mapPushpinModel;
-
-          base.NotifyOfPropertyChange(() => MyPositions);
+        
         }
 
         protected override void DataLoading(object sender, System.ComponentModel.DoWorkEventArgs e)
