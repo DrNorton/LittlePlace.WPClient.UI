@@ -159,6 +159,7 @@
     <Compile Include="Converterts\Base64ToImageConverter.cs" />
     <Compile Include="Converterts\ByteToImageConverter.cs" />
     <Compile Include="Converterts\TextTrimmerConverter.cs" />
+    <Compile Include="EventMessages\NavigateMapToPushpinMessage.cs" />
     <Compile Include="EventMessages\NewPositionEventMessage.cs" />
     <Compile Include="Extensions\AlphaKeyGroup.cs" />
     <Compile Include="Extensions\BindingUtility.cs" />
@@ -166,9 +167,13 @@
     <Compile Include="Maps\Models\MapPushpinModel.cs" />
     <Compile Include="Models\MapModels\BasePushpin.cs" />
     <Compile Include="Models\MapModels\FriendPushpin.cs" />
+    <Compile Include="Models\MapModels\MePushpin.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="SampleData\FriendViewDataSource\FriendViewDataSource.xaml.cs">
       <DependentUpon>FriendViewDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
+      <DependentUpon>SampleDataSource.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\SettingService.cs" />
     <Compile Include="Controls\TextBoxCaptioned.xaml.cs">
@@ -222,6 +227,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SampleData\SampleDataSource\SampleDataSource.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\AuthView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -267,6 +276,7 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Icons\friend.png" />
     <Content Include="Content\Icons\appbar.add.rest.png" />
     <Content Include="Content\Icons\appbar.minus.rest.png" />
     <Content Include="Content\Icons\map_tile.png" />
@@ -296,11 +306,18 @@
     <Resource Include="SampleData\FriendViewDataSource\FriendViewDataSource_Files\image03.png" />
     <Resource Include="SampleData\FriendViewDataSource\FriendViewDataSource_Files\image04.png" />
     <Resource Include="SampleData\FriendViewDataSource\FriendViewDataSource_Files\image05.png" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
   </ItemGroup>
   <ItemGroup>
     <DesignData Include="SampleData\ContactsViewModelSampleData.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
+    <DesignData Include="SampleData\MapViewModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EventMessages\Maps\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

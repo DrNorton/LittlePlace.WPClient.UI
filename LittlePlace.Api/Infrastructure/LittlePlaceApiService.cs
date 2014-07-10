@@ -129,7 +129,7 @@ namespace LittlePlace.Api.Infrastructure
         public async Task<Response<List<FriendPositionResult>>> GetAllFriendsPosition()
         {
             var getMyFriendsCommand = new GetAllFriendsPositionCommand(_httpClient);
-            return await _executerService.ExecuteCommand(getMyFriendsCommand, false);
+            return await _executerService.ExecuteCommand(getMyFriendsCommand, true);
         }
 
         public async Task<Response<List<NewsResult>>> GetAllNews()
