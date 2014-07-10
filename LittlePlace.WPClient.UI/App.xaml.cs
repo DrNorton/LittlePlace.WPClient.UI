@@ -35,7 +35,7 @@ namespace LittlePlace.WPClient.UI
                 _watcher.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(_watcher_PositionChanged);
 
             }
-            _watcher.Start();
+             _watcher.Start();
         }
 
         void _watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)

@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace LittlePlace.Api.ApiRequest.Commands.Result
 {
-    public class User :  INotifyPropertyChanged 
+    public class User :  INotifyPropertyChanged,IEquatable<User>
     {
         private int _userId;
         private string _login;
@@ -106,6 +106,11 @@ namespace LittlePlace.Api.ApiRequest.Commands.Result
             {
                 handler(this, new PropertyChangedEventArgs(name));
             }
+        }
+
+        public bool Equals(User other)
+        {
+            return this.Login == other.Login && this.LastName == other.LastName && this.FirstName == other.FirstName;
         }
     }
 }

@@ -1,0 +1,261 @@
+﻿<ViewModels:MapViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Positioning="clr-namespace:Yandex.Positioning;assembly=Yandex.Maps" xmlns:MapModels="clr-namespace:LittlePlace.WPClient.UI.Models.MapModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" xmlns:System="clr-namespace:System;assembly=mscorlib"
+                         xmlns:maps="clr-namespace:LittlePlace.WPClient.UI.EventMessages.Maps"
+                         DisplayName="Magna massa" IsNotifying="True" IsInitialized="False" IsAllMenuEnabled="True" IsLoading="False" IsActive="True">
+	<ViewModels:MapViewModel.CenterMap>
+		<Positioning:GeoCoordinate Longitude="149.46" Latitude="671.43"/>
+	</ViewModels:MapViewModel.CenterMap>
+	<ViewModels:MapViewModel.FriendPushpins>
+		<maps:FriendPushpin ContentVisibility="Visible" IsNotifying="True" State="Collapsed" Visibility="Visible" ZIndex="14">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="544.71" Latitude="824.47"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Vestibulum class maecenas aliquam" FirstName="Aaberg, Jesper" LastName="Aaberg, Jesper" Login="Vivamus nam aliquam" NameWithSurname="Parturient dictumst phasellus consequat" PhotoUrl="Convallis dignissim aenean" RawPhotoString="(111) 555-0100" TelephoneNumber="Mauris dis eleifend est" TextStatus="Nullam donec vestibulum" UserId="67">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Collapsed" IsNotifying="False" State="Collapsed" Visibility="Visible" ZIndex="54">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="530.04" Latitude="663.65"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Facilisi elementum etiam" FirstName="Adams, Ellen" LastName="Adams, Ellen" Login="Blandit lorem parturient faucibus cursus" NameWithSurname="Commodo conubia morbi dictum" PhotoUrl="Vestibulum hac cubilia nulla proin" RawPhotoString="(222) 555-0101" TelephoneNumber="Adipiscing fermentum duis inceptos interdum" TextStatus="Fringilla augue nunc" UserId="82">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Collapsed" IsNotifying="True" State="Expanded" Visibility="Collapsed" ZIndex="53">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="740.99" Latitude="766.69"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Lectus lobortis" FirstName="Adams, Terry" LastName="Adams, Terry" Login="Nec vestibulum vestibulum ligula non" NameWithSurname="Euismod amet pharetra" PhotoUrl="Per fames habitasse" RawPhotoString="(333) 555-0102" TelephoneNumber="Arcu parturient diam" TextStatus="Felis luctus" UserId="66">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Visible" IsNotifying="False" State="Expanded" Visibility="Visible" ZIndex="74">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="380.82" Latitude="333.94"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Placerat ipsum pulvinar justo hendrerit" FirstName="Adams, Terry" LastName="Adams, Terry" Login="Lorem magna sem himenaeos" NameWithSurname="Eros sit" PhotoUrl="Vel imperdiet nibh" RawPhotoString="(444) 555-0103" TelephoneNumber="Nisl nam iaculis metus mattis" TextStatus="Sociosqu sed morbi" UserId="76">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Visible" IsNotifying="True" State="Expanded" Visibility="Collapsed" ZIndex="38">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="213.4" Latitude="808.05"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Malesuada neque lacinia laoreet" FirstName="Penor, Lori" LastName="Penor, Lori" Login="Leo suscipit" NameWithSurname="Mus netus torquent" PhotoUrl="Mauris mollis" RawPhotoString="(111) 555-0104" TelephoneNumber="Posuere orci montes nostra" TextStatus="Pede ornare nulla" UserId="33">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Visible" IsNotifying="False" State="Collapsed" Visibility="Collapsed" ZIndex="21">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="767.78" Latitude="973.68"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Nec non tincidunt tristique platea" FirstName="Pfeiffer, Michael" LastName="Pfeiffer, Michael" Login="Ultricies sem urna porta cras" NameWithSurname="Rhoncus primis rutrum vehicula duis" PhotoUrl="Sodales purus" RawPhotoString="(222) 555-0105" TelephoneNumber="Parturient nunc semper risus" TextStatus="Vulputate sit" UserId="80">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Collapsed" IsNotifying="True" State="Collapsed" Visibility="Visible" ZIndex="76">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="927.21" Latitude="784.84"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Vel nam" FirstName="Philips, Carol" LastName="Philips, Carol" Login="Elit curabitur sociis" NameWithSurname="Sed dis enim integer adipiscing" PhotoUrl="Phasellus taciti" RawPhotoString="(333) 555-0106" TelephoneNumber="Parturient vivamus est vestibulum convallis" TextStatus="Vestibulum erat dignissim eros maecenas" UserId="97">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Collapsed" IsNotifying="False" State="Collapsed" Visibility="Visible" ZIndex="92">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="527.35" Latitude="831.79"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Hac leo nibh mus praesent" FirstName="Poe, Toni" LastName="Poe, Toni" Login="Aliquam elementum nec vestibulum" NameWithSurname="Etiam non" PhotoUrl="Bibendum nisl facilisis dictumst fusce" RawPhotoString="(444) 555-0107" TelephoneNumber="Fermentum morbi per" TextStatus="Sed vestibulum sem tempus" UserId="78">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Visible" IsNotifying="True" State="Expanded" Visibility="Visible" ZIndex="52">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="340.36" Latitude="179.42"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Adipiscing parturient" FirstName="Hicks, Cassie" LastName="Hicks, Cassie" Login="Sit aliquet adipiscing eleifend varius" NameWithSurname="Vel parturient nulla" PhotoUrl="Aenean pede nam hendrerit proin" RawPhotoString="(555) 555-0108" TelephoneNumber="Quam faucibus dolor fames nullam" TextStatus="Blandit vestibulum commodo himenaeos" UserId="83">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+		<maps:FriendPushpin ContentVisibility="Collapsed" IsNotifying="False" State="Collapsed" Visibility="Visible" ZIndex="34">
+			<maps:FriendPushpin.Position>
+				<Positioning:GeoCoordinate Longitude="848.72" Latitude="101.16"/>
+			</maps:FriendPushpin.Position>
+			<maps:FriendPushpin.User>
+				<Result:User Email="Imperdiet dis aptent conubia felis" FirstName="Argentiero, Luca" LastName="Argentiero, Luca" Login="Penatibus justo porttitor" NameWithSurname="Egestas tincidunt" PhotoUrl="Est euismod interdum" RawPhotoString="(111) 555-0109" TelephoneNumber="Adipiscing lacus lorem quis" TextStatus="Lobortis tristique" UserId="17">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</maps:FriendPushpin.User>
+		</maps:FriendPushpin>
+	</ViewModels:MapViewModel.FriendPushpins>
+	<ViewModels:MapViewModel.Friends>
+		<Result:User Email="Urna magna nascetur ultricies cras" FirstName="Perry, Brian" LastName="Perry, Brian" Login="Iaculis dictum vestibulum" NameWithSurname="Leo vestibulum lectus massa libero" PhotoUrl="Ligula litora pharetra" RawPhotoString="(222) 555-0110" TelephoneNumber="Adipiscing metus morbi magnis" TextStatus="Natoque nunc parturient mus nec" UserId="10">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Placerat posuere amet vulputate" FirstName="Ramos, Luciana" LastName="Ramos, Luciana" Login="Vestibulum diam sodales" NameWithSurname="Mattis pulvinar viverra" PhotoUrl="Non adipiscing curabitur eget" RawPhotoString="(111) 555-0120" TelephoneNumber="Netus phasellus consequat convallis" TextStatus="Senectus mauris mollis dignissim" UserId="84">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Integer montes" FirstName="Barber, David" LastName="Barber, David" Login="Erat parturient per nulla eros" NameWithSurname="Ornare fermentum fringilla" PhotoUrl="Vestibulum habitasse" RawPhotoString="(222) 555-0121" TelephoneNumber="Hendrerit aliquam adipiscing" TextStatus="Platea aliquet sem sociosqu primis" UserId="47">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Himenaeos nisl imperdiet blandit rutrum" FirstName="Jamison, Jay" LastName="Jamison, Jay" Login="Nunc purus conubia" NameWithSurname="Porttitor vel" PhotoUrl="Nam tincidunt vestibulum" RawPhotoString="(333) 555-0122" TelephoneNumber="Cubilia ultrices vehicula taciti" TextStatus="Sed tellus" UserId="49">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Orci tristique" FirstName="Reid, Miles" LastName="Reid, Miles" Login="Risus leo adipiscing" NameWithSurname="Mus maecenas nec dapibus" PhotoUrl="Egestas velit euismod venenatis" RawPhotoString="(444) 555-0123" TelephoneNumber="Accumsan bibendum vulputate" TextStatus="Non vitae dictumst class" UserId="63">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Tempus curabitur pede phasellus consequat" FirstName="Bowen, Eli" LastName="Bowen, Eli" Login="Fermentum vestibulum tortor" NameWithSurname="Iaculis lacinia fringilla adipiscing donec" PhotoUrl="Sed laoreet turpis" RawPhotoString="(111) 555-0134" TelephoneNumber="Habitasse hendrerit" TextStatus="Sem eleifend facilisi" UserId="53">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Faucibus aenean duis mauris" FirstName="Kane, John" LastName="Kane, John" Login="Adipiscing fusce" NameWithSurname="Amet lorem ante morbi nulla" PhotoUrl="Proin parturient nullam" RawPhotoString="(222) 555-0145" TelephoneNumber="Diam nam sed" TextStatus="Lobortis augue dis est aptent" UserId="27">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Eget hac" FirstName="Sarin, Raman" LastName="Sarin, Raman" Login="Penatibus congue fames" NameWithSurname="Porttitor pharetra rhoncus tincidunt cursus" PhotoUrl="Felis dictum sodales tristique ultricies" RawPhotoString="(333) 555-0156" TelephoneNumber="Venenatis vulputate" TextStatus="Vestibulum erat viverra placerat pulvinar" UserId="88">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Lectus mus nec" FirstName="Sato, Naoki" LastName="Sato, Naoki" Login="Nibh phasellus justo litora luctus" NameWithSurname="Vestibulum vestibulum consequat integer adipiscing" PhotoUrl="Magnis lacus" RawPhotoString="(444) 555-0167" TelephoneNumber="Quisque mollis vivamus montes" TextStatus="Parturient sem convallis dignissim elementum" UserId="83">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+		<Result:User Email="Aliquam sagittis" FirstName="Silva, Alexandre" LastName="Silva, Alexandre" Login="Habitasse commodo ornare" NameWithSurname="Platea conubia nisl" PhotoUrl="Senectus vestibulum" RawPhotoString="(555) 555-0178" TelephoneNumber="Vestibulum nunc" TextStatus="Rutrum egestas himenaeos sapien" UserId="39">
+			<Result:User.PhotoRaw>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</Result:User.PhotoRaw>
+		</Result:User>
+	</ViewModels:MapViewModel.Friends>
+</ViewModels:MapViewModel>

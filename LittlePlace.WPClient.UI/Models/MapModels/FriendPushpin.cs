@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using Caliburn.Micro;
+﻿using System.Windows;
 using LittlePlace.Api.ApiRequest.Commands.Result;
+using LittlePlace.WPClient.UI.Models.MapModels;
 using Yandex.Maps;
 using Yandex.Positioning;
 
-namespace LittlePlace.WPClient.UI.Models.MapModels
+namespace LittlePlace.WPClient.UI.EventMessages.Maps
 {
     public class FriendPushpin:BasePushpin
     {
@@ -24,14 +20,15 @@ namespace LittlePlace.WPClient.UI.Models.MapModels
             }
         }
 
+     
+
         public FriendPushpin(User user, FriendPositionResult position)
         {
             _user = user;
-          base.State=PushPinState.Expanded;;
-          base.Visibility=Visibility.Visible;
-          base.ZIndex = 0;
-          base.ContentVisibility = Visibility.Visible;
-          base.Position=new GeoCoordinate(position.Latitude,position.Longitude);
+          base._visibility=Visibility.Visible;
+          base._zIndex = 0;
+          base._contentVisibility = Visibility.Collapsed;
+          base._position=new GeoCoordinate(position.Latitude,position.Longitude);
         }
 
         
