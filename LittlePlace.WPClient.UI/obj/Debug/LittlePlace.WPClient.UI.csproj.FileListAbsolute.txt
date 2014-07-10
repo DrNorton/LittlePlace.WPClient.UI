@@ -11,7 +11,6 @@ C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\LittlePlace.Api.dll
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Phone.Controls.dll
-C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Phone.Controls.Maps.dll
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Threading.Tasks.dll
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
@@ -30,7 +29,6 @@ C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Caliburn.Micro.Extensions.pdb
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Caliburn.Micro.Extensions.xml
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Phone.Controls.xml
-C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Phone.Controls.Maps.xml
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Threading.Tasks.xml
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
 C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Microsoft.Threading.Tasks.Extensions.Phone.xml
@@ -173,3 +171,20 @@ C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPC
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\LittlePlace.WPClient.UI.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\LittlePlace.WPClient.UI.pdb
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\XapCacheFile.xml
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.Core.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.Linq.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.PlatformServices.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Yandex.Maps.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Zlib.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.Core.xml
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.Linq.xml
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.PlatformServices.xml
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Reactive.Windows.Threading.xml
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Yandex.Maps.xml
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\ru-RU\Yandex.Maps.resources.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\tr-TR\Yandex.Maps.resources.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\uk-UA\Yandex.Maps.resources.dll
+C:\Users\drnor_000\Documents\Visual Studio 2012\Projects\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\AuthView.g.cs
