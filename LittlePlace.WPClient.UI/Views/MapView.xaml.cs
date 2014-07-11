@@ -70,5 +70,22 @@ namespace LittlePlace.WPClient.UI.Views
                 }
             }
         }
+
+        private void Item1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Item2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Item3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+       
     }
 }

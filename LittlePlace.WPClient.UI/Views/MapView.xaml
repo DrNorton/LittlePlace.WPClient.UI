@@ -21,6 +21,8 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:behavior="clr-namespace:Yandex.Maps.Behavior;assembly=Yandex.Maps"
     xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
     x:Class="LittlePlace.WPClient.UI.Views.MapView"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
@@ -85,8 +87,28 @@
             CacheMode="BitmapCache"
             TrafficEnabled="True"
             UseLocation="True">
+                <toolkit:GestureService.GestureListener>
+                    <toolkit:GestureListener />
+                </toolkit:GestureService.GestureListener>
+                <toolkit:ContextMenuService.ContextMenu>
+                    <toolkit:ContextMenu>
+                        <toolkit:MenuItem Header="item1" Click="Item1_Click" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <micro:ActionMessage MethodName="NavigateToAddEventView">
+                                        <micro:Parameter Value="$eventArgs" />
+                                        
+                                    </micro:ActionMessage>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </toolkit:MenuItem>
+                        <toolkit:MenuItem Header="item2" Click="Item2_Click" />
+                        <toolkit:MenuItem Header="item3" Click="Item3_Click" />
+                    </toolkit:ContextMenu>
+                </toolkit:ContextMenuService.ContextMenu>
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Tap">
+                    
                         <ymc:CollapseAllPushPinsAction/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>

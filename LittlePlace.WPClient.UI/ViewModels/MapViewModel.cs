@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Navigation;
 using Caliburn.Micro;
 using LittlePlace.Api.ApiRequest.Commands.Result;
@@ -10,6 +11,7 @@ using LittlePlace.WPClient.UI.EventMessages;
 using LittlePlace.WPClient.UI.EventMessages.Maps;
 using LittlePlace.WPClient.UI.Models.MapModels;
 using LittlePlace.WPClient.UI.ViewModels.Base;
+using LittlePlace.WPClient.UI.Views;
 using Yandex.Maps;
 using Yandex.Positioning;
 
@@ -33,7 +35,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
         private Visibility _friendWindowTipVisibility = Visibility.Collapsed;
         private IEventAggregator _eventAggregator;
         private GeoCoordinate _centerPoint = new GeoCoordinate(55.7522200, 37.6155600);
-        
+        private Map _map;
 
 
         public MapViewModel(INavigationService navigationService, ILittlePlaceApiService littlePlaceApiService,IEventAggregator eventAggregator)
@@ -57,7 +59,12 @@ namespace LittlePlace.WPClient.UI.ViewModels
             }
         }
 
-       
+        protected override void OnViewLoaded(object view)
+        {
+            var vi = view as MapView;
+            _map = vi.Map;
+            base.OnViewLoaded(view);
+        }
 
         public void FriendShowPanel()
         {
@@ -74,6 +81,12 @@ namespace LittlePlace.WPClient.UI.ViewModels
         public void NavigateToFriendView(int userId)
         {
             _navigationService.UriFor<FriendContactDetailViewModel>().WithParam(x=>x.UserId,userId).Navigate();
+        }
+
+        public void NavigateToAddEventView(GestureEventArgs args)
+        {
+            Point position = args.GetPosition(_map);
+            GeoCoordinate coordinates = _map.ViewportPointToCoordinates(new Yandex.Media.Point(position.X, position.Y));
         }
 
         public void Handle(NewPositionEventMessage message)
