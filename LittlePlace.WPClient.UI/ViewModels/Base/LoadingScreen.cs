@@ -40,9 +40,7 @@ namespace LittlePlace.WPClient.UI.ViewModels.Base
         {
             IsLoading = status;
             IsAllMenuEnabled = !status;
-            _threadWhoLoadFirstData=new BackgroundWorker();
-            _threadWhoLoadFirstData.RunWorkerCompleted += FirstDataLoadedCompleted;
-            _threadWhoLoadFirstData.DoWork+=DataLoading;
+        
            
         }
 
@@ -59,6 +57,9 @@ namespace LittlePlace.WPClient.UI.ViewModels.Base
         public LoadingScreen()
         {
             AddCustomConventions();
+            _threadWhoLoadFirstData = new BackgroundWorker();
+            _threadWhoLoadFirstData.RunWorkerCompleted += FirstDataLoadedCompleted;
+            _threadWhoLoadFirstData.DoWork += DataLoading;
         }
         static void AddCustomConventions()
         {

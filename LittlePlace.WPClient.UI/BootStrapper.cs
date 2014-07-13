@@ -5,6 +5,7 @@ using Caliburn.Micro;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.WPClient.UI.Cache;
 using LittlePlace.WPClient.UI.Services;
+using LittlePlace.WPClient.UI.Services.Base;
 using LittlePlace.WPClient.UI.ViewModels;
 using Microsoft.Phone.Controls;
 
@@ -56,7 +57,7 @@ namespace LittlePlace.WPClient.UI
             _container.RegisterSingleton(typeof (ILittlePlaceApiService), null, typeof (LittlePlaceApiService));
             _container.RegisterPerRequest(typeof (IExecuterService), null, typeof (ExecuterService));
             _container.RegisterPerRequest(typeof (ISettingService), null, typeof (SettingService));
-          
+            _container.RegisterPerRequest(typeof(IGeoCodingService),null,typeof(GeoCodingService));
         }
 
         private void RegisterViewModels()
@@ -70,6 +71,10 @@ namespace LittlePlace.WPClient.UI
             _container.PerRequest<ChangePasswordViewModel>();
             _container.PerRequest<SingleNewsViewModel>();
             _container.PerRequest<AuthViewModel>();
+            _container.PerRequest<AddEventViewModel>();
+            _container.PerRequest<EventsListViewModel>();
+            _container.PerRequest<EventViewModel>();
+
         }
 
         public void GoTo(string uri)
@@ -120,7 +125,7 @@ namespace LittlePlace.WPClient.UI
                 // Произошло необработанное исключение; перейти в отладчик
                 System.Diagnostics.Debugger.Break();
             }
-
+          
             MessageBox.Show(e.ExceptionObject.Message, "Неожиданная ошибка", MessageBoxButton.OK);
         }
     }

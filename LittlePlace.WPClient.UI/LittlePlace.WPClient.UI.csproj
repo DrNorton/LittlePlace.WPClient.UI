@@ -27,7 +27,7 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -156,7 +156,11 @@
     <Compile Include="Cache\CacheDataContext.cs" />
     <Compile Include="Cache\CacheResult.cs" />
     <Compile Include="Cache\CacheService.cs" />
+    <Compile Include="Controls\AddFriendsToEventControl.xaml.cs">
+      <DependentUpon>AddFriendsToEventControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converterts\Base64ToImageConverter.cs" />
+    <Compile Include="Converterts\BoolToVisibilityConverter.cs" />
     <Compile Include="Converterts\ByteToImageConverter.cs" />
     <Compile Include="Converterts\TextTrimmerConverter.cs" />
     <Compile Include="EventMessages\NavigateMapToPushpinMessage.cs" />
@@ -166,6 +170,7 @@
     <Compile Include="Extensions\EnabledBindableAppBar.cs" />
     <Compile Include="Maps\Models\MapPushpinModel.cs" />
     <Compile Include="Models\MapModels\BasePushpin.cs" />
+    <Compile Include="Models\MapModels\EventPushpin.cs" />
     <Compile Include="Models\MapModels\FriendPushpin.cs" />
     <Compile Include="Models\MapModels\MePushpin.cs" />
     <Compile Include="Models\Profile.cs" />
@@ -175,19 +180,27 @@
     <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
       <DependentUpon>SampleDataSource.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\GeoCodingService.cs" />
+    <Compile Include="Services\Base\IGeoCodingService.cs" />
     <Compile Include="Services\SettingService.cs" />
     <Compile Include="Controls\TextBoxCaptioned.xaml.cs">
       <DependentUpon>TextBoxCaptioned.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AddEventViewModel.cs" />
     <Compile Include="ViewModels\AuthViewModel.cs" />
     <Compile Include="ViewModels\Base\LoadingScreen.cs" />
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ContactsViewModel.cs" />
+    <Compile Include="ViewModels\EventsListViewModel.cs" />
+    <Compile Include="ViewModels\EventViewModel..cs" />
     <Compile Include="ViewModels\FriendContactDetailViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\MyContactDetailViewModel.cs" />
     <Compile Include="ViewModels\SingleNewsViewModel.cs" />
+    <Compile Include="Views\AddEventView.xaml.cs">
+      <DependentUpon>AddEventView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AuthView.xaml.cs">
       <DependentUpon>AuthView.xaml</DependentUpon>
     </Compile>
@@ -196,6 +209,12 @@
     </Compile>
     <Compile Include="Views\ContactsView.xaml.cs">
       <DependentUpon>ContactsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventsListView.xaml.cs">
+      <DependentUpon>EventsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventView.xaml.cs">
+      <DependentUpon>EventView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FriendContactDetailView.xaml.cs">
       <DependentUpon>FriendContactDetailView.xaml</DependentUpon>
@@ -219,6 +238,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Controls\AddFriendsToEventControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SampleData\FriendViewDataSource\FriendViewDataSource.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
@@ -231,6 +254,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\AddEventView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AuthView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -240,6 +267,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ContactsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -280,9 +315,11 @@
     <Content Include="Content\Icons\appbar.add.rest.png" />
     <Content Include="Content\Icons\appbar.minus.rest.png" />
     <Content Include="Content\Icons\map_tile.png" />
+    <Content Include="Content\Icons\Movie.jpg" />
     <Content Include="Content\Icons\navigation.png" />
     <Content Include="Content\Icons\password.png" />
     <Content Include="Content\Icons\red-circle.png" />
+    <Content Include="Content\Pushpins\friendPushpin.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
@@ -309,7 +346,13 @@
     <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
   </ItemGroup>
   <ItemGroup>
+    <DesignData Include="SampleData\.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
     <DesignData Include="SampleData\ContactsViewModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
+    <DesignData Include="SampleData\EventViewModelSampleData.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
     <DesignData Include="SampleData\MapViewModelSampleData.xaml">

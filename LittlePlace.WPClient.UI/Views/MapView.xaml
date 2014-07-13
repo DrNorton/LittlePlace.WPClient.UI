@@ -21,6 +21,8 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:behavior="clr-namespace:Yandex.Maps.Behavior;assembly=Yandex.Maps"
     xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
     x:Class="LittlePlace.WPClient.UI.Views.MapView"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
@@ -85,8 +87,28 @@
             CacheMode="BitmapCache"
             TrafficEnabled="True"
             UseLocation="True">
+                <toolkit:GestureService.GestureListener>
+                    <toolkit:GestureListener />
+                </toolkit:GestureService.GestureListener>
+                <toolkit:ContextMenuService.ContextMenu>
+                    <toolkit:ContextMenu>
+                        <toolkit:MenuItem Header="item1"  >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <micro:ActionMessage MethodName="NavigateToAddEventView">
+                                        <micro:Parameter Value="$eventArgs" />
+                                        
+                                    </micro:ActionMessage>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </toolkit:MenuItem>
+                        <toolkit:MenuItem Header="item2"  />
+                        <toolkit:MenuItem Header="item3" />
+                    </toolkit:ContextMenu>
+                </toolkit:ContextMenuService.ContextMenu>
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Tap">
+                    
                         <ymc:CollapseAllPushPinsAction/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
@@ -95,11 +117,12 @@
                     <behavior:PushPinStateBehavior x:Name="PushPinStateBehavior" GroupKey="All" ExcludeFromHandlingGroupKey="Ad" />
                 </i:Interaction.Behaviors>
                 <contentLayers:LayerContainer x:Name="LayerContainer">
-                    <ymc:MapLayer x:Name="mapLayer2">
-                        <ymc:MapItemsControl  x:Name="friendLayer" ItemsSource="{Binding FriendPushpins,Mode=TwoWay}">
+                    <ymc:MapLayer x:Name="friendLayer">
+                        <ymc:MapItemsControl x:Name="friendLayerItems"   ItemsSource="{Binding FriendPushpins,Mode=TwoWay}">
                             <ymc:MapItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <ymc:PushPin 
+                                   ExpandedImageSource="/Content/Pushpins/friendPushpin.png"
                                     Visibility="{Binding Visibility}"
                                     ContentVisibility="{Binding ContentVisibility, Mode=TwoWay}"
                                     State="{Binding State}"
@@ -151,7 +174,7 @@
                             </ymc:MapItemsControl.ItemTemplate>
                         </ymc:MapItemsControl>
                     </ymc:MapLayer>
-                    <ymc:MapLayer>
+                    <ymc:MapLayer x:Name="MeLayer">
                         <ymc:PushPin DataContext="{Binding MePushpin,Mode=TwoWay}"
                                     Visibility="{Binding Visibility}"
                                     ContentVisibility="{Binding ContentVisibility, Mode=TwoWay}"
@@ -165,6 +188,44 @@
                         </ymc:PushPin>
                     </ymc:MapLayer>
 
+                    <ymc:MapLayer x:Name="EventsLayer">
+                        <ymc:MapItemsControl x:Name="eventsLayerItems"   ItemsSource="{Binding OwnEvents,Mode=TwoWay}">
+                            <ymc:MapItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ymc:PushPin 
+                              
+                                    Visibility="{Binding Visibility}"
+                                    ContentVisibility="{Binding ContentVisibility, Mode=TwoWay}"
+                                    State="{Binding State}"
+                                      
+                                    ymc:MapLayer.Location="{Binding Position}"
+                                    ymc:MapLayer.Alignment="BottomCenter"
+                                    Canvas.ZIndex="{Binding ZIndex,Mode=TwoWay}"
+                                    ymc:PushPinManagerHelper.GroupKeys="All">
+                                     
+                                        <Grid>
+                                            
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image  HorizontalAlignment="Left" Grid.Row="0"  Height="150" Width="150" Source="{Binding User.RawPhotoString, Converter={StaticResource Base64ToImageConverter}, Mode=TwoWay}"/>
+                                            <StackPanel Grid.Column="1" Margin="12,-6,0,0">
+                                                <TextBlock FontSize="40" Text="{Binding Event.Name}" TextWrapping="Wrap"
+                            		Foreground="White"/>
+                                               
+                                            </StackPanel>
+                                        </Grid>
+
+                                    </ymc:PushPin>
+                                </DataTemplate>
+                            </ymc:MapItemsControl.ItemTemplate>
+                        </ymc:MapItemsControl>
+                    </ymc:MapLayer>
                 </contentLayers:LayerContainer>
 
             </ymc:Map>
@@ -173,8 +234,8 @@
         </Grid>
   
 		<extensions:EnabledBindableAppBar IsEnabled="{Binding IsAllMenuEnabled, Mode=TwoWay}" x:Name="AppBar" BarOpacity="1.0" >
-			<bindableAppBar:BindableAppBarButton x:Name="FriendShowPanel" IconUri="/Content/Icons/friend.png" Text="приблизить" />
-            
+			<bindableAppBar:BindableAppBarButton x:Name="FriendShowPanel" IconUri="/Content/Icons/friend.png" Text="друзья" />
+            <bindableAppBar:BindableAppBarButton x:Name="NavigateToEventsView" IconUri="/Content/Icons/friend.png" Text="события" />
 
 		</extensions:EnabledBindableAppBar>
 	</Grid>

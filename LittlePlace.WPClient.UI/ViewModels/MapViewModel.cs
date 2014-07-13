@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Navigation;
 using Caliburn.Micro;
 using LittlePlace.Api.ApiRequest.Commands.Result;
@@ -10,6 +12,7 @@ using LittlePlace.WPClient.UI.EventMessages;
 using LittlePlace.WPClient.UI.EventMessages.Maps;
 using LittlePlace.WPClient.UI.Models.MapModels;
 using LittlePlace.WPClient.UI.ViewModels.Base;
+using LittlePlace.WPClient.UI.Views;
 using Yandex.Maps;
 using Yandex.Positioning;
 
@@ -33,7 +36,8 @@ namespace LittlePlace.WPClient.UI.ViewModels
         private Visibility _friendWindowTipVisibility = Visibility.Collapsed;
         private IEventAggregator _eventAggregator;
         private GeoCoordinate _centerPoint = new GeoCoordinate(55.7522200, 37.6155600);
-        
+        private Map _map;
+        private ObservableCollection<EventPushpin> _ownEvents;
 
 
         public MapViewModel(INavigationService navigationService, ILittlePlaceApiService littlePlaceApiService,IEventAggregator eventAggregator)
@@ -43,6 +47,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);
             _navigationService.Navigating += _navigationService_Navigating;
+            _ownEvents=new ObservableCollection<EventPushpin>();
         }
 
         void _navigationService_Navigating(object sender, System.Windows.Navigation.NavigatingCancelEventArgs e)
@@ -57,7 +62,12 @@ namespace LittlePlace.WPClient.UI.ViewModels
             }
         }
 
-       
+        protected override void OnViewLoaded(object view)
+        {
+            var vi = view as MapView;
+            _map = vi.Map;
+            base.OnViewLoaded(view);
+        }
 
         public void FriendShowPanel()
         {
@@ -74,6 +84,13 @@ namespace LittlePlace.WPClient.UI.ViewModels
         public void NavigateToFriendView(int userId)
         {
             _navigationService.UriFor<FriendContactDetailViewModel>().WithParam(x=>x.UserId,userId).Navigate();
+        }
+
+        public void NavigateToAddEventView(GestureEventArgs args)
+        {
+            Point position = args.GetPosition(_map);
+            GeoCoordinate coordinates = _map.ViewportPointToCoordinates(new Yandex.Media.Point(position.X, position.Y));
+            _navigationService.UriFor<AddEventViewModel>().WithParam(x=>x.Latitude,coordinates.Latitude).WithParam(x=>x.Longitude,coordinates.Longitude).Navigate();
         }
 
         public void Handle(NewPositionEventMessage message)
@@ -99,6 +116,23 @@ namespace LittlePlace.WPClient.UI.ViewModels
             var positions = (await _littlePlaceApiService.GetAllFriendsPosition());
             Friends = (await _littlePlaceApiService.GetMyFriends()).Result;
             FriendPushpins = CreateFriendPositionList(positions.Result, Friends);
+            var events = (await _littlePlaceApiService.GetMyOwnEventsCommand()).Result;
+            CreateEventPusphins(events);
+
+        }
+
+        private void CreateEventPusphins(IEnumerable<Event> events)
+        {
+            foreach (var ev in events)
+            {
+                OwnEvents.Add(new EventPushpin(ev));
+            }
+            base.NotifyOfPropertyChange(()=>OwnEvents);
+        }
+
+        public void NavigateToEventsView()
+        {
+            _navigationService.UriFor<EventsListViewModel>().Navigate();
         }
 
         protected override void DataLoading(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -162,6 +196,16 @@ namespace LittlePlace.WPClient.UI.ViewModels
             {
                 _centerPoint = value;
                 base.NotifyOfPropertyChange(()=>CenterPoint);
+            }
+        }
+
+        public ObservableCollection<EventPushpin> OwnEvents
+        {
+            get { return _ownEvents; }
+            set
+            {
+                _ownEvents = value;
+                base.NotifyOfPropertyChange(()=>OwnEvents);
             }
         }
     }

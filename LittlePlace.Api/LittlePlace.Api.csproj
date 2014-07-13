@@ -41,10 +41,16 @@
     <Compile Include="ApiRequest\Commands\Auth\RegisterCommand.cs" />
     <Compile Include="ApiRequest\Commands\Base\BaseCommand.cs" />
     <Compile Include="ApiRequest\Commands\Base\ICommand.cs" />
+    <Compile Include="ApiRequest\Commands\Events\AddEventCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Events\AddFriendsToEventCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Events\AddFriendToEventCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Events\GetMyInvitedEventsCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Events\GetMyOwnEventsCommand.cs" />
     <Compile Include="ApiRequest\Commands\News\GetAllNewsCommand.cs" />
     <Compile Include="ApiRequest\Commands\News\GetNewsByIdCommand.cs" />
     <Compile Include="ApiRequest\Commands\Position\AddMyPositionCommand.cs" />
     <Compile Include="ApiRequest\Commands\Position\GetFriendPositionCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Result\Event.cs" />
     <Compile Include="ApiRequest\Commands\Result\FriendPositionResult.cs" />
     <Compile Include="ApiRequest\Commands\Result\NewsResult.cs" />
     <Compile Include="ApiRequest\Commands\Result\RegisterResult.cs" />

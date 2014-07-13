@@ -1,0 +1,5 @@
+<ViewModels:EventViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" DisplayName="Praesent accumsan" EventId="60" IsNotifying="True" IsInitialized="False" IsAllMenuEnabled="True" IsLoading="False" IsActive="True">
+	<ViewModels:EventViewModel.ShowingEvent>
+		<Result:Event Address="Nam aenean" Created="07/13/2014 13:41:19" Description="Maecenas cras curabitur" EventTime="07/13/2014 13:41:19" EventId="17" Longitude="439.05" Latitude="178.06" Name="Class vestibulum duis nunc" OwnerId="10"/>
+	</ViewModels:EventViewModel.ShowingEvent>
+</ViewModels:EventViewModel>

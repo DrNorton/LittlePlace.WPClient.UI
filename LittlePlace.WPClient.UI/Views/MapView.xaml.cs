@@ -32,10 +32,9 @@ namespace LittlePlace.WPClient.UI.Views
 
 
 
-
         public void Handle(NavigateMapToPushpinMessage message)
         {
-            var pushPins = FindVisualChildren<PushPin>(friendLayer);
+            var pushPins = FindVisualChildren<PushPin>(friendLayerItems);
             foreach (var pushPin in pushPins)
             {
                 var pushPinContext=(BasePushpin)pushPin.DataContext;
@@ -70,5 +69,8 @@ namespace LittlePlace.WPClient.UI.Views
                 }
             }
         }
+
+
+       
     }
 }

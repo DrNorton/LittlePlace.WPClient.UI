@@ -1,0 +1,76 @@
+﻿<UserControl  x:Class="LittlePlace.WPClient.UI.Controls.AddFriendsToEventControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <UserControl.Resources>
+        <converterts:TextTrimmerConverter x:Key="TextTrimmerConverter"/>
+        <converterts:Base64ToImageConverter x:Key="Base64ToImageConverter"/>
+        <DataTemplate x:Key="ItemTemplate">
+            <StackPanel VerticalAlignment="Top"  >
+                <Grid Margin="17,0,0,17">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="6*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1"  Source="{Binding RawPhotoString,Mode=TwoWay,Converter={StaticResource Base64ToImageConverter}}"/>
+                    <StackPanel Grid.Column="0" Margin="12,-6,0,0">
+                        <TextBlock Text="{Binding Login}" TextWrapping="Wrap"
+                            		Foreground="{StaticResource PhoneAccentBrush}"/>
+                        <TextBlock  TextWrapping="Wrap" FontStyle="Italic"
+                            		Foreground="{StaticResource PhoneForegroundBrush}">
+										<Run Text="{Binding FirstName}"/>,
+										<Run Text="{Binding LastName}"/>
+                        </TextBlock>
+                        <TextBlock Text="{Binding TextStatus}" TextWrapping="Wrap" 
+                                       Foreground="{StaticResource PhoneForegroundBrush}" />
+                        <TextBlock Text="Online" TextWrapping="Wrap"
+                                       Foreground="{StaticResource PhoneSubtleBrush}"/>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+        </DataTemplate>
+      
+    </UserControl.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="LITTLEPLACE" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Позвать друзей" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+                <toolkit:MultiselectList x:Name="FriendSelectList" IsSelectionEnabled="True"
+                                         ItemTemplate="{StaticResource ItemTemplate}"
+                                       
+                                         SelectionChanged="MultiselectList_OnSelectionChanged"
+                                         >
+                 
+                </toolkit:MultiselectList>
+          
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

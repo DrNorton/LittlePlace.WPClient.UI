@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using LittlePlace.Api.ApiRequest.Commands.Auth;
+using LittlePlace.Api.ApiRequest.Commands.Events;
 using LittlePlace.Api.ApiRequest.Commands.News;
 using LittlePlace.Api.ApiRequest.Commands.Position;
 using LittlePlace.Api.ApiRequest.Commands.Result;
@@ -32,6 +34,11 @@ namespace LittlePlace.Api.Infrastructure
         Task<Response<string>> ChangePasssword(string oldPass, string newPass);
         Task<Response<List<NewsResult>>> GetAllNews();
         Task<Response<NewsResult>> GetNewsById(int newsId);
+        Task<Response<List<Event>>> GetMyOwnEventsCommand();
+        Task<Response<List<Event>>> GetMyInvitedEventsCommand();
+        Task<Response<string>> AddFriendToEvent(Event ev, User friend);
+        Task<Response<Event>> AddEvent(Event ev);
+        Task<Response<string>> AddFriendsToEvent(Event ev, IEnumerable<User> friends);
     }
 
     public class LittlePlaceApiService : ILittlePlaceApiService
@@ -55,6 +62,7 @@ namespace LittlePlace.Api.Infrastructure
         private void GetCookies()
         {
             _cookies = _settingService.AuthCookies;
+            var r = _cookies.GetCookies(new Uri(@"http://littleplace.azurewebsites.net/"));
         }
 
         public bool IsAuthorizated
@@ -68,6 +76,7 @@ namespace LittlePlace.Api.Infrastructure
             var logonCommand = new LogonCommand(_httpClient,login,pass);
             var result= await _executerService.ExecuteCommand(logonCommand,false);
             _settingService.AuthCookies = _cookies;
+           var r= _cookies.GetCookies(new Uri(@"http://littleplace.azurewebsites.net/"));
 
             return result;
         }
@@ -144,7 +153,6 @@ namespace LittlePlace.Api.Infrastructure
             return await _executerService.ExecuteCommand(getnewsById, false);
         }
 
-
         public async Task<Response<string>> AddMyPosition(double latitude,double longitude)
         {
             var addPosition = new AddMyPositionCommand(_httpClient,latitude,longitude);
@@ -156,6 +164,39 @@ namespace LittlePlace.Api.Infrastructure
             var getFriendPosition = new GetFriendPositionCommand(_httpClient,friendId);
             return await _executerService.ExecuteCommand(getFriendPosition,false);
         }
+
+        //EVENTS
+
+        public async Task<Response<List<Event>>> GetMyOwnEventsCommand()
+        {
+            var command = new GetMyOwnEventsCommand(_httpClient);
+            return await _executerService.ExecuteCommand(command, true);
+        }
+
+        public async Task<Response<List<Event>>> GetMyInvitedEventsCommand()
+        {
+            var command = new GetMyInvitedEventsCommand(_httpClient);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<string>> AddFriendToEvent(Event ev, User friend)
+        {
+            var command = new AddFriendToEventCommand(_httpClient,ev.EventId,friend.UserId);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<string>> AddFriendsToEvent(Event ev, IEnumerable<User> friends)
+        {
+            var command = new AddFriendsToEventCommand(_httpClient,ev.EventId,friends.Select(x=>x.UserId).ToList());
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<Event>> AddEvent(Event ev)
+        {
+            var command = new AddEventCommand(_httpClient, ev.Name, ev.EventTime, ev.Latitude, ev.Longitude, ev.OwnerId, ev.Address, ev.Description);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
 
         private HttpClient GetHttpClient()
         {
