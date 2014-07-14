@@ -38,7 +38,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
 
         protected override void FirstDataLoadedCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            throw new NotImplementedException();
+           
         }
 
         public Event ShowingEvent
