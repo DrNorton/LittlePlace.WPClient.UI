@@ -13,6 +13,14 @@ namespace LittlePlace.Api.ApiRequest.Commands.Result
         private int _fromId;
         private int _toId;
         private DateTime _sentTime;
+        private string _id;
+
+        [JsonProperty("_id")]
+        public string Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
         [JsonProperty("MessageText")]
         public string MessageText

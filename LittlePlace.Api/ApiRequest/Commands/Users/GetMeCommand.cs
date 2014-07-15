@@ -17,7 +17,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
         }
 
         public GetMeCommand(HttpClient httpClient)
-            :base("user",httpClient)
+            :base("user",httpClient,new Dictionary<string, string>())
         {
             this.IsCached = true;
           

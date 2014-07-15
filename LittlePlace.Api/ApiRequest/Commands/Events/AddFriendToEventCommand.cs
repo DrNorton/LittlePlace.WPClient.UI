@@ -16,12 +16,11 @@ namespace LittlePlace.Api.ApiRequest.Commands.Events
             get { return "addfriendtoevent"; }
         }
 
-        public AddFriendToEventCommand(HttpClient httpClient,int eventId,int friendId)
-            :base("events",httpClient)
+        public AddFriendToEventCommand(HttpClient httpClient,Dictionary<string,string> dict )
+            :base("events",httpClient,dict)
         {
-            FullUrl = String.Format("{0}&friendId={1}&eventId={2}", Url, eventId, friendId);
+            
         }
 
-        
     }
 }

@@ -18,7 +18,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Events
         }
 
         public GetMyInvitedEventsCommand(HttpClient httpClient)
-            : base("events", httpClient)
+            : base("events", httpClient,new Dictionary<string, string>())
         {
             
         }

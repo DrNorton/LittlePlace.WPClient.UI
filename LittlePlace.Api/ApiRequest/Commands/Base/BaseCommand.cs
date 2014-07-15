@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using LittlePlace.Api.Models;
 using Newtonsoft.Json;
@@ -20,11 +22,23 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
         public string FullUrl { get; set; }
        
 
-        public BaseCommand(string methodGroup, HttpClient restClient)
+        public BaseCommand(string methodGroup, HttpClient restClient,Dictionary<string,string> parameters)
         {
             _methodGroup = methodGroup;
             _restClient = restClient;
-            FullUrl = Url;
+            ConvertDictToUrl(parameters,Url);
+        }
+
+        private void ConvertDictToUrl(Dictionary<string, string> parameters,string url)
+        {
+            var builder = new StringBuilder();
+            builder.Append(Url);
+            foreach (var parameter in parameters)
+            {
+                builder.Append(String.Format("&{0}={1}", parameter.Key,parameter.Value));
+            }
+            builder.Append(String.Format("&{0}={1}", "requestid", Guid.NewGuid().ToString()));
+            FullUrl = builder.ToString();
         }
 
         public abstract string ActionName { get; }

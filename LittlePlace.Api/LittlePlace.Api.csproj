@@ -53,8 +53,9 @@
     <Compile Include="ApiRequest\Commands\News\GetNewsByIdCommand.cs" />
     <Compile Include="ApiRequest\Commands\Position\AddMyPositionCommand.cs" />
     <Compile Include="ApiRequest\Commands\Position\GetFriendPositionCommand.cs" />
-    <Compile Include="ApiRequest\Commands\PrivateMessages\GetMyPrivateMessagesCommand.cs" />
-    <Compile Include="ApiRequest\Commands\PrivateMessages\SentPrivateMessageCommand.cs" />
+    <Compile Include="ApiRequest\Commands\PrivateMessages\GetMyDialogsCommand.cs" />
+    <Compile Include="ApiRequest\Commands\Result\Dialog.cs" />
+    <Compile Include="ApiRequest\Commands\Result\DialogMember.cs" />
     <Compile Include="ApiRequest\Commands\Result\Event.cs" />
     <Compile Include="ApiRequest\Commands\Result\EventMember.cs" />
     <Compile Include="ApiRequest\Commands\Result\FriendPositionResult.cs" />

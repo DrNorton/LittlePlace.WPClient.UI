@@ -16,10 +16,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.Events
             get { return "getmessagesfromevent"; }
         }
 
-        public GetMessagesFromEventCommand(HttpClient httpClient,int eventId)
-            : base("message", httpClient)
+        public GetMessagesFromEventCommand(HttpClient httpClient,Dictionary<string,string> dict)
+            : base("message", httpClient,dict)
         {
-            FullUrl = String.Format("{0}&eventid={1}&cache={2}", Url, eventId,Guid.NewGuid().ToString());
+          
         }
 
         

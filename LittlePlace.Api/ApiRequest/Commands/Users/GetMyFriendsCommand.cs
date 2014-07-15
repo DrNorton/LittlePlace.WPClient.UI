@@ -19,7 +19,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
         }
 
         public GetMyFriendsCommand(HttpClient httpClient)
-            :base("user",httpClient)
+            :base("user",httpClient,new Dictionary<string, string>())
         {
             this.IsCached = true;
         }

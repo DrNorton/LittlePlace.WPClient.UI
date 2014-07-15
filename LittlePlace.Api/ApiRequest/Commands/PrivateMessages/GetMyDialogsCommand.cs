@@ -9,19 +9,17 @@ using LittlePlace.Api.Models;
 
 namespace LittlePlace.Api.ApiRequest.Commands.PrivateMessages
 {
-    public class GetMyPrivateMessagesCommand : BaseCommand<Response<List<PrivateMessage>>>
+    public class GetMyDialogsCommand : BaseCommand<Response<List<Dialog>>>
     {
         public override string ActionName
         {
-            get { return "getmyprivatemessages"; }
+            get { return "getmydialogs"; }
         }
 
-        public GetMyPrivateMessagesCommand(HttpClient httpClient)
-            : base("message", httpClient)
+        public GetMyDialogsCommand(HttpClient restClient)
+            :base("message",restClient,new Dictionary<string,string>())
         {
-            FullUrl = String.Format("{0}", Url);
+            
         }
-
-        
     }
 }

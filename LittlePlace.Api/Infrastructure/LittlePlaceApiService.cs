@@ -44,8 +44,7 @@ namespace LittlePlace.Api.Infrastructure
         Task<Response<List<Message>>> GetMessagesFromEventCommand(Event ev);
         Task<Response<List<EventMember>>> GetFriendsFromEvent(Event ev);
         Task<Response<string>> UploadEventImage(byte[] image);
-        Task<Response<string>> SentMessageToFriend(string message, int friendId);
-        Task<Response<List<PrivateMessage>>> GetMyPrivateMessages();
+        Task<Response<List<Dialog>>> GetMyDialogs();
     }
 
     public class LittlePlaceApiService : ILittlePlaceApiService
@@ -77,10 +76,13 @@ namespace LittlePlace.Api.Infrastructure
             get { return _cookies.Count != 0; }
         }
 
-        public async Task<Response<string>>  Logon(string login,string pass)
+        public async Task<Response<string>> Logon(string login,string pass)
         {
-         
-            var logonCommand = new LogonCommand(_httpClient,login,pass);
+
+            var dict = new Dictionary<string, string>();
+            dict.Add("login",login);
+            dict.Add("pass",pass);
+            var logonCommand = new LogonCommand(_httpClient,dict);
             var result= await _executerService.ExecuteCommand(logonCommand,false);
             _settingService.AuthCookies = _cookies;
            var r= _cookies.GetCookies(new Uri(@"http://littleplace.azurewebsites.net/"));
@@ -97,13 +99,19 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<RegisterResult>> Register(string login,string pass)
         {
-            var registerCommand = new RegisterCommand(_httpClient, login,pass);
+            var dict = new Dictionary<string, string>();
+            dict.Add("login", login);
+            dict.Add("pass", pass);
+            var registerCommand = new RegisterCommand(_httpClient, dict);
             return await _executerService.ExecuteCommand(registerCommand,false);
         }
 
         public async Task<Response<string>> ChangePasssword(string oldPass, string newPass)
         {
-            var registerCommand = new ChangePasswordCommand(_httpClient, oldPass, newPass);
+            var dict = new Dictionary<string, string>();
+            dict.Add("oldpass", oldPass);
+            dict.Add("newpass", newPass);
+            var registerCommand = new ChangePasswordCommand(_httpClient, dict);
             return await _executerService.ExecuteCommand(registerCommand, false);
         }
 
@@ -139,13 +147,22 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<User>> GetUserByUserId(int userId)
         {
-            var getMyFriendsCommand = new GetByUserIdCommand(_httpClient,userId);
+            var dict = new Dictionary<string, string>();
+            dict.Add("friendId",userId.ToString());
+            var getMyFriendsCommand = new GetByUserIdCommand(_httpClient,dict);
             return await _executerService.ExecuteCommand(getMyFriendsCommand, true);
         }
 
         public async Task<Response<string>> UpdateMe(User updatedUser)
         {
-            var getMyFriendsCommand = new UpdateMeCommand(_httpClient,updatedUser);
+            var dict = new Dictionary<string, string>();
+            dict.Add("login",updatedUser.Login);
+            dict.Add("photo",updatedUser.PhotoUrl);
+            dict.Add("firstname",updatedUser.FirstName);
+            dict.Add("lastname",updatedUser.LastName);
+            dict.Add("telephonenumber",updatedUser.TelephoneNumber);
+            dict.Add("email",updatedUser.Email);
+            var getMyFriendsCommand = new UpdateMeCommand(_httpClient,dict);
             var result= await _executerService.ExecuteCommand(getMyFriendsCommand, false);
             _cacheService.RemoveCacheResult(new GetMeCommand(_httpClient));
             return result;
@@ -171,7 +188,10 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<string>> AddMyPosition(double latitude,double longitude)
         {
-            var addPosition = new AddMyPositionCommand(_httpClient,latitude,longitude);
+            var dict = new Dictionary<string, string>();
+            dict.Add("latitude",latitude.ToString());
+            dict.Add("longitude",longitude.ToString());
+            var addPosition = new AddMyPositionCommand(_httpClient,dict);
            return await _executerService.ExecuteCommand(addPosition,false);
         }
 
@@ -197,53 +217,80 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<string>> AddFriendToEvent(Event ev, User friend)
         {
-            var command = new AddFriendToEventCommand(_httpClient,ev.EventId,friend.UserId);
+            var dict = new Dictionary<string, string>();
+            dict.Add("friendId",friend.UserId.ToString());
+            dict.Add("eventId",ev.EventId.ToString());
+            var command = new AddFriendToEventCommand(_httpClient,dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
         public async Task<Response<string>> AddFriendsToEvent(Event ev, IEnumerable<User> friends)
         {
-            var command = new AddFriendsToEventCommand(_httpClient,ev.EventId,friends.Select(x=>x.UserId).ToList());
+            var friendListId = friends.Select(x => x.UserId).ToList();
+            var str = "[";
+            for(int i=0;i<friendListId.Count;i++)
+            {
+                str += friendListId[i];
+                if (i != friendListId.Count - 1)
+                {
+                    str += ",";
+                }
+            }
+            str+= "]";
+            var dict = new Dictionary<string, string>();
+            dict.Add("friends",str);
+            dict.Add("eventId",ev.EventId.ToString());
+            var command = new AddFriendsToEventCommand(_httpClient,dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
         public async Task<Response<Event>> AddEvent(Event ev)
         {
-            var command = new AddEventCommand(_httpClient, ev.Name, ev.EventTime, ev.Latitude, ev.Longitude, ev.OwnerId, ev.Address, ev.Description,ev.ImageUrl);
+            var dict = new Dictionary<string, string>();
+            dict.Add("name",ev.Name);
+            dict.Add("eventTime",ev.EventTime.ToString());
+            dict.Add("latitude",ev.Latitude.ToString());
+            dict.Add("longitude",ev.Longitude.ToString());
+            dict.Add("ownerId",ev.OwnerId.ToString());
+            dict.Add("address",ev.Address);
+            dict.Add("description",ev.Description);
+            dict.Add("imageurl",ev.ImageUrl);
+            var command = new AddEventCommand(_httpClient,dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
         public async Task<Response<string>> AddMessageToEvent(string message,Event ev)
         {
-            var command = new AddMessageToEventCommand(_httpClient, message,ev.EventId);
+            var dict = new Dictionary<string, string>();
+            dict.Add("message", message);
+            dict.Add("eventid", ev.EventId.ToString());
+            var command = new AddMessageToEventCommand(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
         public async Task<Response<List<Message>>> GetMessagesFromEventCommand(Event ev)
         {
-            var command = new GetMessagesFromEventCommand(_httpClient, ev.EventId);
+            var dict = new Dictionary<string, string>();
+            dict.Add("eventid", ev.EventId.ToString());
+            var command = new GetMessagesFromEventCommand(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
         public async Task<Response<List<EventMember>>> GetFriendsFromEvent(Event ev)
         {
-            var command = new GetFriendsFromEventCommand(_httpClient, ev);
+            var dict = new Dictionary<string, string>();
+            dict.Add("eventId", ev.EventId.ToString());
+            var command = new GetFriendsFromEventCommand(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
-        public async Task<Response<string>> SentMessageToFriend(string message, int friendId)
+     
+
+        public async Task<Response<List<Dialog>>> GetMyDialogs()
         {
-            var command = new SentPrivateMessageCommand(_httpClient,friendId,message);
+            var command = new GetMyDialogsCommand(_httpClient);
             return await _executerService.ExecuteCommand(command, false);
         }
-
-        public async Task<Response<List<PrivateMessage>>> GetMyPrivateMessages()
-        {
-            var command = new GetMyPrivateMessagesCommand(_httpClient);
-            return await _executerService.ExecuteCommand(command, false);
-        }
-
-
 
         private HttpClient GetHttpClient()
         {

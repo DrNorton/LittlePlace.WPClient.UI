@@ -46,7 +46,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
 
         public void MessageTileTap()
         {
-            _navigationService.UriFor<PrivateMessagesListViewModel>().Navigate();
+            _navigationService.UriFor<DialogsListViewModel>().Navigate();
         }
 
         public void SettingTileTap()

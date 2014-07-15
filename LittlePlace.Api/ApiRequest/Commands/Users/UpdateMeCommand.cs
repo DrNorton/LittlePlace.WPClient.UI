@@ -17,15 +17,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
             get { return "updateme"; }
         }
 
-        public UpdateMeCommand(HttpClient httpClient,User updatedUser)
-            : base("user", httpClient)
+        public UpdateMeCommand(HttpClient httpClient,Dictionary<string,string> dict)  
+            : base("user", httpClient,dict)
         {
-            FullUrl = String.Format("{0}&login={1}&photo={2}&firstname={3}&lastname={4}&telephonenumber={5}&email={6}", Url,
-                updatedUser.Login,updatedUser.PhotoUrl,updatedUser.FirstName,updatedUser.LastName,updatedUser.TelephoneNumber,updatedUser.Email);
+
         }
-
-        
-
-     
     }
 }

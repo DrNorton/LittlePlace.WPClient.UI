@@ -10,9 +10,9 @@ using Microsoft.Phone.Shell;
 
 namespace LittlePlace.WPClient.UI.Views
 {
-    public partial class PrivateMessagesListView : PhoneApplicationPage
+    public partial class DialogsListView : PhoneApplicationPage
     {
-        public PrivateMessagesListView()
+        public DialogsListView()
         {
             InitializeComponent();
         }

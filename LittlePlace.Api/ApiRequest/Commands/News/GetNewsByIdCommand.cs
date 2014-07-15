@@ -17,7 +17,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.News
         }
 
         public GetNewsByIdCommand(HttpClient httpClient,int newsId)
-            :base("news",httpClient)
+            :base("news",httpClient,new Dictionary<string, string>())
         {
             FullUrl = String.Format("{0}&newsId={1}", Url, newsId);
         }
