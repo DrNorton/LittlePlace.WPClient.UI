@@ -24,15 +24,13 @@ namespace LittlePlace.WPClient.UI.ViewModels
         //Сервисы
         private readonly INavigationService _navigationService;
         private readonly ILittlePlaceApiService _littlePlaceApiService;
-  
        //Пушпины
         private List<FriendPushpin> _friendPushpins;
         private MePushpin _mePushpin;
-
         //DataContainers
         private List<User> _friends;
-
         //Всякая шляпа
+
         private Visibility _friendWindowTipVisibility = Visibility.Collapsed;
         private IEventAggregator _eventAggregator;
         private GeoCoordinate _centerPoint = new GeoCoordinate(55.7522200, 37.6155600);
@@ -98,7 +96,6 @@ namespace LittlePlace.WPClient.UI.ViewModels
             MePushpin=new MePushpin(){ContentVisibility = Visibility.Visible,IsNotifying = true,Position = new GeoCoordinate(message.Latitude,message.Longitude),State = PushPinState.Collapsed,ZIndex = 1};
         }
 
-
         private List<FriendPushpin> CreateFriendPositionList(IEnumerable<FriendPositionResult> positions, IEnumerable<User> friends)
         {
             var friendPositionList = new List<FriendPushpin>();
@@ -144,10 +141,6 @@ namespace LittlePlace.WPClient.UI.ViewModels
         {
             
         }
-
-
-
-
 
         public List<FriendPushpin> FriendPushpins
         {

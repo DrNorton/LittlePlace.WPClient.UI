@@ -52,19 +52,29 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Text="Дата:"/>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Text="Время:"/>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Text="Адрес:"/>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Text="Список друзей:"/>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Text="Описание:"/>
-               
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Text="Изображение:"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Text="Дата:"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Text="Время:"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Text="Адрес:"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Text="Список друзей:"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Text="Описание:"/>
 
-                <toolkit:DatePicker Grid.Column="1" x:Name="datePicker" Value="{Binding NewEvent.EventTime,Mode=TwoWay}"/>
-                <toolkit:TimePicker Grid.Column="1" Grid.Row="1" x:Name="timePicker" Value="{Binding NewEvent.EventTime,Mode=TwoWay}"/>
-                <TextBox Text="{Binding NewEvent.Address,Mode=TwoWay}" Grid.Column="1" Grid.Row="2" />
-                <ListBox   Grid.Column="1" Grid.Row="3" ItemsSource="{Binding SelectedFriends,Mode=TwoWay}" Margin="10">
+
+
+                <Image  Grid.Column="1" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="173" Width="173" Source="{Binding NewEvent.RawPhotoString,Mode=TwoWay,Converter={StaticResource Base64ToImageConverter}}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Tap">
+                            <micro:ActionMessage MethodName="ChangePhoto" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
+                <toolkit:DatePicker Grid.Column="1" Grid.Row="1" x:Name="datePicker" Value="{Binding NewEvent.EventTime,Mode=TwoWay}"/>
+                <toolkit:TimePicker Grid.Column="1" Grid.Row="2" x:Name="timePicker" Value="{Binding NewEvent.EventTime,Mode=TwoWay}"/>
+                <TextBox Text="{Binding NewEvent.Address,Mode=TwoWay}" Grid.Column="1" Grid.Row="3" />
+                <ListBox   Grid.Column="1" Grid.Row="4" ItemsSource="{Binding SelectedFriends,Mode=TwoWay}" Margin="10">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Tap">
                             <micro:ActionMessage MethodName="ShowFriendSelector"/>
@@ -81,7 +91,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <TextBox Text="{Binding NewEvent.Description,Mode=TwoWay}" TextWrapping="Wrap" AcceptsReturn="True" MinHeight="200" Grid.Column="1" Grid.Row="4" />
+                <TextBox Text="{Binding NewEvent.Description,Mode=TwoWay}" TextWrapping="Wrap" AcceptsReturn="True" MinHeight="200" Grid.Column="1" Grid.Row="5" />
                
         
     </Grid>

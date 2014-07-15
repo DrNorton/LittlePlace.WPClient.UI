@@ -20,10 +20,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
             get { return "changepassword"; }
         }
 
-        public async override System.Threading.Tasks.Task<Response<string>> Execute()
-        {
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            return Response<string>.Deserialize(responseString);
-        }
+       
     }
 }

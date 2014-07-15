@@ -32,11 +32,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.Events
             FullUrl = String.Format("{0}&friends={1}&eventId={2}", Url,str, eventId);
         }
 
-        public async override System.Threading.Tasks.Task<Response<string>> Execute()
-        {
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            var results = Response<string>.Deserialize(responseString);
-            return results;
-        }
+       
     }
 }

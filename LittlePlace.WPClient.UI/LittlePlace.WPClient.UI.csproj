@@ -27,7 +27,7 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,6 +51,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppBarUtils">
+      <HintPath>..\packages\AppBarUtils.2.4\lib\wp71\AppBarUtils.dll</HintPath>
+    </Reference>
     <Reference Include="Caliburn.Micro, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Caliburn.Micro.1.5.2\lib\wp71\Caliburn.Micro.dll</HintPath>
@@ -168,6 +171,7 @@
     <Compile Include="Extensions\AlphaKeyGroup.cs" />
     <Compile Include="Extensions\BindingUtility.cs" />
     <Compile Include="Extensions\EnabledBindableAppBar.cs" />
+    <Compile Include="Extensions\Helpers.cs" />
     <Compile Include="Maps\Models\MapPushpinModel.cs" />
     <Compile Include="Models\MapModels\BasePushpin.cs" />
     <Compile Include="Models\MapModels\EventPushpin.cs" />
@@ -197,6 +201,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\MyContactDetailViewModel.cs" />
+    <Compile Include="ViewModels\PrivateMessagesListViewModel.cs" />
     <Compile Include="ViewModels\SingleNewsViewModel.cs" />
     <Compile Include="Views\AddEventView.xaml.cs">
       <DependentUpon>AddEventView.xaml</DependentUpon>
@@ -228,6 +233,9 @@
     </Compile>
     <Compile Include="Views\MyContactDetailView.xaml.cs">
       <DependentUpon>MyContactDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrivateMessagesListView.xaml.cs">
+      <DependentUpon>PrivateMessagesListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SingleNewsView.xaml.cs">
       <DependentUpon>SingleNewsView.xaml</DependentUpon>
@@ -294,6 +302,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PrivateMessagesListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SingleNewsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -319,6 +331,7 @@
     <Content Include="Content\Icons\navigation.png" />
     <Content Include="Content\Icons\password.png" />
     <Content Include="Content\Icons\red-circle.png" />
+    <Content Include="Content\noPhoto.png" />
     <Content Include="Content\Pushpins\friendPushpin.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />

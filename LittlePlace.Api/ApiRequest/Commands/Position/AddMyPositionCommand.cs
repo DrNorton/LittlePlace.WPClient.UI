@@ -21,12 +21,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
             FullUrl = String.Format("{0}&latitude={1}&longitude={2}", Url,  latitude, longitude);
         }
 
-        public async override System.Threading.Tasks.Task<Response<string>> Execute()
-        {
-        
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            return Response<string>.Deserialize(responseString);
-        }
+       
 
        
     }

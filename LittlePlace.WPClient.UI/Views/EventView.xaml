@@ -7,24 +7,29 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:bindableAppBar="clr-namespace:Caliburn.Micro.BindableAppBar;assembly=Caliburn.Micro.BindableAppBar"
+    xmlns:extensions="clr-namespace:LittlePlace.WPClient.UI.Extensions"
+    xmlns:controls1="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+    xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True" d:DataContext="{d:DesignData /SampleData/EventViewModelSampleData.xaml, Instance={x:Null}}">
-
+    shell:SystemTray.IsVisible="True" d:DataContext="{d:DesignData /SampleData/EventViewModelSampleData.xaml}"  >
+<phone:PhoneApplicationPage.Resources>
+        <converterts:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converterts:Base64ToImageConverter x:Key="Base64ToImageConverter"/>
+    </phone:PhoneApplicationPage.Resources>
     <!--LayoutRoot is the root grid where all page content is placed-->
-
-
-        <!--ContentPanel - place additional content here-->
-       <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="auto"/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
-                <ScrollViewer>
-                    <Grid>
+    <Grid>
+        <controls1:Pivot SelectionChanged="Pivot_OnSelectionChanged">
+            <controls1:Pivot.Items>
+                <controls1:PivotItem Header="Описание">
+                    <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition/>
@@ -34,17 +39,17 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Image  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="173" Width="173" Source="/Content/Icons/Movie.jpg">
-                          
+
                         </Image>
                         <StackPanel Grid.Column="1" Margin="12,-6,0,0">
                             <TextBlock Text="{Binding ShowingEvent.Name,Mode=TwoWay,StringFormat=f}" TextWrapping="Wrap" 
                             		Foreground="{StaticResource PhoneAccentBrush}"/>
-                            <TextBlock  TextWrapping="Wrap" FontStyle="Italic"
+                            <TextBlock  TextWrapping="Wrap" FontStyle="Italic" 
                             		Foreground="{StaticResource PhoneForegroundBrush}" Text="{Binding ShowingEvent.EventTime,Mode=TwoWay,StringFormat=f}">
-									
+
                             </TextBlock>
-                           
-                          
+
+
                         </StackPanel>
                         <Grid Row="1" Margin="0,10,0,0" Grid.ColumnSpan="2">
                             <Grid.ColumnDefinitions>
@@ -59,27 +64,79 @@
                             </Grid.RowDefinitions>
                             <TextBlock Style="{StaticResource PhoneTextAccentStyle}" Text="Адрес:" Grid.Row="0"/>
                             <TextBlock Style="{StaticResource PhoneTextAccentStyle}" Text="Описание:" Grid.Row="1"/>
+                            <TextBlock Style="{StaticResource PhoneTextAccentStyle}" Text="Участники:" Grid.Row="2"/>
+                            
                             <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" Text="{Binding ShowingEvent.Address}" />
                             <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Text="{Binding ShowingEvent.Description}"/>
+                            <ListBox   Grid.Column="1" Grid.Row="2" ItemsSource="{Binding Participants,Mode=TwoWay}" Margin="10">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <micro:ActionMessage MethodName="ShowFriendSelector"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <toolkit:WrapPanel Orientation="Horizontal"></toolkit:WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Image Width="64" Height="64" Margin="5" Source="{Binding RawPhotoString,Mode=TwoWay,Converter={StaticResource Base64ToImageConverter}}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                         </Grid>
+
                     </Grid>
-                </ScrollViewer>
-            <Grid Grid.Row="1">
-               <Grid.RowDefinitions>
-                   <RowDefinition/>
-                   <RowDefinition Height="Auto"/>
-               </Grid.RowDefinitions>
-                
-            <toolkit:PhoneTextBox Grid.Row="1" Hint="type a message"
+                </controls1:PivotItem>
+                <controls1:PivotItem Header="Диалоги">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <ListBox x:Name="MessagesListBox" ItemsSource="{Binding Messages,Mode=TwoWay}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <controls:ChatBubble 
+                        ChatBubbleDirection="LowerLeft"
+                        Margin="48, 0, 0, 0">
+                                        <StackPanel>
+
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding MessageText,Mode=TwoWay}"/>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0"  HorizontalAlignment="Left" Text="{Binding Login,Mode=TwoWay}"  Style="{StaticResource PhoneTextSmallStyle}"/>
+                                                <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding SentTime,Mode=TwoWay,StringFormat='g'}" Style="{StaticResource PhoneTextSmallStyle}"/>
+                                            </Grid>
+
+
+                                        </StackPanel>
+
+
+                                    </controls:ChatBubble>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <toolkit:PhoneTextBox Grid.Row="1" Hint="type a message"
                                   TextWrapping="Wrap"
                                   AcceptsReturn="True"
                                   Padding="0"
-                                  x:Name="TextInput"
-                                  GotFocus="TextInput_GotFocus"
-                                  LostFocus="TextInput_LostFocus"/>
+                                      Text="{Binding Message,Mode=TwoWay}"
+                                      TextChanged="TextInput_OnTextChanged"
+                                  x:Name="TextInput"/>
 
-        </Grid>
-        </Grid>
-
+                    </Grid>
+                </controls1:PivotItem>
+            </controls1:Pivot.Items>
+        </controls1:Pivot>
+        <extensions:EnabledBindableAppBar IsEnabled="{Binding IsAllMenuEnabled, Mode=TwoWay}" x:Name="AppBar" BarOpacity="1.0" >
+            <bindableAppBar:BindableAppBarButton x:Name="SentMessage" IconUri="/Content/Icons/friend.png" Text="друзья" />
+        </extensions:EnabledBindableAppBar>
+    </Grid>
+  
 
 </phone:PhoneApplicationPage>

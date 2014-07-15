@@ -20,11 +20,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
             this.IsCached = true;
         }
 
-        public async override System.Threading.Tasks.Task<Response<List<FriendPositionResult>>> Execute()
-        {
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            var userResults = Response<List<FriendPositionResult>>.Deserialize(responseString);
-            return userResults;
-        }
+      
     }
 }

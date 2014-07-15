@@ -27,7 +27,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
         {
             
             var responseString = await _restClient.GetStringAsync(FullUrl);
-            var user = Response<User>.Deserialize(responseString);
+            var user = base.Deserialize(responseString);
             //получаем фоточки по урлу в бинари
             //получаем фоточки по урлу в бинари
           

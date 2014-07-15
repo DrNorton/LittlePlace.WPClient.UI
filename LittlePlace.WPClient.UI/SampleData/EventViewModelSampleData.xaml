@@ -1,5 +1,17 @@
-<ViewModels:EventViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" DisplayName="Praesent accumsan" EventId="60" IsNotifying="True" IsInitialized="False" IsAllMenuEnabled="True" IsLoading="False" IsActive="True">
+﻿<ViewModels:EventViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" DisplayName="Erat libero" EventId="36" IsNotifying="True" IsInitialized="False" IsAllMenuEnabled="True" IsLoading="False" IsActive="True">
+	<ViewModels:EventViewModel.Messages>
+		<Result:Message EventId="19" Login="Aaberg, Jesper" MessageText="Cras praesent phasellus" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="72" Login="Adams, Ellen" MessageText="Aliquam consequat" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="98" Login="Adams, Terry" MessageText="Mus integer donec" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="80" Login="Adams, Terry" MessageText="Accumsan bibendum vestibulum duis" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="63" Login="Penor, Lori" MessageText="Aenean amet adipiscing" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="88" Login="Pfeiffer, Michael" MessageText="Aliquam fusce dignissim" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="30" Login="Philips, Carol" MessageText="Elementum nec aliquet eget elit" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="21" Login="Poe, Toni" MessageText="Fermentum auctor commodo congue conubia" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="90" Login="Hicks, Cassie" MessageText="Per cursus fringilla" SentTime="07/14/2014 15:05:20"/>
+		<Result:Message EventId="94" Login="Argentiero, Luca" MessageText="Morbi cubilia enim" SentTime="07/14/2014 15:05:20"/>
+	</ViewModels:EventViewModel.Messages>
 	<ViewModels:EventViewModel.ShowingEvent>
-		<Result:Event Address="Nam aenean" Created="07/13/2014 13:41:19" Description="Maecenas cras curabitur" EventTime="07/13/2014 13:41:19" EventId="17" Longitude="439.05" Latitude="178.06" Name="Class vestibulum duis nunc" OwnerId="10"/>
+		<Result:Event Address="Dapibus habitasse" Created="07/14/2014 15:05:20" Description="Hendrerit egestas himenaeos facilisi nulla" EventTime="07/14/2014 15:05:20" EventId="63" Longitude="462.08" Latitude="832.89" Name="Proin imperdiet augue lectus euismod" OwnerId="80"/>
 	</ViewModels:EventViewModel.ShowingEvent>
 </ViewModels:EventViewModel>

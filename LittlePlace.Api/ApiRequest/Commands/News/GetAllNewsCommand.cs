@@ -22,11 +22,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.News
             this.IsCached = true;
         }
 
-        public async override System.Threading.Tasks.Task<Response<List<NewsResult>>> Execute()
-        {
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            var results = Response<List<NewsResult>>.Deserialize(responseString);
-            return results;
-        }
+       
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using LittlePlace.Api.Models;
+using Newtonsoft.Json;
 
 namespace LittlePlace.Api.ApiRequest.Commands.Base
 {
-    public abstract class BaseCommand<T> : ICommand<T>
+    public abstract class BaseCommand<T> : ICommand<T> 
     {
         private string _methodGroup;
         protected readonly HttpClient _restClient;
@@ -26,7 +28,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
         }
 
         public abstract string ActionName { get; }
-        public abstract Task<T> Execute();
+      
 
         public int BuildCacheKey()
         {
@@ -37,6 +39,18 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
         {
             get { return _isCached; }
             set { _isCached = value; }
+        }
+
+        public async virtual System.Threading.Tasks.Task<T> Execute()
+        {
+            var responseString = await _restClient.GetStringAsync(FullUrl);
+            var results =Deserialize(responseString);
+            return results;
+        }
+
+        public  T Deserialize(string text)
+        {
+            return JsonConvert.DeserializeObject<T>(text);
         }
     }
 }

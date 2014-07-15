@@ -25,11 +25,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
             FullUrl = String.Format("{0}&login={1}&pass={2}", Url, login, pass);
         }
 
-        public async override Task<Response<string>> Execute()
-        {
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            return Response<string>.Deserialize(responseString);
-        }
+      
 
       
     }

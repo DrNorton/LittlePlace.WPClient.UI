@@ -22,11 +22,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.News
             FullUrl = String.Format("{0}&newsId={1}", Url, newsId);
         }
 
-        public async override System.Threading.Tasks.Task<Response<NewsResult>> Execute()
-        {
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            var results = Response<NewsResult>.Deserialize(responseString);
-            return results;
-        }
+       
     }
 }

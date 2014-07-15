@@ -9,6 +9,7 @@ using LittlePlace.Api.ApiRequest.Commands.Auth;
 using LittlePlace.Api.ApiRequest.Commands.Events;
 using LittlePlace.Api.ApiRequest.Commands.News;
 using LittlePlace.Api.ApiRequest.Commands.Position;
+using LittlePlace.Api.ApiRequest.Commands.PrivateMessages;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.ApiRequest.Commands.Upload;
 using LittlePlace.Api.ApiRequest.Commands.Users;
@@ -39,6 +40,12 @@ namespace LittlePlace.Api.Infrastructure
         Task<Response<string>> AddFriendToEvent(Event ev, User friend);
         Task<Response<Event>> AddEvent(Event ev);
         Task<Response<string>> AddFriendsToEvent(Event ev, IEnumerable<User> friends);
+        Task<Response<string>> AddMessageToEvent(string message,Event ev);
+        Task<Response<List<Message>>> GetMessagesFromEventCommand(Event ev);
+        Task<Response<List<EventMember>>> GetFriendsFromEvent(Event ev);
+        Task<Response<string>> UploadEventImage(byte[] image);
+        Task<Response<string>> SentMessageToFriend(string message, int friendId);
+        Task<Response<List<PrivateMessage>>> GetMyPrivateMessages();
     }
 
     public class LittlePlaceApiService : ILittlePlaceApiService
@@ -114,6 +121,15 @@ namespace LittlePlace.Api.Infrastructure
             _cacheService.RemoveCacheResult(new GetMeCommand(_httpClient));
             return result;
         }
+
+        public async Task<Response<string>> UploadEventImage(byte[] image)
+        {
+            var uploadAvatarCommand = new UploadEventImageCommand(_httpClient);
+            uploadAvatarCommand.Image = image;
+            var result = await _executerService.ExecuteCommand(uploadAvatarCommand, false);
+            return result;
+        }
+
 
         public async Task<Response<User>> GetMe()
         {
@@ -193,9 +209,40 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<Event>> AddEvent(Event ev)
         {
-            var command = new AddEventCommand(_httpClient, ev.Name, ev.EventTime, ev.Latitude, ev.Longitude, ev.OwnerId, ev.Address, ev.Description);
+            var command = new AddEventCommand(_httpClient, ev.Name, ev.EventTime, ev.Latitude, ev.Longitude, ev.OwnerId, ev.Address, ev.Description,ev.ImageUrl);
             return await _executerService.ExecuteCommand(command, false);
         }
+
+        public async Task<Response<string>> AddMessageToEvent(string message,Event ev)
+        {
+            var command = new AddMessageToEventCommand(_httpClient, message,ev.EventId);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<List<Message>>> GetMessagesFromEventCommand(Event ev)
+        {
+            var command = new GetMessagesFromEventCommand(_httpClient, ev.EventId);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<List<EventMember>>> GetFriendsFromEvent(Event ev)
+        {
+            var command = new GetFriendsFromEventCommand(_httpClient, ev);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<string>> SentMessageToFriend(string message, int friendId)
+        {
+            var command = new SentPrivateMessageCommand(_httpClient,friendId,message);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<List<PrivateMessage>>> GetMyPrivateMessages()
+        {
+            var command = new GetMyPrivateMessagesCommand(_httpClient);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
 
 
         private HttpClient GetHttpClient()

@@ -18,8 +18,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.Result
         private int _ownerId;
         private string _address;
         private string _description;
+        private string _imageUrl;
+        private string _rawPhotoString;
 
-         [JsonProperty("EventId")]
+        [JsonProperty("EventId")]
         public int EventId
         {
             get { return _eventId; }
@@ -115,6 +117,31 @@ namespace LittlePlace.Api.ApiRequest.Commands.Result
             {
                 _description = value;
                 OnPropertyChanged("Description");
+            }
+        }
+
+        [JsonProperty("ImageUrl")]
+        public string ImageUrl
+        {
+            get { return _imageUrl; }
+            set
+            {
+                _imageUrl = value;
+                OnPropertyChanged("ImageUrl");
+            }
+        }
+
+        [JsonIgnore]
+        public byte[] PhotoRaw { get; set; }
+
+        [JsonProperty("RawPhotoString")]
+        public string RawPhotoString
+        {
+            get { return _rawPhotoString; }
+            set
+            {
+                _rawPhotoString = value;
+                OnPropertyChanged("RawPhotoString");
             }
         }
 

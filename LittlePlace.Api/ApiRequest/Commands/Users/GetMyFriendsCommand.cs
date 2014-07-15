@@ -27,7 +27,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
         public async override System.Threading.Tasks.Task<Response<List<User>>> Execute()
         {
             var responseString = await _restClient.GetStringAsync(FullUrl);
-            var userResults=Response<List<User>>.Deserialize(responseString);
+            var userResults=base.Deserialize(responseString);
             //получаем фоточки по урлу в бинари
             foreach (var user in userResults.Result)
             {

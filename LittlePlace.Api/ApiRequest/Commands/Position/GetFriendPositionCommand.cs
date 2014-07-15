@@ -23,13 +23,6 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
             FullUrl = String.Format("{0}&friendId={1}", Url, friendId);
         }
 
-        public async override System.Threading.Tasks.Task<Response<List<UserPosition>>> Execute()
-        {
-      
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            return Response<List<UserPosition>>.Deserialize(responseString);
-        }
-
        
     }
 }

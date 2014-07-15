@@ -24,12 +24,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
                 updatedUser.Login,updatedUser.PhotoUrl,updatedUser.FirstName,updatedUser.LastName,updatedUser.TelephoneNumber,updatedUser.Email);
         }
 
-        public async override System.Threading.Tasks.Task<Response<string>> Execute()
-        {
-            var responseString = await _restClient.GetStringAsync(FullUrl);
-            var result = Response<string>.Deserialize(responseString);
-            return result;
-        }
+        
 
      
     }

@@ -46,9 +46,6 @@ namespace LittlePlace.Api.Models
             set { _result = value; }
         }
 
-        public static Response<T>  Deserialize(string text)
-        {
-            return JsonConvert.DeserializeObject<Response<T>>(text);
-        }
+       
     }
 }

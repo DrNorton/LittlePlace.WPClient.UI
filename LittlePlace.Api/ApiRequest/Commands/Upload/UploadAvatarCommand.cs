@@ -33,7 +33,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Upload
             using (var response = await _restClient.PostAsync(FullUrl, requestContent))
             {
                  var responseString = await response.Content.ReadAsStringAsync();
-                 var result = Response<string>.Deserialize(responseString);
+                 var result = base.Deserialize(responseString);
                 return result;
             }
             
