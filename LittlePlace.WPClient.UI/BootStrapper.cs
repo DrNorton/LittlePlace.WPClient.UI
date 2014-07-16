@@ -75,6 +75,7 @@ namespace LittlePlace.WPClient.UI
             _container.PerRequest<EventsListViewModel>();
             _container.PerRequest<EventViewModel>();
             _container.PerRequest<DialogsListViewModel>();
+            _container.PerRequest<DialogViewModel>();
 
         }
 

@@ -17,10 +17,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
             get { return "getfriendposition"; }
         }
 
-        public GetFriendPositionCommand(HttpClient restClient,int friendId)
-            :base("position",restClient,new Dictionary<string, string>())
+        public GetFriendPositionCommand(HttpClient restClient,Dictionary<string,string> dict )
+            :base("position",restClient,dict)
         {
-            FullUrl = String.Format("{0}&friendId={1}", Url, friendId);
+            
         }
 
        

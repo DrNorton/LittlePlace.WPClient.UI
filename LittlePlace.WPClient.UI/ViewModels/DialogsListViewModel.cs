@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Windows;
+using Caliburn.Micro;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.Api.Models;
 using LittlePlace.WPClient.UI.Models;
+using LittlePlace.WPClient.UI.Models.DialogModels;
 using LittlePlace.WPClient.UI.ViewModels.Base;
 
 namespace LittlePlace.WPClient.UI.ViewModels
@@ -13,16 +17,18 @@ namespace LittlePlace.WPClient.UI.ViewModels
     public class DialogsListViewModel:LoadingScreen
     {
         private readonly ILittlePlaceApiService _littlePlaceApiService;
-        private List<FullDialog> _privateMessages;
+        private readonly INavigationService _navigationService;
+        private ObservableCollection<ExtendedDialog> _dialogs;
+        private ExtendedDialog _selectedDialog;
+        
 
-        public DialogsListViewModel(ILittlePlaceApiService littlePlaceApiService)
+        public DialogsListViewModel(ILittlePlaceApiService littlePlaceApiService,INavigationService navigationService)
         {
             _littlePlaceApiService = littlePlaceApiService;
-            _privateMessages=new List<FullDialog>();
+            _navigationService = navigationService;
+            _dialogs=new ObservableCollection<ExtendedDialog>();
             base.StartDataLoading();
         }
-
-       
 
         protected async override void DataLoading(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
@@ -39,20 +45,39 @@ namespace LittlePlace.WPClient.UI.ViewModels
         private async void CreateFullDialog(List<Dialog> dialogs)
         {
             var friends=(await _littlePlaceApiService.GetMyFriends()).Result;
+            var me = (await _littlePlaceApiService.GetMe()).Result;
             foreach (var dialog in dialogs)
             {
-                _privateMessages.Add(new FullDialog(dialog,friends));
+                Deployment.Current.Dispatcher.BeginInvoke(() =>  Dialogs.Add(ExtendedDialog.CreateExtendedDialog(friends, me, dialog)));
             }
-            
         }
 
-        public List<FullDialog> PrivateMessages
+        public ObservableCollection<ExtendedDialog> Dialogs
         {
-            get { return _privateMessages; }
+            get { return _dialogs; }
             set
             {
-                _privateMessages = value;
-                base.NotifyOfPropertyChange(() => PrivateMessages);
+                _dialogs = value;
+                base.NotifyOfPropertyChange(() => Dialogs);
+            }
+        }
+
+        public ExtendedDialog SelectedDialog
+        {
+            get { return _selectedDialog; }
+            set
+            {
+                _selectedDialog = value;
+                NavigateToDialogView(value);
+                base.NotifyOfPropertyChange(()=>SelectedDialog);
+            }
+        }
+
+        private void NavigateToDialogView(ExtendedDialog value)
+        {
+            if (value != null)
+            {
+                _navigationService.UriFor<DialogViewModel>().WithParam(x=>x.DialogId,value.Id).WithParam(x=>x.ToId,value.Member.UserId).Navigate();
             }
         }
     }

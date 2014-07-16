@@ -11,7 +11,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" d:DataContext="{d:DesignData /SampleData/DialogsListViewModelSampleData1.xaml}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -28,7 +28,24 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+			<ListBox ItemsSource="{Binding Dialogs}" SelectedItem="{Binding SelectedDialog,Mode=TwoWay}" >
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<StackPanel Grid.Column="0">
+								<TextBlock Text="{Binding Member.Login,Mode=TwoWay}" Style="{StaticResource PhoneTextTitle1Style}"/>
+								<TextBlock  Text="{Binding LastMessage.MessageText,Mode=TwoWay}" Style="{StaticResource PhoneTextSubtleStyle}"/>
+							</StackPanel>
+							<TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding LastMessage.SentTime,Mode=TwoWay,StringFormat='d MM'}" Style="{StaticResource PhoneTextNormalStyle}"/>
+						</Grid>
+						
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
         </Grid>
     </Grid>
 
