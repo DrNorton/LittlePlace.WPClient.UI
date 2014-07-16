@@ -16,13 +16,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.Events
             get { return "addevent"; }
         }
 
-        public AddEventCommand(HttpClient httpClient,string name, DateTime eventTime,double latitude,double longitude,int ownerId,string address, string description,string imageUrl)
-            : base("events", httpClient)
+        public AddEventCommand(HttpClient httpClient,Dictionary<string,string> dict )
+            : base("events", httpClient,dict)
         {
-
-            FullUrl = String.Format("{0}&name={1}&eventTime={2}&latitude={3}&longitude={4}&ownerId={5}&address={6}&description={7}&imageurl={8}", Url, name, eventTime, latitude, longitude, ownerId, address, description,imageUrl);
+           
         }
-
-       
     }
 }

@@ -16,16 +16,11 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
             get { return "register"; }
         }
 
-        public RegisterCommand(HttpClient restClient,string login,string pass)
-            : base("auth",restClient)
+        public RegisterCommand(HttpClient restClient,Dictionary<string,string> dict )
+            : base("auth",restClient,dict)
         {
-            FullUrl = String.Format("{0}&login={1}&pass={2}", Url, login, pass);
+          
         }
-
-      
-
-      
-
        
     }
 }

@@ -18,7 +18,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
         }
 
         public GetFriendPositionCommand(HttpClient restClient,int friendId)
-            :base("position",restClient)
+            :base("position",restClient,new Dictionary<string, string>())
         {
             FullUrl = String.Format("{0}&friendId={1}", Url, friendId);
         }

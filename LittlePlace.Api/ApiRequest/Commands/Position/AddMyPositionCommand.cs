@@ -15,14 +15,11 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
             get { return "addmyposition"; }
         }
 
-        public AddMyPositionCommand(HttpClient restClient,double latitude,double longitude)
-            :base("position",restClient)
+        public AddMyPositionCommand(HttpClient restClient,Dictionary<string,string> dict )
+            :base("position",restClient,dict)
         {
-            FullUrl = String.Format("{0}&latitude={1}&longitude={2}", Url,  latitude, longitude);
+            FullUrl = String.Format("{0}&latitude={1}&longitude={2}", Url,  dict);
         }
-
-       
-
        
     }
 }

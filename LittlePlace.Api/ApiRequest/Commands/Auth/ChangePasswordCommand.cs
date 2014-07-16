@@ -10,10 +10,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
 {
     public class ChangePasswordCommand : BaseCommand<Response<string>>
     {
-        public ChangePasswordCommand(HttpClient restClient,string oldPass,string newPass)
-            :base("auth",restClient)
+        public ChangePasswordCommand(HttpClient restClient,Dictionary<string,string> dict )
+            :base("auth",restClient,dict)
         {
-            FullUrl = String.Format("{0}&oldpass={1}&newpass={2}", Url, oldPass, newPass);
+           
         }
         public override string ActionName
         {

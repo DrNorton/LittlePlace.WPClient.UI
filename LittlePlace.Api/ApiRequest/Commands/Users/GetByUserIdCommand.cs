@@ -18,11 +18,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
         }
 
 
-        public GetByUserIdCommand(HttpClient httpClient,int userId)
-            :base("user",httpClient)
+        public GetByUserIdCommand(HttpClient httpClient,Dictionary<string,string> dict)
+            :base("user",httpClient,dict)
         {
             this.IsCached = true;
-            FullUrl = String.Format("{0}&friendId={1}", Url, userId);
         }
 
         public async override System.Threading.Tasks.Task<Response<User>> Execute()
