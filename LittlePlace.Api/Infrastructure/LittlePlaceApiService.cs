@@ -45,6 +45,8 @@ namespace LittlePlace.Api.Infrastructure
         Task<Response<List<EventMember>>> GetFriendsFromEvent(Event ev);
         Task<Response<string>> UploadEventImage(byte[] image);
         Task<Response<List<Dialog>>> GetMyDialogs();
+        Task<Response<Dialog>> GetMyDialogById(string id);
+        Task<Response<string>> SentPrivateMessage(int toid, string message);
     }
 
     public class LittlePlaceApiService : ILittlePlaceApiService
@@ -182,7 +184,9 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<NewsResult>> GetNewsById(int newsId)
         {
-            var getnewsById = new GetNewsByIdCommand(_httpClient,newsId);
+            var dict = new Dictionary<string, string>();
+           dict.Add("newsId",newsId.ToString());
+            var getnewsById = new GetNewsByIdCommand(_httpClient,dict);
             return await _executerService.ExecuteCommand(getnewsById, false);
         }
 
@@ -197,7 +201,9 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<List<UserPosition>>> GetFriendPosition(int friendId)
         {
-            var getFriendPosition = new GetFriendPositionCommand(_httpClient,friendId);
+            var dict = new Dictionary<string, string>();
+            dict.Add("friendId",friendId.ToString());
+            var getFriendPosition = new GetFriendPositionCommand(_httpClient,dict);
             return await _executerService.ExecuteCommand(getFriendPosition,false);
         }
 
@@ -289,6 +295,23 @@ namespace LittlePlace.Api.Infrastructure
         public async Task<Response<List<Dialog>>> GetMyDialogs()
         {
             var command = new GetMyDialogsCommand(_httpClient);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<Dialog>> GetMyDialogById(string id)
+        {
+            var dict = new Dictionary<string, string>();
+            dict.Add("id",id);
+            var command = new GetDialogByIdCommand(_httpClient,dict);
+            return await _executerService.ExecuteCommand(command, false);
+        }
+
+        public async Task<Response<string>> SentPrivateMessage(int toid, string message)
+        {
+            var dict = new Dictionary<string, string>();
+            dict.Add("toid", toid.ToString());
+            dict.Add("message", message);
+            var command = new SentPrivateMessageCommand(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 

@@ -18,7 +18,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
         public AddMyPositionCommand(HttpClient restClient,Dictionary<string,string> dict )
             :base("position",restClient,dict)
         {
-            FullUrl = String.Format("{0}&latitude={1}&longitude={2}", Url,  dict);
+            
         }
        
     }

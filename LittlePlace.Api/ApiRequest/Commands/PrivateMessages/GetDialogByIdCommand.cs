@@ -7,21 +7,19 @@ using LittlePlace.Api.ApiRequest.Commands.Base;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Models;
 
-namespace LittlePlace.Api.ApiRequest.Commands.News
+namespace LittlePlace.Api.ApiRequest.Commands.PrivateMessages
 {
-    public class GetNewsByIdCommand : BaseCommand<Response<NewsResult>>
+    public class GetDialogByIdCommand : BaseCommand<Response<Dialog>>
     {
         public override string ActionName
         {
-            get { return "getbyid"; }
+            get { return "getdialogbyid"; }
         }
 
-        public GetNewsByIdCommand(HttpClient httpClient,Dictionary<string,string> dict)
-            :base("news",httpClient,dict)
+        public GetDialogByIdCommand(HttpClient restClient,Dictionary<string,string> dict)
+            : base("message",restClient,dict)
         {
-          
+            
         }
-
-       
     }
 }

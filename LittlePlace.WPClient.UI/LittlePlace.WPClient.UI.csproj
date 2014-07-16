@@ -27,7 +27,7 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -173,8 +173,8 @@
     <Compile Include="Extensions\EnabledBindableAppBar.cs" />
     <Compile Include="Extensions\Helpers.cs" />
     <Compile Include="Maps\Models\MapPushpinModel.cs" />
-    <Compile Include="Models\FullDialog.cs" />
-    <Compile Include="Models\FullPrivateMessage.cs" />
+    <Compile Include="Models\DialogModels\ExtendedDialog.cs" />
+    <Compile Include="Models\DialogModels\ExtendedPrivateMessage.cs" />
     <Compile Include="Models\MapModels\BasePushpin.cs" />
     <Compile Include="Models\MapModels\EventPushpin.cs" />
     <Compile Include="Models\MapModels\FriendPushpin.cs" />
@@ -197,6 +197,7 @@
     <Compile Include="ViewModels\Base\LoadingScreen.cs" />
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ContactsViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModel.cs" />
     <Compile Include="ViewModels\EventsListViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel..cs" />
     <Compile Include="ViewModels\FriendContactDetailViewModel.cs" />
@@ -216,6 +217,9 @@
     </Compile>
     <Compile Include="Views\ContactsView.xaml.cs">
       <DependentUpon>ContactsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DialogView.xaml.cs">
+      <DependentUpon>DialogView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EventsListView.xaml.cs">
       <DependentUpon>EventsListView.xaml</DependentUpon>
@@ -277,6 +281,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ContactsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DialogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -365,6 +373,12 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
     <DesignData Include="SampleData\ContactsViewModelSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
+    <DesignData Include="SampleData\DialogsListViewModelSampleData1.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
+    <DesignData Include="SampleData\DialogViewModelSampleData.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
     <DesignData Include="SampleData\EventViewModelSampleData.xaml">

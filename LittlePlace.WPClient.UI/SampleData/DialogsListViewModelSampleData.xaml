@@ -1,0 +1,624 @@
+﻿<ViewModels:DialogsListViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Models="clr-namespace:LittlePlace.WPClient.UI.Models" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" xmlns:System="clr-namespace:System;assembly=mscorlib" DisplayName="Felis mattis nunc quisque malesuada" IsNotifying="True" IsInitialized="False" IsAllMenuEnabled="True" IsLoading="False" IsActive="True">
+	<ViewModels:DialogsListViewModel.Dialogs>
+		<Models:FullDialog LastMessage="Sagittis parturient">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Nam curabitur phasellus class vestibulum" FirstName="Adipiscing aliquam aenean curae parturient" LastName="Integer cras" Login="Aaberg, Jesper" NameWithSurname="Quisque vivamus duis mauris" PhotoUrl="Nullam dis aliquam consequat aptent" RawPhotoString="Convallis aliquet blandit donec auctor" TelephoneNumber="Congue est" TextStatus="Etiam nunc fusce cursus dignissim" UserId="89"/>
+				<Result:User Email="Commodo maecenas elementum" FirstName="Hac facilisis leo praesent" LastName="Accumsan mus fermentum vestibulum" Login="Adams, Ellen" NameWithSurname="Morbi nulla" PhotoUrl="Conubia amet" RawPhotoString="Cubilia ante" TelephoneNumber="Arcu dictum" TextStatus="Non dictumst lectus dapibus" UserId="84"/>
+				<Result:User Email="Per adipiscing proin egestas libero" FirstName="Fringilla ligula" LastName="Diam sed habitasse litora" Login="Adams, Terry" NameWithSurname="Parturient vestibulum sem augue" PhotoUrl="Vestibulum eleifend hendrerit dolor" RawPhotoString="Eget elit facilisi himenaeos" TelephoneNumber="Adipiscing imperdiet fames" TextStatus="Feugiat sit faucibus vel" UserId="20"/>
+				<Result:User Email="Gravida felis" FirstName="Nam habitant magnis iaculis mattis" LastName="Sed ipsum malesuada" Login="Adams, Terry" NameWithSurname="Dis inceptos" PhotoUrl="Interdum enim" RawPhotoString="Erat est hac leo" TelephoneNumber="Lobortis lacus" TextStatus="Vestibulum penatibus laoreet porttitor mauris" UserId="23"/>
+				<Result:User Email="Mus nec nascetur" FirstName="Vestibulum eros lorem tincidunt" LastName="Magna adipiscing massa pharetra" Login="Penor, Lori" NameWithSurname="Parturient placerat ultricies pulvinar metus" PhotoUrl="Nibh nisi" RawPhotoString="Montes non" TelephoneNumber="Pretium vestibulum vestibulum" TextStatus="Adipiscing nisl venenatis vulputate" UserId="69"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Vivamus aliquam risus velit aliquet" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Per nunc" FirstName="Odio morbi" LastName="Neque rhoncus orci netus" Login="Pfeiffer, Michael" NameWithSurname="Nulla viverra aliquam sed" PhotoUrl="Phasellus vestibulum pede consequat" RawPhotoString="Sem sit vestibulum convallis" TelephoneNumber="Quam adipiscing integer porta parturient" TextStatus="Purus dignissim quisque elementum vel" UserId="87"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Vitae quis nostra" FirstName="Nam ornare class facilisis" LastName="Sociosqu sed platea fermentum" Login="Philips, Carol" NameWithSurname="Blandit dis" PhotoUrl="Suscipit fringilla est curae vestibulum" RawPhotoString="Primis habitasse duis" TelephoneNumber="Donec vestibulum adipiscing" TextStatus="Etiam hendrerit fusce hac leo" UserId="83"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Nulla vel" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Himenaeos commodo rutrum parturient" FirstName="Conubia cubilia mus" LastName="Dapibus sapien semper nunc sociis" Login="Poe, Toni" NameWithSurname="Ultrices lorem" PhotoUrl="Vehicula taciti adipiscing morbi" RawPhotoString="Non tellus parturient" TelephoneNumber="Ante per" TextStatus="Tempor sed sem tempus sit" UserId="27"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Egestas volutpat maecenas" FirstName="Euismod nam imperdiet feugiat malesuada" LastName="Gravida arcu" Login="Hicks, Cassie" NameWithSurname="Tortor sed vestibulum" PhotoUrl="Dolor accumsan penatibus" RawPhotoString="Elit fames turpis iaculis" TelephoneNumber="Varius vestibulum dis" TextStatus="Aenean felis porttitor" UserId="90"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Cursus adipiscing natoque" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Mauris bibendum est lacinia" FirstName="Adipiscing enim erat ipsum tincidunt" LastName="Parturient hac tristique ultricies" Login="Argentiero, Luca" NameWithSurname="Mus nullam eros eleifend" PhotoUrl="Vestibulum laoreet facilisi" RawPhotoString="Faucibus justo aptent lacus" TelephoneNumber="Nibh vestibulum habitant venenatis auctor" TextStatus="Congue lorem" UserId="33"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Nisi nisl magna nunc" FirstName="Parturient posuere" LastName="Dictum inceptos interdum massa" Login="Perry, Brian" NameWithSurname="Curabitur phasellus neque odio" PhotoUrl="Lobortis nec" RawPhotoString="Nascetur orci pretium vestibulum" TelephoneNumber="Pede rhoncus non" TextStatus="Libero pharetra" UserId="71"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Duis pulvinar quisque vitae" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Sodales ligula quam quis" FirstName="Consequat netus convallis litora vestibulum" LastName="Adipiscing nulla parturient" Login="Ramos, Luciana" NameWithSurname="Sed porta purus placerat" PhotoUrl="Aliquam vestibulum urna cras integer" RawPhotoString="Luctus vestibulum facilisis risus" TelephoneNumber="Fermentum sem magnis velit sit" TextStatus="Fringilla vel" UserId="58"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Nam mattis" FirstName="Class curae mauris sed dis" LastName="Est sagittis hac" Login="Barber, David" NameWithSurname="Hendrerit mus" PhotoUrl="Vivamus amet adipiscing senectus" RawPhotoString="Donec etiam nec non ante" TelephoneNumber="Himenaeos imperdiet sociosqu aliquam fusce" TextStatus="Malesuada suscipit" UserId="46"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Accumsan vestibulum" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Mollis penatibus" FirstName="Parturient torquent arcu ultrices" LastName="Vestibulum vehicula montes" Login="Jamison, Jay" NameWithSurname="Volutpat adipiscing maecenas" PhotoUrl="Aliquet parturient eget porttitor" RawPhotoString="Elit sed" TelephoneNumber="Enim sem vestibulum lorem erat" TextStatus="Ornare praesent morbi platea" UserId="11"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Primis bibendum nulla tincidunt" FirstName="Sit tristique adipiscing proin augue" LastName="Eros parturient dolor vestibulum vestibulum" Login="Reid, Miles" NameWithSurname="Vel parturient conubia" PhotoUrl="Rutrum dictumst vestibulum eleifend" RawPhotoString="Vestibulum sapien semper" TelephoneNumber="Nam nisl adipiscing" TextStatus="Fames nunc ultricies" UserId="15"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Parturient facilisi venenatis sociis odio" FirstName="Orci cubilia vestibulum" LastName="Vulputate pede" Login="Bowen, Eli" NameWithSurname="Faucibus dapibus tellus quam" PhotoUrl="Vestibulum habitant adipiscing" RawPhotoString="Phasellus felis egestas parturient tempor" TelephoneNumber="Vestibulum tempus consequat" TextStatus="Quis dis" UserId="14">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Nisi consequat nostra convallis">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Est hac convallis leo" FirstName="Euismod urna ipsum dignissim" LastName="Tortor elementum" Login="Kane, John" NameWithSurname="Cras inceptos" PhotoUrl="Varius facilisis fermentum" RawPhotoString="Interdum mus" TelephoneNumber="Nec lobortis justo vestibulum" TextStatus="Nascetur non" UserId="27"/>
+				<Result:User Email="Adipiscing parturient duis" FirstName="Fringilla pharetra habitasse hendrerit per" LastName="Placerat nunc aenean sed lacus" Login="Sarin, Raman" NameWithSurname="Himenaeos nullam magna pulvinar sit" PhotoUrl="Imperdiet sagittis lacinia laoreet vestibulum" RawPhotoString="Aptent vestibulum vel auctor" TelephoneNumber="Congue nam malesuada" TextStatus="Amet cursus penatibus massa" UserId="68"/>
+				<Result:User Email="Sed porttitor tincidunt" FirstName="Senectus dictum lectus libero dis" LastName="Tristique natoque" Login="Sato, Naoki" NameWithSurname="Venenatis suscipit adipiscing parturient" PhotoUrl="Est ante" RawPhotoString="Torquent arcu ultrices" TelephoneNumber="Metus vulputate" TextStatus="Vestibulum morbi vehicula neque diam" UserId="81"/>
+				<Result:User Email="Eget pretium" FirstName="Ligula hac" LastName="Volutpat rhoncus litora leo sodales" Login="Silva, Alexandre" NameWithSurname="Viverra curabitur luctus" PhotoUrl="Vestibulum porta magnis" RawPhotoString="Aliquam maecenas" TelephoneNumber="Purus adipiscing" TextStatus="Elit mattis" UserId="10"/>
+				<Result:User Email="Integer praesent" FirstName="Parturient enim quisque vestibulum vivamus" LastName="Mus accumsan bibendum aliquam" Login="Cook, Kevin" NameWithSurname="Aliquet eros velit vitae adipiscing" PhotoUrl="Mauris phasellus parturient nec class" RawPhotoString="Nibh mollis blandit" TelephoneNumber="Montes dictumst" TextStatus="Non vestibulum curae vestibulum" UserId="58"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Lorem elementum rutrum pede sapien" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Ornare adipiscing per parturient" FirstName="Nisl commodo dignissim donec" LastName="Nunc vestibulum" Login="Li, Yuhong" NameWithSurname="Sit eleifend" PhotoUrl="Facilisi faucibus conubia cubilia" RawPhotoString="Vel odio primis" TelephoneNumber="Nam fusce habitant" TextStatus="Inceptos orci" UserId="21"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Adipiscing morbi" FirstName="Facilisis semper dapibus sociis nulla" LastName="Sed dis" Login="Strande, Amy" NameWithSurname="Tempor proin interdum parturient" PhotoUrl="Augue dolor" RawPhotoString="Egestas quam fermentum" TelephoneNumber="Quis fames fringilla" TextStatus="Lobortis vestibulum" UserId="60"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Gravida iaculis" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Habitasse hendrerit urna" FirstName="Est himenaeos hac" LastName="Nascetur imperdiet vestibulum" Login="Makovac, Zrinka" NameWithSurname="Leo duis ipsum euismod mus" PhotoUrl="Pharetra adipiscing feugiat nec" RawPhotoString="Parturient penatibus vestibulum non" TelephoneNumber="Justo nunc" TextStatus="Lacus amet" UserId="63"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Per lacinia" FirstName="Placerat laoreet sed" LastName="Vestibulum lorem magna" Login="Miller, Ben" NameWithSurname="Ante sem adipiscing tortor sit" PhotoUrl="Natoque posuere morbi vel" RawPhotoString="Tincidunt neque" TelephoneNumber="Tristique parturient turpis nam sagittis" TextStatus="Ultricies potenti varius" UserId="56"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Integer velit parturient vestibulum" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Venenatis vestibulum arcu sed" FirstName="Senectus aenean pretium diam" LastName="Sociosqu suscipit" Login="Orton, Jon" NameWithSurname="Rhoncus adipiscing dis vulputate elit" PhotoUrl="Curabitur sodales enim" RawPhotoString="Mauris nulla porta phasellus vehicula" TelephoneNumber="Volutpat consequat" TextStatus="Viverra aliquam purus risus" UserId="47"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Erat vestibulum nullam vitae" FirstName="Adipiscing quisque convallis maecenas" LastName="Class eros curae dignissim" Login="Zhang, Larry" NameWithSurname="Nisi praesent" PhotoUrl="Accumsan elementum" RawPhotoString="Aptent aliquet" TelephoneNumber="Parturient blandit" TextStatus="Facilisis nisl" UserId="76"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Hendrerit morbi" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Fermentum vestibulum bibendum" FirstName="Hac etiam" LastName="Dictumst vestibulum adipiscing fringilla" Login="Gladkikh, Andrey" NameWithSurname="Faucibus habitant parturient" PhotoUrl="Inceptos fusce" RawPhotoString="Habitasse cubilia" TelephoneNumber="Vestibulum auctor vestibulum interdum" TextStatus="Congue lobortis lorem leo" UserId="15"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Cursus nascetur mus" FirstName="Dictum adipiscing pharetra placerat" LastName="Nec non nunc odio" Login="Meyer, April" NameWithSurname="Per lectus" PhotoUrl="Sed parturient pede libero vestibulum" RawPhotoString="Senectus sociosqu nulla quam" TelephoneNumber="Proin sem vestibulum" TextStatus="Suscipit dapibus augue" UserId="79"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Lacinia volutpat magna" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Himenaeos sit ligula dolor" FirstName="Imperdiet egestas quis" LastName="Malesuada adipiscing urna euismod fames" Login="Clark, Molly" NameWithSurname="Justo cras feugiat parturient gravida" PhotoUrl="Lacus vestibulum lorem litora" RawPhotoString="Penatibus vel porttitor" TelephoneNumber="Duis iaculis ultrices vehicula" TextStatus="Luctus magnis tincidunt mattis" UserId="51"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Massa vestibulum tristique" FirstName="Nunc amet metus mauris" LastName="Morbi nam adipiscing ultricies" Login="Dellamore, Luca" NameWithSurname="Maecenas parturient dis vestibulum vulputate" PhotoUrl="Est montes curabitur" RawPhotoString="Praesent vestibulum ante" TelephoneNumber="Arcu laoreet hac adipiscing parturient" TextStatus="Vestibulum accumsan bibendum vestibulum neque" UserId="53"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Leo phasellus diam dictumst" FirstName="Mus adipiscing nostra nec parturient" LastName="Ornare natoque vestibulum netus" Login="Aaberg, Jesper" NameWithSurname="Dignissim posuere elementum" PhotoUrl="Rutrum eget" RawPhotoString="Vestibulum adipiscing non" TelephoneNumber="Eleifend sapien semper elit parturient" TextStatus="Enim nulla" UserId="24">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Suscipit nisl egestas libero euismod">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Facilisis per potenti" FirstName="Erat vestibulum eros" LastName="Fermentum nibh" Login="Adams, Ellen" NameWithSurname="Pretium rhoncus porta nisi" PhotoUrl="Nisl sociis nunc taciti" RawPhotoString="Vestibulum sem sit hendrerit" TelephoneNumber="Adipiscing himenaeos odio facilisi purus" TextStatus="Sodales parturient vestibulum" UserId="16"/>
+				<Result:User Email="Vel risus orci nam" FirstName="Pede quam quis imperdiet velit" LastName="Vestibulum tellus" Login="Adams, Terry" NameWithSurname="Penatibus tempus urna sed" PhotoUrl="Adipiscing tortor cras curae" RawPhotoString="Porttitor donec habitant" TelephoneNumber="Turpis tincidunt varius" TextStatus="Aenean inceptos dis" UserId="65"/>
+				<Result:User Email="Parturient tristique etiam fusce" FirstName="Duis est" LastName="Hac nunc lorem amet" Login="Adams, Terry" NameWithSurname="Aliquam lobortis vestibulum ultricies mauris" PhotoUrl="Adipiscing parturient" RawPhotoString="Integer mus vestibulum nulla" TelephoneNumber="Vestibulum quisque venenatis nec" TextStatus="Vulputate vivamus curabitur phasellus" UserId="17"/>
+				<Result:User Email="Consequat aliquam non ante aliquet" FirstName="Nullam per convallis nascetur" LastName="Proin arcu pharetra blandit" Login="Penor, Lori" NameWithSurname="Sem commodo placerat" PhotoUrl="Augue sit parturient eget" RawPhotoString="Elit aptent" TelephoneNumber="Vestibulum enim" TextStatus="Conubia auctor" UserId="96"/>
+				<Result:User Email="Erat dolor congue" FirstName="Dignissim cursus fames vel dictum" LastName="Cubilia felis" Login="Pfeiffer, Michael" NameWithSurname="Vestibulum nisi pulvinar sagittis lectus" PhotoUrl="Adipiscing parturient" RawPhotoString="Lorem elementum" TelephoneNumber="Dapibus senectus facilisis magna" TextStatus="Fermentum sociosqu" UserId="54"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Mattis quam mauris gravida" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Vestibulum torquent fringilla nam vestibulum" FirstName="Sed ligula feugiat" LastName="Nunc massa" Login="Philips, Carol" NameWithSurname="Habitasse vestibulum metus odio orci" PhotoUrl="Litora dis luctus pede" RawPhotoString="Vestibulum ultrices morbi hendrerit magnis" TelephoneNumber="Vehicula volutpat himenaeos maecenas" TextStatus="Est praesent imperdiet accumsan" UserId="76"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Malesuada neque iaculis mollis" FirstName="Quis montes lacinia penatibus hac" LastName="Nostra laoreet natoque ornare porttitor" Login="Poe, Toni" NameWithSurname="Platea nulla" PhotoUrl="Primis porta bibendum dictumst" RawPhotoString="Rutrum urna" TelephoneNumber="Purus mus cras potenti nec" TextStatus="Eleifend facilisi" UserId="62"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Phasellus taciti parturient" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Faucibus habitant vestibulum" FirstName="Inceptos tincidunt duis" LastName="Tristique vestibulum sapien risus nunc" Login="Hicks, Cassie" NameWithSurname="Ante ultricies semper" PhotoUrl="Sociis arcu" RawPhotoString="Adipiscing class curae non" TelephoneNumber="Venenatis vulputate interdum" TextStatus="Donec diam lobortis curabitur" UserId="85"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Consequat per convallis" FirstName="Vestibulum pretium eget dignissim nascetur" LastName="Etiam sed" Login="Argentiero, Luca" NameWithSurname="Tellus elit elementum enim fusce" PhotoUrl="Facilisis sem fermentum pharetra lorem" RawPhotoString="Morbi placerat erat" TelephoneNumber="Adipiscing sit fringilla sodales nulla" TextStatus="Viverra tempor pulvinar" UserId="91"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Malesuada hac" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Proin aliquam eros augue" FirstName="Parturient habitasse nibh tempus dolor" LastName="Vel fames nam nisi" Login="Perry, Brian" NameWithSurname="Dis hendrerit sagittis" PhotoUrl="Nisl aenean himenaeos nunc" RawPhotoString="Imperdiet senectus odio" TelephoneNumber="Vestibulum est vestibulum" TextStatus="Quisque vivamus" UserId="22"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Aliquam aliquet penatibus mauris adipiscing" FirstName="Parturient nullam" LastName="Aptent felis" Login="Ramos, Luciana" NameWithSurname="Vestibulum auctor congue cursus" PhotoUrl="Dictum vestibulum lectus sociosqu" RawPhotoString="Mus orci pede libero" TelephoneNumber="Quam nec non per ligula" TextStatus="Quis sed porttitor commodo ipsum" UserId="30"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Curabitur dis magna amet massa" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Justo sem tincidunt lacus" FirstName="Sit urna" LastName="Tristique cras suscipit" Login="Barber, David" NameWithSurname="Conubia adipiscing" PhotoUrl="Nunc ultrices" RawPhotoString="Cubilia dapibus vel" TelephoneNumber="Nam ultricies venenatis parturient litora" TextStatus="Sed egestas lorem vulputate" UserId="41"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Est euismod ante metus feugiat" FirstName="Arcu vestibulum morbi phasellus consequat" LastName="Luctus hac vehicula volutpat diam" Login="Jamison, Jay" NameWithSurname="Leo maecenas praesent iaculis" PhotoUrl="Netus accumsan bibendum" RawPhotoString="Dignissim dictumst nulla" TelephoneNumber="Mus eget magnis adipiscing" TextStatus="Mattis mauris porta" UserId="67"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Sit vitae nisi hendrerit" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Parturient purus nec" FirstName="Mollis elit elementum vestibulum" LastName="Non montes" Login="Reid, Miles" NameWithSurname="Ornare erat eleifend" PhotoUrl="Eros lacinia velit" RawPhotoString="Per fermentum facilisi fringilla platea" TelephoneNumber="Nibh sed" TextStatus="Habitasse laoreet sem" UserId="19"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Adipiscing vel himenaeos" FirstName="Nisl imperdiet parturient" LastName="Faucibus primis vestibulum" Login="Bowen, Eli" NameWithSurname="Vestibulum natoque curae" PhotoUrl="Posuere nam malesuada" RawPhotoString="Habitant adipiscing sed" TelephoneNumber="Donec odio" TextStatus="Potenti orci dis parturient" UserId="20"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Inceptos pede rutrum sapien" FirstName="Etiam est pretium fusce vestibulum" LastName="Semper lorem" Login="Kane, John" NameWithSurname="Vestibulum sociis taciti viverra" PhotoUrl="Nascetur pharetra quam" RawPhotoString="Aliquam quis" TelephoneNumber="Tellus tempor" TextStatus="Urna integer" UserId="18">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Cras purus sodales luctus">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Penatibus tempus quisque hac" FirstName="Adipiscing cras vivamus" LastName="Leo tortor parturient nulla proin" Login="Sarin, Raman" NameWithSurname="Duis placerat nunc fames amet" PhotoUrl="Turpis pulvinar" RawPhotoString="Ante arcu porttitor aliquam" TelephoneNumber="Felis mus" TextStatus="Nec vestibulum diam" UserId="75"/>
+				<Result:User Email="Vestibulum sagittis varius" FirstName="Senectus eget non tincidunt aenean" LastName="Mauris nullam per aliquet aptent" Login="Sato, Naoki" NameWithSurname="Ipsum justo" PhotoUrl="Sed tristique sem sit erat" RawPhotoString="Sociosqu ultricies" TelephoneNumber="Suscipit lacus" TextStatus="Venenatis commodo conubia" UserId="48"/>
+				<Result:User Email="Eros auctor vel lorem" FirstName="Nam cubilia vulputate dapibus nibh" LastName="Sed curabitur phasellus" Login="Silva, Alexandre" NameWithSurname="Nisi torquent egestas" PhotoUrl="Ultrices massa" RawPhotoString="Adipiscing vehicula parturient dis nisl" TelephoneNumber="Dignissim euismod" TextStatus="Elementum facilisis feugiat fermentum" UserId="75"/>
+				<Result:User Email="Est fringilla" FirstName="Vestibulum metus volutpat congue nunc" LastName="Gravida iaculis cursus" Login="Cook, Kevin" NameWithSurname="Adipiscing orci morbi" PhotoUrl="Dictum neque" RawPhotoString="Praesent parturient accumsan hac netus" TelephoneNumber="Lacinia lectus laoreet vestibulum" TextStatus="Leo pede" UserId="63"/>
+				<Result:User Email="Mus vestibulum habitasse bibendum nulla" FirstName="Hendrerit adipiscing parturient" LastName="Libero dictumst eleifend ligula" Login="Li, Yuhong" NameWithSurname="Vestibulum quam natoque" PhotoUrl="Per sed vestibulum" RawPhotoString="Posuere quis potenti urna pretium" TelephoneNumber="Sem adipiscing rhoncus porta himenaeos" TextStatus="Sit litora" UserId="64"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Vivamus aliquam" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Parturient magnis viverra" FirstName="Duis nunc mattis vestibulum" LastName="Aliquam vel" Login="Strande, Amy" NameWithSurname="Risus vestibulum montes adipiscing" PhotoUrl="Sed faucibus imperdiet nostra habitant" RawPhotoString="Dis velit parturient" TelephoneNumber="Ornare integer inceptos" TextStatus="Quisque amet vitae interdum" UserId="87"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Class ante platea vestibulum lobortis" FirstName="Arcu curae vestibulum est" LastName="Hac primis" Login="Makovac, Zrinka" NameWithSurname="Aliquet nec blandit pharetra" PhotoUrl="Vestibulum donec etiam" RawPhotoString="Fusce lorem" TelephoneNumber="Malesuada penatibus" TextStatus="Morbi vestibulum porttitor diam adipiscing" UserId="96"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Senectus euismod vulputate" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Rutrum tincidunt non tristique" FirstName="Parturient vestibulum nulla commodo conubia" LastName="Sapien cubilia per vestibulum" Login="Miller, Ben" NameWithSurname="Placerat parturient pulvinar eget elit" PhotoUrl="Ultricies egestas vestibulum" RawPhotoString="Venenatis enim sagittis vestibulum augue" TelephoneNumber="Adipiscing sed dolor parturient semper" TextStatus="Sociis fames vestibulum erat" UserId="77"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Sem eros" FirstName="Taciti curabitur felis" LastName="Tellus ipsum tempor" Login="Orton, Jon" NameWithSurname="Phasellus sociosqu lacus" PhotoUrl="Nisi adipiscing consequat lorem magna" RawPhotoString="Massa gravida tempus nisl vel" TelephoneNumber="Tortor iaculis" TextStatus="Nam lacinia laoreet" UserId="33"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Mus dignissim nullam volutpat nec" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Nunc sed metus odio natoque" FirstName="Dis est posuere" LastName="Suscipit turpis varius parturient aenean" Login="Zhang, Larry" NameWithSurname="Vestibulum convallis" PhotoUrl="Pede adipiscing morbi" RawPhotoString="Mauris vehicula" TelephoneNumber="Potenti leo" TextStatus="Pretium neque" UserId="56"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Elementum non maecenas praesent" FirstName="Per quam" LastName="Sed aptent" Login="Gladkikh, Andrey" NameWithSurname="Auctor sit" PhotoUrl="Vel facilisis fermentum nam" RawPhotoString="Fringilla nulla porta habitasse" TelephoneNumber="Vestibulum congue sed adipiscing" TextStatus="Cursus purus accumsan" UserId="66"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Fusce lorem malesuada leo" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Rhoncus dis urna" FirstName="Risus cras est" LastName="Velit parturient sodales hendrerit" Login="Meyer, April" NameWithSurname="Imperdiet vitae viverra dictum class" PhotoUrl="Dictumst aliquam duis nunc vestibulum" RawPhotoString="Curae vestibulum eleifend integer" TelephoneNumber="Donec facilisi etiam hac" TextStatus="Amet quisque ante" UserId="32"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Penatibus arcu mus porttitor tincidunt" FirstName="Diam morbi eget vivamus lectus" LastName="Libero nulla nec faucibus" Login="Clark, Molly" NameWithSurname="Aliquam habitant tristique augue aliquet" PhotoUrl="Blandit inceptos commodo" RawPhotoString="Interdum conubia cubilia" TelephoneNumber="Per dapibus egestas sed" TextStatus="Lobortis dolor" UserId="21"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Nisi phasellus mattis sociosqu" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Euismod ligula feugiat fames" FirstName="Litora ultricies parturient nascetur elit" LastName="Enim vestibulum felis ipsum" Login="Dellamore, Luca" NameWithSurname="Pharetra sem venenatis placerat" PhotoUrl="Sit vulputate" RawPhotoString="Erat gravida justo eros nibh" TelephoneNumber="Pulvinar curabitur vel" TextStatus="Nam adipiscing magnis sagittis senectus" UserId="78"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Sed parturient consequat" FirstName="Iaculis mauris mollis" LastName="Convallis lacus montes dis" Login="Aaberg, Jesper" NameWithSurname="Ornare torquent lorem ultrices" PhotoUrl="Platea magna dignissim nisl" RawPhotoString="Nunc massa" TelephoneNumber="Est odio" TextStatus="Vehicula orci metus" UserId="47"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Primis volutpat" FirstName="Lacinia morbi hac neque netus" LastName="Maecenas elementum nulla" Login="Adams, Ellen" NameWithSurname="Praesent natoque quis accumsan" PhotoUrl="Posuere urna leo" RawPhotoString="Vestibulum cras" TelephoneNumber="Adipiscing parturient duis potenti fermentum" TextStatus="Fringilla pretium vestibulum porta nunc" UserId="49">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Dignissim massa sem ultrices">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Purus rhoncus habitasse hendrerit" FirstName="Sodales mus nec" LastName="Vestibulum viverra rutrum risus" Login="Adams, Terry" NameWithSurname="Aliquam integer non adipiscing quisque" PhotoUrl="Per semper himenaeos vitae" RawPhotoString="Sociis sed" TelephoneNumber="Sem imperdiet malesuada" TextStatus="Parturient eleifend class taciti" UserId="79"/>
+				<Result:User Email="Sit amet" FirstName="Curae penatibus" LastName="Porttitor vivamus aliquam tellus ante" Login="Adams, Terry" NameWithSurname="Tempus arcu etiam" PhotoUrl="Fusce commodo vestibulum facilisi vel" RawPhotoString="Adipiscing tincidunt" TelephoneNumber="Conubia tortor" TextStatus="Turpis parturient lorem" UserId="56"/>
+				<Result:User Email="Diam cubilia tristique" FirstName="Vestibulum nam faucibus dapibus vestibulum" LastName="Habitant inceptos" Login="Penor, Lori" NameWithSurname="Parturient morbi nulla vestibulum ultricies" PhotoUrl="Interdum egestas" RawPhotoString="Euismod lobortis elit mauris nascetur" TelephoneNumber="Vestibulum proin feugiat augue" TextStatus="Dolor sed" UserId="51"/>
+				<Result:User Email="Gravida enim" FirstName="Dis adipiscing" LastName="Venenatis est" Login="Pfeiffer, Michael" NameWithSurname="Placerat iaculis hac" PhotoUrl="Nullam lacinia erat" RawPhotoString="Leo laoreet eros aptent pulvinar" TelephoneNumber="Ipsum sagittis senectus vulputate" TextStatus="Natoque posuere justo sociosqu" UserId="81"/>
+				<Result:User Email="Nibh auctor" FirstName="Congue cursus dictum curabitur vestibulum" LastName="Phasellus vestibulum potenti lacus" Login="Philips, Carol" NameWithSurname="Nisl mus adipiscing nec convallis" PhotoUrl="Nunc non" RawPhotoString="Odio parturient" TelephoneNumber="Magna orci lectus libero per" TextStatus="Pede ligula sed vestibulum torquent" UserId="94"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Nam netus" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Vehicula rhoncus" FirstName="Metus quam sit elementum" LastName="Facilisis sodales volutpat litora" Login="Poe, Toni" NameWithSurname="Quis vestibulum adipiscing morbi" PhotoUrl="Urna aliquam" RawPhotoString="Vel integer quisque luctus fringilla" TelephoneNumber="Neque parturient" TextStatus="Vivamus cras vestibulum magnis aliquam" UserId="18"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Nulla mattis mauris sed" FirstName="Dis porta est" LastName="Accumsan aliquet hac bibendum" Login="Hicks, Cassie" NameWithSurname="Habitasse hendrerit vestibulum" PhotoUrl="Dictumst commodo" RawPhotoString="Leo conubia eleifend" TelephoneNumber="Mus nec adipiscing purus" TextStatus="Facilisi parturient duis montes" UserId="59"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Tincidunt donec tristique sed semper" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Faucibus vestibulum nunc habitant" FirstName="Amet nostra himenaeos ornare" LastName="Vestibulum risus" Login="Argentiero, Luca" NameWithSurname="Imperdiet vitae" PhotoUrl="Malesuada per penatibus class ante" RawPhotoString="Parturient dapibus" TelephoneNumber="Primis inceptos arcu rutrum egestas" TextStatus="Porttitor curae sapien" UserId="50"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Ultricies etiam sociis sem taciti" FirstName="Venenatis diam sit" LastName="Vel fusce vestibulum euismod eget" Login="Perry, Brian" NameWithSurname="Curabitur tellus elit" PhotoUrl="Feugiat nam gravida enim" RawPhotoString="Tempor erat tempus adipiscing" TelephoneNumber="Eros parturient tortor interdum" TextStatus="Vestibulum lorem turpis" UserId="16"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Congue placerat odio" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Morbi iaculis varius" FirstName="Lobortis phasellus consequat" LastName="Nulla convallis aenean mauris" Login="Ramos, Luciana" NameWithSurname="Aptent elementum lacinia laoreet augue" PhotoUrl="Nibh nisi sed vestibulum" RawPhotoString="Natoque facilisis" TelephoneNumber="Nisl nascetur posuere pharetra nunc" TextStatus="Potenti auctor" UserId="95"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Fermentum cursus dictum" FirstName="Orci pulvinar dolor pede fames" LastName="Dis fringilla est adipiscing pretium" Login="Barber, David" NameWithSurname="Ipsum sagittis hac" PhotoUrl="Justo lacus leo" RawPhotoString="Rhoncus ligula mus lorem senectus" TelephoneNumber="Sodales habitasse" TextStatus="Nec non viverra aliquam" UserId="19"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Quam porttitor" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Integer litora per" FirstName="Luctus sociosqu vestibulum sed hendrerit" LastName="Himenaeos suscipit imperdiet" Login="Jamison, Jay" NameWithSurname="Massa malesuada torquent" PhotoUrl="Vel ultrices" RawPhotoString="Vehicula vestibulum" TelephoneNumber="Quisque metus penatibus volutpat" TextStatus="Vivamus nam aliquam maecenas" UserId="46"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Sed morbi" FirstName="Dis adipiscing parturient neque" LastName="Magnis praesent tincidunt vestibulum mattis" Login="Reid, Miles" NameWithSurname="Hac quis nulla ultricies urna" PhotoUrl="Vestibulum porta" RawPhotoString="Adipiscing accumsan" TelephoneNumber="Leo mus" TextStatus="Purus bibendum cras" UserId="91"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Phasellus faucibus velit vitae consequat" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Venenatis mauris" FirstName="Nec blandit" LastName="Parturient dictumst" Login="Bowen, Eli" NameWithSurname="Sed mollis montes duis nostra" PhotoUrl="Vulputate eleifend ornare" RawPhotoString="Sem vestibulum sit facilisi platea" TelephoneNumber="Curabitur risus" TextStatus="Vestibulum vel" UserId="28"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Adipiscing nam convallis" FirstName="Primis sed commodo class parturient" LastName="Rutrum nunc vestibulum" Login="Kane, John" NameWithSurname="Sapien adipiscing conubia cubilia curae" PhotoUrl="Amet hac" RawPhotoString="Leo donec parturient habitant" TelephoneNumber="Vestibulum ante arcu semper mus" TextStatus="Vestibulum dignissim" UserId="95"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Inceptos etiam" FirstName="Sociis fusce" LastName="Taciti adipiscing elementum nec non" Login="Sarin, Raman" NameWithSurname="Facilisis tempor egestas" PhotoUrl="Diam lorem eget vestibulum" RawPhotoString="Elit fermentum" TelephoneNumber="Fringilla habitasse hendrerit himenaeos" TextStatus="Sed tempus enim tortor" UserId="46">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Hac pulvinar">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Morbi erat eros" FirstName="Nulla imperdiet turpis sem euismod" LastName="Feugiat malesuada proin" Login="Sato, Naoki" NameWithSurname="Augue nisi nisl" PhotoUrl="Nunc lobortis nascetur dolor" RawPhotoString="Pharetra penatibus" TelephoneNumber="Porttitor gravida aenean" TextStatus="Placerat iaculis lacinia" UserId="36"/>
+				<Result:User Email="Sit pulvinar sagittis adipiscing" FirstName="Senectus odio sociosqu" LastName="Laoreet orci parturient vel natoque" Login="Silva, Alexandre" NameWithSurname="Ultrices nam" PhotoUrl="Vestibulum felis" RawPhotoString="Mauris posuere vehicula vestibulum" TelephoneNumber="Volutpat nullam" TextStatus="Pede potenti ipsum" UserId="67"/>
+				<Result:User Email="Justo tincidunt aptent maecenas" FirstName="Auctor sed pretium" LastName="Dis rhoncus quam lacus lorem" Login="Cook, Kevin" NameWithSurname="Quis bibendum urna" PhotoUrl="Dictumst est congue" RawPhotoString="Hac sodales viverra magna leo" TelephoneNumber="Parturient cursus tristique mus dictum" TextStatus="Lectus eleifend" UserId="39"/>
+				<Result:User Email="Massa cras" FirstName="Libero aliquam metus" LastName="Nec facilisi duis morbi" Login="Li, Yuhong" NameWithSurname="Non venenatis vestibulum faucibus habitant" PhotoUrl="Vestibulum neque quisque vivamus adipiscing" RawPhotoString="Amet netus parturient" TelephoneNumber="Nulla ligula per sed" TextStatus="Porta aliquam" UserId="41"/>
+				<Result:User Email="Vulputate curabitur inceptos purus" FirstName="Aliquet blandit" LastName="Interdum litora ante sem" Login="Strande, Amy" NameWithSurname="Vestibulum risus velit" PhotoUrl="Sit nascetur diam" RawPhotoString="Vel nam adipiscing sed luctus" TelephoneNumber="Parturient eget pharetra vestibulum placerat" TextStatus="Commodo dis est conubia" UserId="75"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Iaculis nostra senectus sed ornare" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Magnis mattis mauris leo" FirstName="Vestibulum cubilia" LastName="Elit dapibus consequat convallis enim" Login="Makovac, Zrinka" NameWithSurname="Mus nec" PhotoUrl="Non vitae erat" RawPhotoString="Euismod sagittis parturient" TelephoneNumber="Feugiat vestibulum" TextStatus="Gravida mollis per montes" UserId="90"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Sociosqu eros vestibulum" FirstName="Dignissim suscipit" LastName="Lacinia nibh platea" Login="Miller, Ben" NameWithSurname="Laoreet torquent natoque ultrices" PhotoUrl="Parturient posuere rutrum vehicula vestibulum" RawPhotoString="Sem sapien" TelephoneNumber="Elementum facilisis potenti fermentum" TextStatus="Volutpat vestibulum sit" UserId="60"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Dolor adipiscing" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Pretium vel nam maecenas" FirstName="Fringilla adipiscing praesent nisi nisl" LastName="Semper accumsan" Login="Orton, Jon" NameWithSurname="Sociis curae donec habitasse hendrerit" PhotoUrl="Etiam rhoncus" RawPhotoString="Vestibulum dis est nunc fusce" TelephoneNumber="Odio lorem hac morbi himenaeos" TextStatus="Vestibulum nulla proin augue taciti" UserId="29"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Imperdiet dictumst leo eleifend" FirstName="Tellus parturient vestibulum vestibulum" LastName="Mus facilisi tempor sodales" Login="Zhang, Larry" NameWithSurname="Faucibus parturient nec integer quisque" PhotoUrl="Habitant felis" RawPhotoString="Orci vestibulum inceptos penatibus interdum" TelephoneNumber="Lobortis ipsum vestibulum" TextStatus="Non tempus adipiscing" UserId="68"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Urna venenatis" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Pede justo porttitor" FirstName="Vivamus per" LastName="Sed lacus quam" Login="Gladkikh, Andrey" NameWithSurname="Tincidunt sit nascetur tristique pharetra" PhotoUrl="Turpis lorem varius magna vestibulum" RawPhotoString="Placerat aliquet aenean massa" TelephoneNumber="Quis metus mauris nullam" TextStatus="Aptent blandit ultricies vestibulum pulvinar" UserId="39"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Vel adipiscing" FirstName="Parturient cras morbi" LastName="Duis auctor sagittis" Login="Meyer, April" NameWithSurname="Phasellus vestibulum consequat" PhotoUrl="Senectus commodo sociosqu vestibulum suscipit" RawPhotoString="Nunc torquent" TelephoneNumber="Amet nam ultrices convallis" TextStatus="Adipiscing dignissim sed congue" UserId="72"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Est vestibulum hendrerit" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Parturient ante elementum neque conubia" FirstName="Dis vehicula cubilia netus arcu" LastName="Vestibulum facilisis diam" Login="Clark, Molly" NameWithSurname="Nulla egestas fermentum" PhotoUrl="Adipiscing fringilla" RawPhotoString="Habitasse porta" TelephoneNumber="Euismod dictum feugiat" TextStatus="Parturient purus eget risus gravida" UserId="97"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Maecenas vestibulum lectus" FirstName="Libero himenaeos" LastName="Hac adipiscing ligula imperdiet" Login="Dellamore, Luca" NameWithSurname="Vitae luctus leo magnis accumsan" PhotoUrl="Elit class" RawPhotoString="Iaculis mus curae" TelephoneNumber="Lacinia bibendum" TextStatus="Nec mattis dictumst" UserId="19"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Nulla proin augue" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Donec enim parturient" FirstName="Mauris eleifend erat non" LastName="Vestibulum laoreet" Login="Aaberg, Jesper" NameWithSurname="Parturient etiam" PhotoUrl="Per natoque eros vestibulum" RawPhotoString="Fusce posuere nibh faucibus potenti" TelephoneNumber="Lorem habitant mollis inceptos" TextStatus="Morbi montes interdum" UserId="40"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Lobortis dolor" FirstName="Vestibulum fames nascetur felis nisi" LastName="Nostra pretium ornare pharetra" Login="Adams, Ellen" NameWithSurname="Ipsum adipiscing primis" PhotoUrl="Sed nisl nunc odio" RawPhotoString="Rutrum justo sem" TelephoneNumber="Parturient pulvinar" TextStatus="Sapien sagittis orci" UserId="73"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Lacus senectus" FirstName="Semper sociis pede vestibulum" LastName="Sit lorem viverra sociosqu" Login="Adams, Terry" NameWithSurname="Quam vestibulum adipiscing sed parturient" PhotoUrl="Vestibulum dis integer" RawPhotoString="Quis urna cras" TelephoneNumber="Duis quisque" TextStatus="Penatibus suscipit nunc" UserId="23">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Tristique libero posuere">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Torquent vivamus" FirstName="Porttitor tincidunt magna" LastName="Amet est" Login="Adams, Terry" NameWithSurname="Massa ultrices arcu aliquam tristique" PhotoUrl="Metus leo diam aliquet morbi" RawPhotoString="Taciti eget vestibulum" TelephoneNumber="Ultricies tellus" TextStatus="Vehicula volutpat mus tempor" UserId="74"/>
+				<Result:User Email="Elit enim maecenas" FirstName="Nec tempus" LastName="Erat adipiscing" Login="Penor, Lori" NameWithSurname="Parturient venenatis vestibulum vulputate" PhotoUrl="Blandit nisl curabitur vestibulum netus" RawPhotoString="Phasellus non" TelephoneNumber="Per sed commodo nulla adipiscing" TextStatus="Praesent accumsan porta nunc" UserId="80"/>
+				<Result:User Email="Bibendum odio dictumst consequat sem" FirstName="Conubia eleifend convallis" LastName="Tortor parturient orci" Login="Pfeiffer, Michael" NameWithSurname="Velit sit pede quam" PhotoUrl="Elementum facilisi faucibus dapibus vel" RawPhotoString="Quis habitant egestas urna cras" TelephoneNumber="Duis euismod vestibulum nam turpis" TextStatus="Facilisis nunc sed fermentum adipiscing" UserId="62"/>
+				<Result:User Email="Feugiat parturient gravida varius" FirstName="Inceptos vitae dis" LastName="Interdum class lobortis" Login="Philips, Carol" NameWithSurname="Amet curae est mauris" PhotoUrl="Hac placerat vestibulum vestibulum" RawPhotoString="Leo pulvinar ante" TelephoneNumber="Sagittis iaculis fringilla" TextStatus="Adipiscing habitasse nullam donec arcu" UserId="21"/>
+				<Result:User Email="Diam eget" FirstName="Lacinia hendrerit mus etiam himenaeos" LastName="Imperdiet nec parturient elit aptent" Login="Poe, Toni" NameWithSurname="Senectus congue cursus" PhotoUrl="Enim dictum penatibus" RawPhotoString="Per lectus" TelephoneNumber="Fusce lorem porttitor sed natoque" TextStatus="Erat tincidunt" UserId="68"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Vel venenatis dolor" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Ligula morbi potenti pretium" FirstName="Vestibulum eros nibh vestibulum adipiscing" LastName="Parturient vestibulum nulla sociosqu sem" Login="Hicks, Cassie" NameWithSurname="Litora adipiscing" PhotoUrl="Nisi suscipit luctus nisl sit" RawPhotoString="Sodales torquent magnis ultrices" TelephoneNumber="Nunc ultricies odio augue" TextStatus="Parturient vestibulum" UserId="39"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Orci mattis fames vestibulum viverra" FirstName="Adipiscing nam" LastName="Aliquam sed vehicula" Login="Argentiero, Luca" NameWithSurname="Maecenas parturient" PhotoUrl="Mauris vestibulum felis vulputate" RawPhotoString="Dis est mollis vestibulum pede" TelephoneNumber="Praesent quisque" TextStatus="Curabitur hac" UserId="24"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Faucibus dignissim" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Phasellus vivamus ipsum consequat" FirstName="Leo convallis aliquam" LastName="Quam adipiscing" Login="Perry, Brian" NameWithSurname="Urna montes mus nostra ornare" PhotoUrl="Nec bibendum cras platea parturient" RawPhotoString="Dictumst primis eleifend duis non" TelephoneNumber="Facilisi vestibulum nunc amet" TextStatus="Aliquet rutrum" UserId="67"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Ante per" FirstName="Habitant elementum inceptos interdum sed" LastName="Facilisis sapien arcu sem" Login="Ramos, Luciana" NameWithSurname="Vel nam justo" PhotoUrl="Lacus diam eget" RawPhotoString="Sed lobortis nascetur dis elit" TelephoneNumber="Pharetra adipiscing placerat enim" TextStatus="Fermentum conubia pulvinar fringilla sociis" UserId="88"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Nisl gravida torquent himenaeos sed" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Habitasse lorem parturient" FirstName="Taciti magna erat" LastName="Eros massa" Login="Barber, David" NameWithSurname="Senectus nibh egestas" PhotoUrl="Hac tempor" RawPhotoString="Euismod leo mus nec nisi" TelephoneNumber="Sociosqu feugiat tempus hendrerit suscipit" TextStatus="Non metus per vestibulum" UserId="34"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Vestibulum adipiscing sem parturient" FirstName="Imperdiet sit vel ultrices iaculis" LastName="Lacinia morbi laoreet natoque" Login="Jamison, Jay" NameWithSurname="Vehicula dis netus vestibulum porttitor" PhotoUrl="Nulla tortor nunc" RawPhotoString="Porta posuere turpis potenti pretium" TelephoneNumber="Vestibulum purus varius" TextStatus="Odio aenean rhoncus orci" UserId="56"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Per vitae class" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Risus adipiscing" FirstName="Pede est hac tincidunt" LastName="Mauris quam nullam" Login="Reid, Miles" NameWithSurname="Vestibulum velit quis" PhotoUrl="Leo tristique ultricies" RawPhotoString="Mus nec" TelephoneNumber="Volutpat auctor sodales venenatis" TextStatus="Viverra urna non" UserId="68"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Cras maecenas praesent aliquam accumsan" FirstName="Sed vulputate vestibulum duis" LastName="Curabitur sem phasellus" Login="Bowen, Eli" NameWithSurname="Nunc donec adipiscing quisque bibendum" PhotoUrl="Sit etiam dignissim dictumst elementum" RawPhotoString="Vel vivamus facilisis nam" TelephoneNumber="Eleifend amet fermentum fusce" TextStatus="Fringilla lorem cursus" UserId="77"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Commodo hac felis leo lectus" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Facilisi sed ante habitasse" FirstName="Aliquam arcu" LastName="Dis hendrerit" Login="Kane, John" NameWithSurname="Himenaeos inceptos" PhotoUrl="Morbi imperdiet aliquet blandit nulla" RawPhotoString="Interdum vestibulum proin lobortis" TelephoneNumber="Augue dolor malesuada" TextStatus="Fames nascetur dictum" UserId="60"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Ipsum pharetra placerat mus adipiscing" FirstName="Justo nec pulvinar" LastName="Non diam sagittis per" Login="Sarin, Raman" NameWithSurname="Penatibus sed" PhotoUrl="Porttitor lacus sem tincidunt" RawPhotoString="Tristique ultricies conubia" TelephoneNumber="Cubilia lorem" TextStatus="Libero venenatis elit" UserId="86"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Dapibus enim vestibulum senectus" FirstName="Sociosqu ligula litora egestas" LastName="Sit euismod feugiat" Login="Sato, Naoki" NameWithSurname="Gravida torquent eros iaculis" PhotoUrl="Massa adipiscing luctus vulputate" RawPhotoString="Ultrices nibh metus lacinia laoreet" TelephoneNumber="Nisi nisl" TextStatus="Curabitur natoque" UserId="15">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Orci suscipit per">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Posuere parturient vel phasellus nunc" FirstName="Nam magnis consequat potenti" LastName="Odio vestibulum orci vehicula sed" Login="Silva, Alexandre" NameWithSurname="Rhoncus est vestibulum hac convallis" PhotoUrl="Sodales pede quam" RawPhotoString="Mattis quis mauris morbi dignissim" TelephoneNumber="Adipiscing mollis parturient volutpat" TextStatus="Leo montes elementum urna nostra" UserId="60"/>
+				<Result:User Email="Neque viverra facilisis fermentum" FirstName="Fringilla maecenas" LastName="Ornare aliquam" Login="Cook, Kevin" NameWithSurname="Duis netus" PhotoUrl="Praesent accumsan vestibulum bibendum" RawPhotoString="Vestibulum platea adipiscing integer" TelephoneNumber="Sed sem quisque" TextStatus="Habitasse parturient vivamus dictumst eleifend" UserId="29"/>
+				<Result:User Email="Nulla primis sit" FirstName="Facilisi porta nunc vel" LastName="Faucibus aliquam" Login="Li, Yuhong" NameWithSurname="Purus ante hendrerit" PhotoUrl="Vestibulum arcu inceptos nam rutrum" RawPhotoString="Sapien sed" TelephoneNumber="Risus dis semper est interdum" TextStatus="Himenaeos diam imperdiet sociis hac" UserId="96"/>
+				<Result:User Email="Velit taciti malesuada" FirstName="Aliquet adipiscing blandit" LastName="Parturient commodo lobortis vitae" Login="Strande, Amy" NameWithSurname="Tellus nascetur class" PhotoUrl="Vestibulum curae pharetra conubia" RawPhotoString="Donec cubilia elit" TelephoneNumber="Enim erat eros mus" TextStatus="Etiam fusce tempor lorem dapibus" UserId="53"/>
+				<Result:User Email="Placerat nibh" FirstName="Vestibulum penatibus porttitor morbi" LastName="Nisi adipiscing pulvinar" Login="Makovac, Zrinka" NameWithSurname="Senectus nisl" PhotoUrl="Nec non egestas" RawPhotoString="Sociosqu tincidunt tristique tortor" TelephoneNumber="Turpis nulla nunc euismod" TextStatus="Odio proin feugiat varius parturient" UserId="48"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Cursus vestibulum dictum" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Augue torquent dolor sed gravida" FirstName="Ultricies aenean ultrices" LastName="Sem vehicula venenatis iaculis sit" Login="Miller, Ben" NameWithSurname="Pede vel" PhotoUrl="Lacinia laoreet nullam volutpat" RawPhotoString="Vulputate nam aptent sed" TelephoneNumber="Auctor maecenas congue praesent" TextStatus="Accumsan dis" UserId="16"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Lectus natoque" FirstName="Bibendum est adipiscing parturient fames" LastName="Quam libero curabitur ligula posuere" Login="Orton, Jon" NameWithSurname="Luctus magnis felis" PhotoUrl="Mattis eleifend ipsum" RawPhotoString="Justo potenti pretium" TelephoneNumber="Phasellus hac quis" TextStatus="Leo vestibulum vestibulum" UserId="73"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Duis vestibulum sit" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Mauris facilisi lacus faucibus rhoncus" FirstName="Mus mollis montes" LastName="Nec sodales habitant" Login="Zhang, Larry" NameWithSurname="Non ornare adipiscing per sed" PhotoUrl="Magna massa inceptos" RawPhotoString="Consequat interdum cras convallis parturient" TelephoneNumber="Dignissim sem elementum" TextStatus="Facilisis platea" UserId="88"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Vel vestibulum adipiscing aliquam" FirstName="Parturient vestibulum metus fermentum" LastName="Vestibulum nam fringilla nunc amet" Login="Gladkikh, Andrey" NameWithSurname="Lobortis sed parturient quisque vestibulum" PhotoUrl="Primis morbi" RawPhotoString="Rutrum vivamus vestibulum himenaeos" TelephoneNumber="Imperdiet nascetur neque" TextStatus="Sapien arcu dis" UserId="95"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Tempus placerat parturient" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Semper est aliquam" FirstName="Diam netus hac malesuada" LastName="Penatibus aliquet sociis pharetra porttitor" Login="Meyer, April" NameWithSurname="Blandit tincidunt commodo" PhotoUrl="Conubia adipiscing" RawPhotoString="Eget tellus mus cubilia" TelephoneNumber="Elit dapibus" TextStatus="Nulla porta nec non tempor" UserId="32"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Tristique enim erat purus" FirstName="Pulvinar risus per eros" LastName="Sagittis velit" Login="Clark, Molly" NameWithSurname="Sociosqu egestas" PhotoUrl="Euismod nibh" RawPhotoString="Sem sit ultricies feugiat vel" TelephoneNumber="Gravida tortor turpis" TextStatus="Varius iaculis vestibulum suscipit" UserId="22"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Donec elementum" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Venenatis torquent" FirstName="Nisi vestibulum adipiscing vulputate" LastName="Nisl vitae" Login="Dellamore, Luca" NameWithSurname="Parturient nunc curabitur" PhotoUrl="Nam phasellus ultrices" RawPhotoString="Laoreet natoque vestibulum" TelephoneNumber="Consequat convallis dignissim sed curae" TextStatus="Vehicula odio vestibulum" UserId="64"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Facilisis adipiscing" FirstName="Dis aenean mauris etiam parturient" LastName="Orci est volutpat fermentum fusce" Login="Aaberg, Jesper" NameWithSurname="Posuere pede potenti maecenas hac" PhotoUrl="Praesent fringilla vestibulum habitasse accumsan" RawPhotoString="Quam hendrerit adipiscing bibendum parturient" TelephoneNumber="Quis dictumst vestibulum vestibulum pretium" TextStatus="Rhoncus sodales adipiscing" UserId="45"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Augue adipiscing parturient" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Himenaeos nullam" FirstName="Eleifend parturient aptent auctor" LastName="Imperdiet leo" Login="Adams, Ellen" NameWithSurname="Aliquam urna" PhotoUrl="Cras integer" RawPhotoString="Malesuada quisque vestibulum" TelephoneNumber="Penatibus mus morbi nulla" TextStatus="Vivamus cursus proin" UserId="62"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Vestibulum dolor facilisi dictum" FirstName="Vestibulum fames porttitor duis" LastName="Lectus tincidunt felis aliquam adipiscing" Login="Adams, Terry" NameWithSurname="Non inceptos per nunc sed" PhotoUrl="Libero aliquet interdum" RawPhotoString="Ligula blandit litora tristique amet" TelephoneNumber="Commodo ante" TextStatus="Conubia ultricies sem" UserId="41"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Sit venenatis luctus" FirstName="Lobortis vulputate justo lacus" LastName="Magnis nascetur pharetra arcu diam" Login="Adams, Terry" NameWithSurname="Mattis eget" PhotoUrl="Dapibus curabitur" RawPhotoString="Phasellus parturient vestibulum elit" TelephoneNumber="Pulvinar egestas sagittis" TextStatus="Magna mauris enim erat eros" UserId="76">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Lorem sit">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Vel nam euismod feugiat" FirstName="Mollis gravida montes" LastName="Vestibulum consequat adipiscing" Login="Penor, Lori" NameWithSurname="Convallis nostra" PhotoUrl="Massa dignissim parturient iaculis" RawPhotoString="Elementum ornare lacinia" TelephoneNumber="Suscipit sed" TextStatus="Nibh nisi laoreet facilisis dis" UserId="32"/>
+				<Result:User Email="Est vestibulum vestibulum" FirstName="Nisl platea" LastName="Natoque nunc" Login="Pfeiffer, Michael" NameWithSurname="Adipiscing fermentum fringilla habitasse" PhotoUrl="Torquent leo hendrerit orci metus" RawPhotoString="Primis pede quam" TelephoneNumber="Parturient rutrum himenaeos sapien imperdiet" TextStatus="Posuere morbi mus" UserId="96"/>
+				<Result:User Email="Semper sociis" FirstName="Vestibulum ultrices neque" LastName="Malesuada penatibus nec potenti quis" Login="Philips, Carol" NameWithSurname="Vestibulum volutpat adipiscing pretium porttitor" PhotoUrl="Maecenas urna parturient vestibulum" RawPhotoString="Cras rhoncus vestibulum duis" TelephoneNumber="Sodales non praesent accumsan" TextStatus="Adipiscing tincidunt parturient tristique" UserId="71"/>
+				<Result:User Email="Viverra vestibulum nunc" FirstName="Taciti vestibulum purus" LastName="Ultricies bibendum" Login="Poe, Toni" NameWithSurname="Adipiscing parturient risus" PhotoUrl="Tellus ante aliquam arcu" RawPhotoString="Dictumst eleifend venenatis" TelephoneNumber="Tempor tempus facilisi diam tortor" TextStatus="Integer eget" UserId="20"/>
+				<Result:User Email="Vestibulum vulputate" FirstName="Quisque velit turpis" LastName="Vitae vestibulum varius faucibus" Login="Hicks, Cassie" NameWithSurname="Class curae donec" PhotoUrl="Phasellus sed habitant parturient" RawPhotoString="Vestibulum enim consequat erat" TelephoneNumber="Aenean etiam eros nibh" TextStatus="Fusce sem" UserId="66"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Auctor elementum" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Vestibulum morbi vel" FirstName="Adipiscing parturient vivamus convallis mauris" LastName="Inceptos nulla vestibulum aliquam interdum" Login="Argentiero, Luca" NameWithSurname="Aliquet lobortis" PhotoUrl="Aptent blandit nascetur sed" RawPhotoString="Dis commodo nisl est" TelephoneNumber="Augue hac" TextStatus="Conubia dolor" UserId="84"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Nunc cubilia fames" FirstName="Congue felis ipsum odio" LastName="Justo orci dapibus pede" Login="Perry, Brian" NameWithSurname="Facilisis pharetra quam dictum euismod" PhotoUrl="Feugiat lectus placerat leo fermentum" RawPhotoString="Magna libero fringilla quis pulvinar" TelephoneNumber="Sagittis gravida mus vestibulum adipiscing" TextStatus="Urna nec" UserId="78"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Vel ultrices ante nam purus" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Non habitasse massa iaculis cras" FirstName="Metus per hendrerit senectus" LastName="Sed himenaeos lacinia ligula" Login="Ramos, Luciana" NameWithSurname="Sociosqu malesuada neque laoreet vestibulum" PhotoUrl="Vestibulum netus" RawPhotoString="Sem natoque penatibus posuere" TelephoneNumber="Nunc potenti luctus nulla suscipit" TextStatus="Torquent porta amet sit magnis" UserId="96"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Pretium risus" FirstName="Vehicula velit" LastName="Vitae volutpat class" Login="Barber, David" NameWithSurname="Mauris tincidunt curae diam" PhotoUrl="Sed tristique" RawPhotoString="Eget donec rhoncus mollis" TelephoneNumber="Montes etiam praesent" TextStatus="Sodales dis ultricies" UserId="53"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Facilisi elementum nisi mus proin" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Accumsan venenatis bibendum est hac" FirstName="Viverra dictumst fusce adipiscing" LastName="Nostra elit aliquam vulputate parturient" Login="Jamison, Jay" NameWithSurname="Vestibulum lorem ornare" PhotoUrl="Consequat convallis morbi erat integer" RawPhotoString="Vestibulum quisque dignissim eros" TelephoneNumber="Leo adipiscing eleifend nibh" TextStatus="Parturient vivamus vestibulum aliquam nulla" UserId="71"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Faucibus habitant inceptos" FirstName="Platea interdum aliquet" LastName="Nisl primis facilisis augue blandit" Login="Reid, Miles" NameWithSurname="Nunc adipiscing fringilla nec" PhotoUrl="Parturient semper" RawPhotoString="Sociis dolor vestibulum" TelephoneNumber="Fames vestibulum conubia cubilia odio" TextStatus="Taciti felis" UserId="53"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Sagittis malesuada senectus sociosqu non" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Lobortis dapibus" FirstName="Nascetur egestas habitasse tellus" LastName="Adipiscing ipsum parturient pharetra" Login="Bowen, Eli" NameWithSurname="Feugiat pede placerat gravida" PhotoUrl="Vestibulum tempus" RawPhotoString="Adipiscing justo quam quis lacus" TelephoneNumber="Iaculis lorem pulvinar lacinia himenaeos" TextStatus="Laoreet imperdiet magna massa urna" UserId="50"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Natoque per" FirstName="Cras metus sed" LastName="Suscipit parturient" Login="Kane, John" NameWithSurname="Torquent potenti vestibulum penatibus" PhotoUrl="Duis pretium varius rhoncus adipiscing" RawPhotoString="Sodales viverra aenean porttitor" TelephoneNumber="Aliquam integer" TextStatus="Morbi ultrices quisque" UserId="44"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Cursus porta vestibulum" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Tincidunt mauris" FirstName="Parturient vestibulum" LastName="Tristique ultricies" Login="Sarin, Raman" NameWithSurname="Vivamus aliquam curabitur amet ante" PhotoUrl="Vestibulum adipiscing neque nullam aptent" RawPhotoString="Sit arcu netus diam" TelephoneNumber="Vehicula auctor parturient volutpat" TextStatus="Nulla phasellus congue" UserId="92"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Maecenas vel vestibulum praesent accumsan" FirstName="Nam sed dis consequat" LastName="Purus adipiscing" Login="Sato, Naoki" NameWithSurname="Velit parturient aliquet vitae" PhotoUrl="Convallis class blandit" RawPhotoString="Commodo est dictumst eget" TelephoneNumber="Lectus dignissim hac" TextStatus="Elementum vestibulum eleifend elit" UserId="51"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Curae facilisis" FirstName="Conubia leo" LastName="Vestibulum enim facilisi libero" Login="Silva, Alexandre" NameWithSurname="Etiam faucibus cubilia luctus" PhotoUrl="Magnis erat eros dapibus" RawPhotoString="Parturient mattis nec non" TelephoneNumber="Fusce egestas lorem" TextStatus="Nibh vestibulum" UserId="17">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+		<Models:FullDialog LastMessage="Sed dictum lectus dis">
+			<Models:FullDialog.DialogMembers>
+				<Result:User Email="Morbi fermentum habitant inceptos nisi" FirstName="Fringilla habitasse nisl" LastName="Per mauris interdum mollis hendrerit" Login="Cook, Kevin" NameWithSurname="Lobortis nunc" PhotoUrl="Nascetur nostra" RawPhotoString="Pharetra ornare feugiat nulla" TelephoneNumber="Proin platea" TextStatus="Sit placerat pulvinar augue odio" UserId="53"/>
+				<Result:User Email="Gravida sagittis" FirstName="Senectus dolor iaculis vel himenaeos" LastName="Imperdiet orci primis malesuada rutrum" Login="Li, Yuhong" NameWithSurname="Adipiscing nam parturient penatibus" PhotoUrl="Lacinia laoreet vestibulum quis" RawPhotoString="Vestibulum sed urna dis" TelephoneNumber="Adipiscing sapien" TextStatus="Fames est felis" UserId="67"/>
+				<Result:User Email="Sociosqu ipsum cras justo parturient" FirstName="Semper suscipit" LastName="Vestibulum porttitor tincidunt sociis" Login="Strande, Amy" NameWithSurname="Adipiscing parturient tellus hac tempor" PhotoUrl="Tempus leo tristique" RawPhotoString="Mus ultricies lacus lorem venenatis" TelephoneNumber="Natoque nec tortor duis turpis" TextStatus="Posuere non" UserId="46"/>
+				<Result:User Email="Per nunc amet vestibulum" FirstName="Vulputate vestibulum" LastName="Potenti magna adipiscing" Login="Makovac, Zrinka" NameWithSurname="Ante arcu" PhotoUrl="Vehicula phasellus sed vestibulum" RawPhotoString="Sem rhoncus sodales" TelephoneNumber="Viverra vestibulum sit diam" TextStatus="Adipiscing aliquam varius volutpat aenean" UserId="89"/>
+				<Result:User Email="Parturient massa vestibulum" FirstName="Consequat convallis integer metus mauris" LastName="Vestibulum dignissim adipiscing nullam" Login="Miller, Ben" NameWithSurname="Vestibulum facilisis auctor morbi" PhotoUrl="Praesent vel vivamus aliquam" RawPhotoString="Aliquet vestibulum fermentum" TelephoneNumber="Fringilla accumsan habitasse congue" TextStatus="Nam cursus bibendum neque" UserId="43"/>
+			</Models:FullDialog.DialogMembers>
+			<Models:FullDialog.Messages>
+				<Models:FullPrivateMessage MessageText="Mus egestas habitant parturient" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Blandit commodo" FirstName="Adipiscing netus conubia" LastName="Eget cubilia elit libero nulla" Login="Orton, Jon" NameWithSurname="Enim est erat porta" PhotoUrl="Purus eros nibh" RawPhotoString="Facilisi litora faucibus nisi hac" TelephoneNumber="Luctus risus dapibus" TextStatus="Leo nisl hendrerit" UserId="30"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Himenaeos inceptos imperdiet" FirstName="Vestibulum magnis vestibulum interdum" LastName="Mattis mauris" Login="Zhang, Larry" NameWithSurname="Malesuada penatibus velit mollis non" PhotoUrl="Lobortis odio" RawPhotoString="Orci montes per porttitor nascetur" TelephoneNumber="Vitae pede tincidunt" TextStatus="Sed quam" UserId="74"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Laoreet parturient natoque" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Class euismod nostra quis" FirstName="Adipiscing curae urna" LastName="Feugiat ornare donec tristique" Login="Gladkikh, Andrey" NameWithSurname="Sem duis sit vestibulum" PhotoUrl="Gravida iaculis" RawPhotoString="Nunc pharetra" TelephoneNumber="Vel nam ultricies etiam fusce" TextStatus="Venenatis vestibulum adipiscing lacinia vulputate" UserId="68"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Sed vestibulum" FirstName="Curabitur vestibulum phasellus platea" LastName="Amet consequat" Login="Meyer, April" NameWithSurname="Dis placerat" PhotoUrl="Pulvinar morbi pretium nulla parturient" RawPhotoString="Rhoncus ante sodales viverra convallis" TelephoneNumber="Sagittis aliquam proin integer" TextStatus="Vestibulum quisque augue dolor rutrum" UserId="17"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Tellus adipiscing nisl" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Vestibulum arcu fames adipiscing" FirstName="Senectus est hac dignissim" LastName="Vivamus sociosqu aliquam" Login="Clark, Molly" NameWithSurname="Suscipit felis ipsum diam eget" PhotoUrl="Justo parturient leo vestibulum semper" RawPhotoString="Elit enim erat facilisis" TelephoneNumber="Vestibulum eros torquent fermentum mus" TextStatus="Ultrices nibh nisi sociis taciti" UserId="74"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Parturient vehicula" FirstName="Volutpat fringilla nec" LastName="Tempor vestibulum vestibulum adipiscing" Login="Dellamore, Luca" NameWithSurname="Lorem parturient habitasse per" PhotoUrl="Praesent aliquet nunc odio blandit" RawPhotoString="Hendrerit vestibulum commodo" TelephoneNumber="Himenaeos conubia cubilia" TextStatus="Imperdiet malesuada accumsan" UserId="25"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Urna euismod vel cras adipiscing" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Magna sed sem" FirstName="Massa metus" LastName="Dapibus orci penatibus morbi" Login="Aaberg, Jesper" NameWithSurname="Neque sit pede tincidunt quam" PhotoUrl="Bibendum netus" RawPhotoString="Tristique nulla vestibulum" TelephoneNumber="Ultricies quis venenatis vestibulum egestas" TextStatus="Dictumst porta turpis" UserId="46"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Varius nam eleifend purus vulputate" FirstName="Parturient risus" LastName="Velit duis facilisi vestibulum feugiat" Login="Adams, Ellen" NameWithSurname="Nunc mauris" PhotoUrl="Vestibulum adipiscing sed amet ante" RawPhotoString="Iaculis lacinia faucibus" TelephoneNumber="Arcu parturient laoreet" TextStatus="Habitant class" UserId="26"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+				<Models:FullPrivateMessage MessageText="Convallis potenti fusce sem cursus" SentTime="07/16/2014 13:36:24">
+					<Models:FullPrivateMessage.From>
+						<Result:User Email="Vestibulum dis est phasellus" FirstName="Inceptos nullam" LastName="Curae natoque" Login="Adams, Terry" NameWithSurname="Posuere aptent consequat" PhotoUrl="Auctor leo mus" RawPhotoString="Congue nec non per sed" TelephoneNumber="Donec adipiscing diam parturient eget" TextStatus="Lobortis elit nascetur etiam" UserId="59"/>
+					</Models:FullPrivateMessage.From>
+					<Models:FullPrivateMessage.To>
+						<Result:User Email="Dictum pharetra sit" FirstName="Dignissim elementum vestibulum vel facilisis" LastName="Lorem pretium placerat pulvinar enim" Login="Adams, Terry" NameWithSurname="Senectus morbi fermentum fringilla" PhotoUrl="Erat sociosqu" RawPhotoString="Habitasse nulla suscipit ligula eros" TelephoneNumber="Hendrerit vestibulum" TextStatus="Sed dis" UserId="31"/>
+					</Models:FullPrivateMessage.To>
+				</Models:FullPrivateMessage>
+			</Models:FullDialog.Messages>
+			<Models:FullDialog.ToUser>
+				<Result:User Email="Torquent adipiscing rhoncus litora" FirstName="Proin nibh" LastName="Nisi est hac sodales" Login="Penor, Lori" NameWithSurname="Nisl luctus" PhotoUrl="Integer magnis" RawPhotoString="Ultrices himenaeos augue imperdiet leo" TelephoneNumber="Dolor vehicula" TextStatus="Fames parturient" UserId="35">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</Models:FullDialog.ToUser>
+		</Models:FullDialog>
+	</ViewModels:DialogsListViewModel.Dialogs>
+</ViewModels:DialogsListViewModel>

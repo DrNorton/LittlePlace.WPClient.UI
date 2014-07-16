@@ -1,0 +1,30 @@
+<ViewModels:DialogViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" DisplayName="Commodo nulla habitasse" DialogId="Mus blandit" IsNotifying="True" IsInitialized="False" IsAllMenuEnabled="True" IsLoading="False" IsActive="True">
+	<ViewModels:DialogViewModel.Dialog>
+		<Result:Dialog Id="Cras aenean class mauris duis">
+			<Result:Dialog.Messages>
+				<Result:PrivateMessage FromId="11" Id="Nunc vestibulum nullam curabitur" MessageText="Aliquam maecenas" SentTime="07/16/2014 16:43:54" ToId="32"/>
+				<Result:PrivateMessage FromId="72" Id="Aptent praesent" MessageText="Amet integer" SentTime="07/16/2014 16:43:54" ToId="36"/>
+				<Result:PrivateMessage FromId="53" Id="Nam quisque" MessageText="Auctor ante phasellus" SentTime="07/16/2014 16:43:54" ToId="86"/>
+				<Result:PrivateMessage FromId="28" Id="Adipiscing consequat" MessageText="Arcu diam" SentTime="07/16/2014 16:43:54" ToId="36"/>
+				<Result:PrivateMessage FromId="81" Id="Vivamus accumsan curae convallis" MessageText="Dignissim sed" SentTime="07/16/2014 16:43:54" ToId="85"/>
+				<Result:PrivateMessage FromId="18" Id="Congue eget" MessageText="Parturient cursus dictum dis" SentTime="07/16/2014 16:43:54" ToId="15"/>
+				<Result:PrivateMessage FromId="48" Id="Bibendum elit dictumst" MessageText="Enim lectus elementum" SentTime="07/16/2014 16:43:54" ToId="28"/>
+				<Result:PrivateMessage FromId="97" Id="Libero vestibulum donec est etiam" MessageText="Fusce eleifend" SentTime="07/16/2014 16:43:54" ToId="54"/>
+				<Result:PrivateMessage FromId="82" Id="Erat lorem eros" MessageText="Vestibulum hac aliquam morbi nibh" SentTime="07/16/2014 16:43:54" ToId="94"/>
+				<Result:PrivateMessage FromId="38" Id="Nisi facilisis aliquet fermentum leo" MessageText="Facilisi fringilla" SentTime="07/16/2014 16:43:54" ToId="72"/>
+			</Result:Dialog.Messages>
+			<Result:Dialog.Members>
+				<Result:DialogMember MemberId="82"/>
+				<Result:DialogMember MemberId="60"/>
+				<Result:DialogMember MemberId="23"/>
+				<Result:DialogMember MemberId="19"/>
+				<Result:DialogMember MemberId="21"/>
+				<Result:DialogMember MemberId="15"/>
+				<Result:DialogMember MemberId="48"/>
+				<Result:DialogMember MemberId="22"/>
+				<Result:DialogMember MemberId="28"/>
+				<Result:DialogMember MemberId="71"/>
+			</Result:Dialog.Members>
+		</Result:Dialog>
+	</ViewModels:DialogViewModel.Dialog>
+</ViewModels:DialogViewModel>
