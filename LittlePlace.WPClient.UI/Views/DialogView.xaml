@@ -10,6 +10,10 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:extensions="clr-namespace:LittlePlace.WPClient.UI.Extensions"
     xmlns:bindableAppBar="clr-namespace:Caliburn.Micro.BindableAppBar;assembly=Caliburn.Micro.BindableAppBar"
+    xmlns:primitives="clr-namespace:Telerik.Windows.Controls.Primitives;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:phoneTextBox="clr-namespace:Telerik.Windows.Controls.PhoneTextBox;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikDataControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -19,47 +23,137 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-      <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <ListBox x:Name="MessagesListBox" ItemsSource="{Binding Dialog.Messages,Mode=TwoWay}">
-                        <ListBox.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <VirtualizingStackPanel VerticalAlignment="Bottom"/>
-                            </ItemsPanelTemplate>
-                        </ListBox.ItemsPanel>
-                        <ListBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <controls:ChatBubble 
-                                    ChatBubbleDirection="LowerLeft"
-                                    Margin="48, 0, 0, 0">
-                                                    <StackPanel>
 
-                                                        <TextBlock TextWrapping="Wrap" Text="{Binding MessageText,Mode=TwoWay}"/>
-                                                        <Grid>
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="Auto"/>
-                                                                <ColumnDefinition/>
-                                                            </Grid.ColumnDefinitions>
-                                                            <TextBlock Grid.Column="0"  HorizontalAlignment="Left" Text="{Binding Login,Mode=TwoWay}"  Style="{StaticResource PhoneTextSmallStyle}"/>
-                                                            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding SentTime,Mode=TwoWay,StringFormat='g'}" Style="{StaticResource PhoneTextSmallStyle}"/>
-                                                        </Grid>
+        <telerikDataControls:RadConversationView Grid.Row="1"
+                                         x:Name="conversationView"
+                                         SendingMessage="OnSendingMessage">
+            <telerikDataControls:RadConversationView.IncomingMessageTemplate>
+                <DataTemplate>
+                    <Grid Margin="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=FormattedTimeStamp}"
+                                       Margin="0, 0, 0, 4"
+                                       HorizontalAlignment="Right"
+                                       Foreground="{StaticResource PhoneSubtleBrush}"/>
 
-                                                    </StackPanel>
+                            <primitives:RadPointerContentControl Background="#A200FF"
+                                                                 TargetPoint="-120,-300"
+                                                                 Foreground="White">
+                                <primitives:RadPointerContentControl.PointerTemplate>
+                                    <DataTemplate>
+                                        <Polygon Width="12"
+                                                 Height="24"
+                                                 Points="0,0 12,0 12,12 0,24"
+                                                 StrokeThickness="0"
+                                                 Fill="#A200FF"
+                                                 RenderTransformOrigin="0.5, 0.5">
+                                            <Polygon.RenderTransform>
+                                                <ScaleTransform ScaleX="-1"/>
+                                            </Polygon.RenderTransform>
+                                        </Polygon>
+                                    </DataTemplate>
+                                </primitives:RadPointerContentControl.PointerTemplate>
 
+                                <TextBlock Text="{Binding Path=Text}"
+                                           TextWrapping="Wrap"
+                                           Margin="8, 2, 8, 6"/>
 
-                                                </controls:ChatBubble>
-                                            </DataTemplate>
-                                        </ListBox.ItemTemplate>
-                        </ListBox>
-                        <toolkit:PhoneTextBox Grid.Row="1" Hint="type a message"
-                                  TextWrapping="Wrap"
-                                  AcceptsReturn="True"
-                                  Padding="0"
-                                      Text="{Binding Message,Mode=TwoWay}"
-                                  x:Name="TextInput" TextChanged="TextInput_OnTextChanged"/>
+                            </primitives:RadPointerContentControl>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </telerikDataControls:RadConversationView.IncomingMessageTemplate>
+
+            <telerikDataControls:RadConversationView.OutgoingMessageTemplate>
+                <DataTemplate>
+                    <Grid Margin="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="{Binding Path=FormattedTimeStamp}"
+                                       Margin="0, 0, 0, 4"
+                                       HorizontalAlignment="Left"
+                                       Foreground="{StaticResource PhoneSubtleBrush}"/>
+
+                            <primitives:RadPointerContentControl Background="#849A01"
+                                                                 TargetPoint="130, -300"
+                                                                 Foreground="White">
+                                <primitives:RadPointerContentControl.PointerTemplate>
+                                    <DataTemplate>
+                                        <Polygon Width="12"
+                                                 Height="24"
+                                                 Points="0,0 12,0 12,12 0,24"
+                                                 StrokeThickness="0"
+                                                 Fill="#849A01"
+                                                 RenderTransformOrigin="0.5, 0.5">
+                                        </Polygon>
+                                    </DataTemplate>
+                                </primitives:RadPointerContentControl.PointerTemplate>
+
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Path=Text}"
+                                               TextWrapping="Wrap"
+                                               Margin="8, 2, 8, 6"/>
+
+                                </StackPanel>
+                            </primitives:RadPointerContentControl>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </telerikDataControls:RadConversationView.OutgoingMessageTemplate>
+
+            <telerikDataControls:RadConversationView.TextBoxTemplate>
+                <DataTemplate>
+                    <Grid Margin="0, 24, 0, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <primitives:RadPointerContentControl Grid.ColumnSpan="2"
+                                                             TargetPoint="200, -300">
+                            <primitives:RadPointerContentControl.PointerTemplate>
+                                <DataTemplate>
+                                    <Polygon Width="12"
+                                             Height="24"
+                                             Points="0,0 12,0 12,12"
+                                             StrokeThickness="0"
+                                             RenderTransformOrigin="0.5, 0.5">
+                                        <Polygon.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="-1"/>
+                                                <TranslateTransform Y="-8"/>
+                                            </TransformGroup>
+                                        </Polygon.RenderTransform>
+                                    </Polygon>
+                                </DataTemplate>
+                            </primitives:RadPointerContentControl.PointerTemplate>
+
+                            <telerikPrimitives:RadTextBox x:Name="PART_TextBox"
+                                                          Watermark="type a message"
+                                                          ActionButtonVisibility="Visible"
+                                                          AcceptsReturn="True">
+                                <telerikPrimitives:RadTextBox.ActionButtonStyle>
+                                    <Style TargetType="phoneTextBox:TextBoxActionButton">
+                                        <Setter Property="ButtonType"
+                                                Value="Custom"/>
+                                        <Setter Property="RestStateImageSource"
+                                                Value="/Telerik.Windows.Controls.Data;component/ConversationView/Images/SendIcon.png"/>
+                                    </Style>
+                                </telerikPrimitives:RadTextBox.ActionButtonStyle>
+                            </telerikPrimitives:RadTextBox>
+                        </primitives:RadPointerContentControl>
+                    </Grid>
+                </DataTemplate>
+            </telerikDataControls:RadConversationView.TextBoxTemplate>
+        </telerikDataControls:RadConversationView>
         <extensions:EnabledBindableAppBar IsEnabled="{Binding IsAllMenuEnabled, Mode=TwoWay}" x:Name="AppBar" BarOpacity="1.0" >
             <bindableAppBar:BindableAppBarButton x:Name="SentMessage" IconUri="/Content/Icons/friend.png" Text="друзья" />
         </extensions:EnabledBindableAppBar>

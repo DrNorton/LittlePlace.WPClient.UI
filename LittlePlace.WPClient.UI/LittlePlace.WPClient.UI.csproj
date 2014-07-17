@@ -178,6 +178,7 @@
     <Compile Include="Extensions\EnabledBindableAppBar.cs" />
     <Compile Include="Extensions\Helpers.cs" />
     <Compile Include="Maps\Models\MapPushpinModel.cs" />
+    <Compile Include="Models\ContactForTileModel.cs" />
     <Compile Include="Models\DialogModels\ExtendedDialog.cs" />
     <Compile Include="Models\DialogModels\ExtendedPrivateMessage.cs" />
     <Compile Include="Models\MapModels\BasePushpin.cs" />
@@ -248,9 +249,13 @@
     <Compile Include="Views\DialogsListView.xaml.cs">
       <DependentUpon>DialogsListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RadControlsItem1.xaml.cs">
+      <DependentUpon>RadControlsItem1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SingleNewsView.xaml.cs">
       <DependentUpon>SingleNewsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewModels\MessagesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -322,6 +327,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\DialogsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RadControlsItem1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -405,6 +414,7 @@
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="Views\Images\SendIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LittlePlace.Api\LittlePlace.Api.csproj">

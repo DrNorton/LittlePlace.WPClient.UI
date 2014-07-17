@@ -12,13 +12,18 @@
     xmlns:controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml, Instance={x:Null}}">
 
+    <phone:PhoneApplicationPage.Resources>
+        <converterts:Base64ToImageConverter x:Key="Base64ToImageConverter"/>
+    </phone:PhoneApplicationPage.Resources>
+    
     <shell:SystemTray.ProgressIndicator>
         <shell:ProgressIndicator IsIndeterminate="{Binding IsLoading}" IsVisible="True" />
     </shell:SystemTray.ProgressIndicator>
@@ -56,10 +61,13 @@
                     <cal:ActionMessage MethodName="MapTileTap" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
+            
         </toolkit:HubTile>
 
 
-        <telerikPrimitives:RadMosaicHubTile  Background="{StaticResource ElkFgBrush}" x:Name="ContactImageTile" Grid.Row="2" Grid.Column="0" 
+        <telerikPrimitives:RadMosaicHubTile  Background="{StaticResource ElkFgBrush}" x:Name="ContactImageTile" Grid.Row="2" Grid.Column="0"
+                                             Width="200" 
+                                             Height="200" 
                                             Title="Контакты" 
                                            >
             <system:String>0</system:String>
@@ -74,12 +82,12 @@
             </i:Interaction.Triggers>
         </telerikPrimitives:RadMosaicHubTile>
 
-        <telerikPrimitives:RadCycleHubTile  Grid.Row="2" Grid.Column="1" >
+        <telerikPrimitives:RadCycleHubTile Background="{StaticResource ElkFgBrush}" Title="Сообщения"  Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Dialogs,Mode=TwoWay}" Width="200" Height="200">
             <telerikPrimitives:RadCycleHubTile.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="12, 6, 12, 12">
                         <TextBlock>
-                                <Run Text="{Binding ContactName}"/> said:
+                                <Run Text="{Binding Member.Login,Mode=TwoWay}"/> 
                         </TextBlock>
                         <Grid Margin="0, 12, 0, 0">
                             <Grid.ColumnDefinitions>
@@ -87,9 +95,9 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Image VerticalAlignment="Top"
-                                            Stretch="Uniform"
-                                       Source="{Binding Picture}"/>
-                            <TextBlock Text="{Binding Text}"
+                                       Stretch="Uniform"
+                                       Source="{Binding Member.RawPhotoString,Converter={StaticResource Base64ToImageConverter},Mode=TwoWay}"/>
+                            <TextBlock Text="{Binding LastMessage.MessageText,Mode=TwoWay}"
                                            TextWrapping="Wrap"
                                            Margin="12, 0, 0, 0"
                                            Grid.Column="1"
@@ -105,9 +113,6 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </telerikPrimitives:RadCycleHubTile>
-
-
-
 
     </Grid>
 

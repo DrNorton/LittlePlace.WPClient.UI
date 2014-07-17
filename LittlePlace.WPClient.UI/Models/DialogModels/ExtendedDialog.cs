@@ -35,5 +35,7 @@ namespace LittlePlace.WPClient.UI.Models.DialogModels
             return extendedDialog;
         }
 
+
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -15,6 +16,8 @@ using LittlePlace.Api.ApiRequest.Commands.Users;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.Api.Models;
 using LittlePlace.WPClient.UI.Extensions;
+using LittlePlace.WPClient.UI.Models;
+using LittlePlace.WPClient.UI.Models.DialogModels;
 using LittlePlace.WPClient.UI.ViewModels.Auth;
 using LittlePlace.WPClient.UI.ViewModels.Base;
 using LittlePlace.WPClient.UI.Views;
@@ -29,9 +32,11 @@ namespace LittlePlace.WPClient.UI.ViewModels
         private readonly ILittlePlaceApiService _littlePlaceApiService;
         private List<BitmapImage> _friendTileImages;
         private List<User> _friends;
+        private ContactForTileModel _contactForTileModel=new ContactForTileModel(){ContactName = "Andrew",Text = "Te"};
+        
 
         private int _count = 0;
-        private List<Dialog> _dialogs;
+        private ObservableCollection<ExtendedDialog> _dialogs;
 
         public MainViewModel(INavigationService navigationService,ICacheService cacheService,ICommandProvider commandProvider,ILittlePlaceApiService littlePlaceApiService)
         {
@@ -39,7 +44,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
             _cacheService = cacheService;
             _commandProvider = commandProvider;
             _littlePlaceApiService = littlePlaceApiService;
-
+            _dialogs = new ObservableCollection<ExtendedDialog>();
             AutorityIfNeeded();
         }
 
@@ -51,12 +56,25 @@ namespace LittlePlace.WPClient.UI.ViewModels
             if (api.IsAuthorizated)
             {
                 GetFriendsFromCacheAndSetTileImages(vs);
-                var cachedResult =
-               _cacheService.GetCachedResult(_commandProvider.GetCommand<GetMyDialogsCommand>(new HttpClient(),
-                   new Dictionary<string, string>()));
-                if (cachedResult != null)
+                await CreateDialogList();
+            }
+        }
+
+        private async Task CreateDialogList()
+        {
+            var cachedResult =
+                _cacheService.GetCachedResult(_commandProvider.GetCommand<GetMyDialogsCommand>(new HttpClient(),
+                    new Dictionary<string, string>()));
+            if (cachedResult != null)
+            {
+                var dialogs = cachedResult.Result;
+                foreach (var dialog in dialogs)
                 {
-                    _dialogs = cachedResult.Result;
+                    var me = (await _littlePlaceApiService.GetMe()).Result;
+                    Dialogs.Add(ExtendedDialog.CreateExtendedDialog(Friends, me, dialog));
+                  
+                    base.NotifyOfPropertyChange(()=>ContactForTileModel);
+                   
                 }
             }
         }
@@ -68,7 +86,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
                     new Dictionary<string, string>()));
             if (cachedResult != null)
             {
-                _friends = cachedResult.Result;
+                Friends = cachedResult.Result;
                 vs.ContactImageTile.CreateImageSource = CreateImageSource;
             }
         }
@@ -76,9 +94,9 @@ namespace LittlePlace.WPClient.UI.ViewModels
 
         public ImageSource CreateImageSource(object uri)
         {
-            if (_friends != null)
+            if (Friends != null)
             {
-                string rawPhotoString = _friends[_count].RawPhotoString;
+                string rawPhotoString = Friends[_count].RawPhotoString;
                 if (!String.IsNullOrEmpty(rawPhotoString))
                 {
                     var currentImage = Convert.FromBase64String(rawPhotoString);
@@ -103,7 +121,36 @@ namespace LittlePlace.WPClient.UI.ViewModels
             }
         }
 
-      
+        public ObservableCollection<ExtendedDialog> Dialogs
+        {
+            get { return _dialogs; }
+            set
+            {
+                _dialogs = value;
+                base.NotifyOfPropertyChange(()=>Dialogs);
+            }
+        }
+
+        public List<User> Friends
+        {
+            get { return _friends; }
+            set
+            {
+                _friends = value;
+                base.NotifyOfPropertyChange(()=>Friends);
+            }
+        }
+
+        public ContactForTileModel ContactForTileModel
+        {
+            get { return _contactForTileModel; }
+            set
+            {
+                _contactForTileModel = value;
+                base.NotifyOfPropertyChange(()=>ContactForTileModel);
+            }
+        }
+
         private async void AutorityIfNeeded()
         {
             if (!_littlePlaceApiService.IsAuthorizated)
@@ -111,7 +158,6 @@ namespace LittlePlace.WPClient.UI.ViewModels
                 _navigationService.UriFor<AuthViewModel>().Navigate();
             }
         }
-
       
         public void MapTileTap()
         {
