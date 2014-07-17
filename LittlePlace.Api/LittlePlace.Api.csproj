@@ -74,8 +74,11 @@
     <Compile Include="ApiRequest\Commands\Users\GetMyFriendsCommand.cs" />
     <Compile Include="ApiRequest\Commands\Users\UpdateMeCommand.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Exceptions\ApiException.cs" />
+    <Compile Include="Infrastructure\CommandProvider.cs" />
     <Compile Include="Infrastructure\ExecuterService.cs" />
     <Compile Include="Infrastructure\ICacheService.cs" />
+    <Compile Include="Infrastructure\ICommandProvider.cs" />
     <Compile Include="Infrastructure\IExecuterService.cs" />
     <Compile Include="Infrastructure\ISettingService.cs" />
     <Compile Include="Infrastructure\LittlePlaceApiService.cs" />

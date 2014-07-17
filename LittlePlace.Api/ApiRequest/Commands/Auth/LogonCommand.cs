@@ -20,6 +20,11 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
             get { return "logon"; }
         }
 
+        public LogonCommand()
+        {
+            
+        }
+
         public LogonCommand(HttpClient restClient,Dictionary<string,string> dict )
             :base("auth",restClient,dict)
         {

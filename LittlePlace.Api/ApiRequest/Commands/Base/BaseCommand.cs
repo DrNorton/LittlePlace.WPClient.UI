@@ -20,6 +20,8 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
         }
 
         public string FullUrl { get; set; }
+
+        private string _cacheUrl { get; set; }
        
 
         public BaseCommand(string methodGroup, HttpClient restClient,Dictionary<string,string> parameters)
@@ -27,6 +29,11 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
             _methodGroup = methodGroup;
             _restClient = restClient;
             ConvertDictToUrl(parameters,Url);
+        }
+
+        public BaseCommand()
+        {
+            
         }
 
         private void ConvertDictToUrl(Dictionary<string, string> parameters,string url)
@@ -37,6 +44,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
             {
                 builder.Append(String.Format("&{0}={1}", parameter.Key,parameter.Value));
             }
+            _cacheUrl = builder.ToString();
             builder.Append(String.Format("&{0}={1}", "requestid", Guid.NewGuid().ToString()));
             FullUrl = builder.ToString();
         }
@@ -46,7 +54,7 @@ namespace LittlePlace.Api.ApiRequest.Commands.Base
 
         public int BuildCacheKey()
         {
-            return FullUrl.GetHashCode();
+            return _cacheUrl.GetHashCode();
         }
 
         public bool IsCached

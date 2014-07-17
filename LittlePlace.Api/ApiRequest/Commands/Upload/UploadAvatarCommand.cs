@@ -18,8 +18,8 @@ namespace LittlePlace.Api.ApiRequest.Commands.Upload
             get { return "addavatar"; }
         }
 
-        public UploadAvatarCommand(HttpClient httpclient)
-            :base("upload",httpclient,new Dictionary<string, string>())
+        public UploadAvatarCommand(HttpClient httpclient,Dictionary<string,string> dict )
+            :base("upload",httpclient,dict)
         {
           
         }

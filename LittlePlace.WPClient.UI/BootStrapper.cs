@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Input;
 using Caliburn.Micro;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.WPClient.UI.Cache;
 using LittlePlace.WPClient.UI.Services;
 using LittlePlace.WPClient.UI.Services.Base;
 using LittlePlace.WPClient.UI.ViewModels;
+using LittlePlace.WPClient.UI.ViewModels.Auth;
 using Microsoft.Phone.Controls;
 
 using ISettingService = LittlePlace.Api.Infrastructure.ISettingService;
@@ -53,11 +55,37 @@ namespace LittlePlace.WPClient.UI
 
         private void RegisterServices()
         {
-            _container.RegisterInstance(typeof (ICacheService), null, new CacheService(_dbDataContext));
+            var cacheService = new CacheService(_dbDataContext);
+            _container.RegisterInstance(typeof (ICacheService), null, cacheService);
+            var executerService = new ExecuterService(cacheService);
+            AddErrorSubscriptionToExecuterService(executerService);
             _container.RegisterSingleton(typeof (ILittlePlaceApiService), null, typeof (LittlePlaceApiService));
-            _container.RegisterPerRequest(typeof (IExecuterService), null, typeof (ExecuterService));
+            _container.RegisterInstance(typeof (IExecuterService), null, executerService);
             _container.RegisterPerRequest(typeof (ISettingService), null, typeof (SettingService));
             _container.RegisterPerRequest(typeof(IGeoCodingService),null,typeof(GeoCodingService));
+            _container.RegisterPerRequest(typeof(ICommandProvider),null,typeof(CommandProvider));
+        }
+
+        private void AddErrorSubscriptionToExecuterService(ExecuterService executerService)
+        {
+            executerService.OnError += executerService_OnError;
+            executerService.OnInternalException += executerService_OnInternalException;
+        }
+
+        void executerService_OnInternalException(Exception obj)
+        {
+            MessageBox.Show(obj.Message);
+        }
+
+        void executerService_OnError(int code, string message)
+        {
+            switch (code)
+            {
+                case 401:
+                    MessageBox.Show("Авторизуйтесь");
+                    IoC.Get<INavigationService>().UriFor<AuthViewModel>().Navigate();
+                    break;
+            }
         }
 
         private void RegisterViewModels()

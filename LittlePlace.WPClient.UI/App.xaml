@@ -10,10 +10,15 @@
 
     <!--Application Resources-->
     <Application.Resources>
-    	<ui:BootStrapper x:Key="bootstrapper" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary x:Name="ResourcesDictionary" Source="/LittlePlace.WPClient.UI;component/Resources.xaml" />
+          
+        </ResourceDictionary.MergedDictionaries>
+        <ui:BootStrapper x:Key="bootstrapper" />
         <maps:MapGlobalSettings x:Key="MapGlobalSettings" ApiKey="v7rQ0Pg6AN9xUzWHfLbsoy6zULUsuFfyhjDVFZT2UK1rt9NXi3PaMCETdcMHq5q18SlSMgk8u8KwY7cPEmhgrj27JrM6k1rsqM8ic1F8ad0=" />
+       </ResourceDictionary>
     </Application.Resources>
 
-   
-
+  
 </Application>

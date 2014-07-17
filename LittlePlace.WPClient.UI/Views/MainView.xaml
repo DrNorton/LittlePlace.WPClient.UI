@@ -10,101 +10,111 @@
     xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml, Instance={x:Null}}">
 
+    <phone:PhoneApplicationPage.Resources>
+        <converterts:Base64ToImageConverter x:Key="Base64ToImageConverter"/>
+    </phone:PhoneApplicationPage.Resources>
+    
     <shell:SystemTray.ProgressIndicator>
         <shell:ProgressIndicator IsIndeterminate="{Binding IsLoading}" IsVisible="True" />
     </shell:SystemTray.ProgressIndicator>
 
-    <ScrollViewer>
-        <Grid x:Name="LayoutRoot" Background="Transparent" Margin="12, 0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="222"/>
-                <RowDefinition Height="222"/>
-                <RowDefinition Height="222"/>
-                <RowDefinition Height="222"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="222" />
-                <ColumnDefinition Width="222" />
-            </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.ColumnSpan="2" 
+    <Grid x:Name="LayoutRoot" Background="{StaticResource ElkBgBrush}" Margin="12, 0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="5*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="222" />
+            <ColumnDefinition Width="222" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.ColumnSpan="2" 
                        HorizontalAlignment="Center" 
-                       Style="{StaticResource PhoneTextTitle1Style}" 
+                      Style="{StaticResource ElkTextTitle}"
                        Margin="0" 
                        Text="LittlePlace" />
 
-            <controls:Tile Grid.Row="1" Grid.ColumnSpan="2" Margin="12"
-                    Label="Карта"
-                      Foreground="Black" 
-                      FontSize="{StaticResource PhoneFontSizeMediumLarge}"
-                      toolkit:TiltEffect.IsTiltEnabled="True"
-                     >
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Tap">
-                        <cal:ActionMessage MethodName="MapTileTap" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-                <controls:Tile.Background>
-                    <ImageBrush ImageSource="/Content\Icons\map_tile.png" />
-                </controls:Tile.Background>
-            </controls:Tile>
-
-            <controls:Tile Grid.Row="2" Grid.Column="0" Margin="12" 
-                      Foreground="White"
-                           Label="Друзья"
-                      FontSize="{StaticResource PhoneFontSizeMediumLarge}"
-                      toolkit:TiltEffect.IsTiltEnabled="True"
-                     >
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Tap">
-                        <cal:ActionMessage MethodName="FriendTileTap" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-                <Path Width="90" Height="90" Data="M42.917957,36.640002C42.917957,36.640002,60.947113,40.930449,62.667,58.102001L0,58.102001C0,58.102001,5.1497741,39.21007,20.598974,37.49018L24.788836,55.411804 27.868641,55.391783 31.358461,46.22099 28.09861,40.550529 34.618313,40.550529 31.488461,46.360652 35.478256,55.331718 37.878166,55.311697z M30.899479,0C40.449177,0 48.198929,7.7390842 48.198929,17.297953 48.198929,26.846822 40.449177,34.595904 30.899479,34.595903 21.339783,34.595904 13.600028,26.846822 13.600028,17.297953 13.600028,7.7390842 21.339783,0 30.899479,0z" Fill="White" Stretch="Uniform" />
-            </controls:Tile>
-
-            <controls:Tile Grid.Row="2" Grid.Column="1" Margin="12" 
-                       Label="Сообщения"
-                      Foreground="White"
-                      FontSize="{StaticResource PhoneFontSizeMediumLarge}"
-                      toolkit:TiltEffect.IsTiltEnabled="True"
-                    >
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Tap">
-                        <cal:ActionMessage MethodName="MessageTileTap" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-                
-            </controls:Tile>
+        <toolkit:HubTile Grid.Row="1" Margin="10" Grid.ColumnSpan="2"
+                         HorizontalAlignment="Stretch" 
+                         VerticalAlignment="Stretch"
+                         Source="/Content/Icons/map_tile.png"
+                         Title="Карта"
+                         Background="{StaticResource ElkFgBrush}"
+                         DisplayNotification="False"
+                         Size="Large">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Tap">
+                    <cal:ActionMessage MethodName="MapTileTap" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+        </toolkit:HubTile>
 
 
+        <telerikPrimitives:RadMosaicHubTile  Background="{StaticResource ElkFgBrush}" x:Name="ContactImageTile" Grid.Row="2" Grid.Column="0"
+                                             Width="200" 
+                                             Height="200" 
+                                            Title="Контакты" 
+                                           >
+            <system:String>0</system:String>
+            <system:String>1</system:String>
+            <system:String>2</system:String>
+            <system:String>3</system:String>
+            <system:String>4</system:String>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Tap">
+                    <cal:ActionMessage MethodName="ContactTileTap" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </telerikPrimitives:RadMosaicHubTile>
 
-           
+        <telerikPrimitives:RadCycleHubTile Background="{StaticResource ElkFgBrush}" Title="Сообщения"  Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Dialogs,Mode=TwoWay}" Width="200" Height="200">
+            <telerikPrimitives:RadCycleHubTile.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="12, 6, 12, 12">
+                        <TextBlock>
+                                <Run Text="{Binding Member.Login,Mode=TwoWay}"/> 
+                        </TextBlock>
+                        <Grid Margin="0, 12, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image VerticalAlignment="Top"
+                                       Stretch="Uniform"
+                                       Source="{Binding Member.RawPhotoString,Converter={StaticResource Base64ToImageConverter},Mode=TwoWay}"/>
+                            <TextBlock Text="{Binding LastMessage.MessageText,Mode=TwoWay}"
+                                           TextWrapping="Wrap"
+                                           Margin="12, 0, 0, 0"
+                                           Grid.Column="1"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left"/>
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </telerikPrimitives:RadCycleHubTile.ItemTemplate>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Tap">
+                    <cal:ActionMessage MethodName="MessageTileTap" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </telerikPrimitives:RadCycleHubTile>
 
-            <controls:Tile Grid.Row="3" Grid.Column="0" Margin="12" 
-                  Label="Настройки"
-                      Foreground="White"
-                      FontSize="{StaticResource PhoneFontSizeMediumLarge}"
-                      toolkit:TiltEffect.IsTiltEnabled="True"
-                     >
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Tap">
-                        <cal:ActionMessage MethodName="SettingTileTap" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-               
-            </controls:Tile>
+    </Grid>
 
-         
-        </Grid>
-    </ScrollViewer>
 
 </phone:PhoneApplicationPage>

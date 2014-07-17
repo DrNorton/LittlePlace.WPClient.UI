@@ -16,8 +16,8 @@ namespace LittlePlace.Api.ApiRequest.Commands.Auth
             get { return "logoff"; }
         }
 
-        public LogoffCommand(HttpClient restClient)
-            : base("auth",restClient,new Dictionary<string, string>())
+        public LogoffCommand(HttpClient restClient,Dictionary<string,string> dict )
+            : base("auth",restClient,dict)
         {
             
         }

@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using LittlePlace.Api.ApiRequest.Commands.Auth;
+using LittlePlace.Api.ApiRequest.Commands.Base;
 using LittlePlace.Api.ApiRequest.Commands.Events;
 using LittlePlace.Api.ApiRequest.Commands.News;
 using LittlePlace.Api.ApiRequest.Commands.Position;
@@ -54,15 +55,17 @@ namespace LittlePlace.Api.Infrastructure
         private readonly IExecuterService _executerService;
         private readonly ISettingService _settingService;
         private readonly ICacheService _cacheService;
+        private readonly ICommandProvider _commandProvider;
         private HttpClient _httpClient;
         private CookieContainer _cookies;
         private bool _isAuthorizated;
 
-        public LittlePlaceApiService(IExecuterService executerService,ISettingService settingService,ICacheService cacheService)
+        public LittlePlaceApiService(IExecuterService executerService,ISettingService settingService,ICacheService cacheService,ICommandProvider commandProvider)
         {
             _executerService = executerService;
             _settingService = settingService;
             _cacheService = cacheService;
+            _commandProvider = commandProvider;
             GetCookies();
             _httpClient = GetHttpClient();
         }
@@ -80,22 +83,19 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<string>> Logon(string login,string pass)
         {
-
             var dict = new Dictionary<string, string>();
             dict.Add("login",login);
             dict.Add("pass",pass);
-            var logonCommand = new LogonCommand(_httpClient,dict);
+            var logonCommand= _commandProvider.GetCommand<LogonCommand>(_httpClient,dict);
             var result= await _executerService.ExecuteCommand(logonCommand,false);
             _settingService.AuthCookies = _cookies;
-           var r= _cookies.GetCookies(new Uri(@"http://littleplace.azurewebsites.net/"));
-
             return result;
         }
 
+
         public async Task<Response<string>> Logoff()
         {
-
-            var logoffCommand = new LogoffCommand(_httpClient);
+            var logoffCommand = _commandProvider.GetCommand<LogoffCommand>(_httpClient,new Dictionary<string, string>());
             return await _executerService.ExecuteCommand(logoffCommand, false);
         }
 
@@ -104,7 +104,7 @@ namespace LittlePlace.Api.Infrastructure
             var dict = new Dictionary<string, string>();
             dict.Add("login", login);
             dict.Add("pass", pass);
-            var registerCommand = new RegisterCommand(_httpClient, dict);
+            var registerCommand = _commandProvider.GetCommand<RegisterCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(registerCommand,false);
         }
 
@@ -113,45 +113,45 @@ namespace LittlePlace.Api.Infrastructure
             var dict = new Dictionary<string, string>();
             dict.Add("oldpass", oldPass);
             dict.Add("newpass", newPass);
-            var registerCommand = new ChangePasswordCommand(_httpClient, dict);
+            var registerCommand = _commandProvider.GetCommand<ChangePasswordCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(registerCommand, false);
         }
 
         public async Task<Response<List<User>>> GetMyFriends()
         {
-            var getMyFriendsCommand = new GetMyFriendsCommand(_httpClient);
+             var getMyFriendsCommand=_commandProvider.GetCommand<GetMyFriendsCommand>(_httpClient, new Dictionary<string, string>());
             return await _executerService.ExecuteCommand(getMyFriendsCommand, true);
         }
 
         public async Task<Response<string>> UploadAvatar(byte[] image)
         {
-            var uploadAvatarCommand = new UploadAvatarCommand(_httpClient);
+           var uploadAvatarCommand = _commandProvider.GetCommand<UploadAvatarCommand>(_httpClient,new Dictionary<string, string>());
             uploadAvatarCommand.Image = image;
             var result= await _executerService.ExecuteCommand(uploadAvatarCommand, false);
-            _cacheService.RemoveCacheResult(new GetMeCommand(_httpClient));
+            _cacheService.RemoveCacheResult(_commandProvider.GetCommand<GetMeCommand>(_httpClient,new Dictionary<string, string>()));
             return result;
         }
 
         public async Task<Response<string>> UploadEventImage(byte[] image)
         {
-            var uploadAvatarCommand = new UploadEventImageCommand(_httpClient);
-            uploadAvatarCommand.Image = image;
-            var result = await _executerService.ExecuteCommand(uploadAvatarCommand, false);
+            var command = _commandProvider.GetCommand<UploadEventImageCommand>(_httpClient, new Dictionary<string, string>());
+            command.Image = image;
+            var result = await _executerService.ExecuteCommand(command, false);
             return result;
         }
 
 
         public async Task<Response<User>> GetMe()
         {
-            var getMyFriendsCommand = new GetMeCommand(_httpClient);
-            return await _executerService.ExecuteCommand(getMyFriendsCommand, true);
+            var command = _commandProvider.GetCommand<GetMeCommand>(_httpClient, new Dictionary<string, string>());
+            return await _executerService.ExecuteCommand(command, true);
         }
 
         public async Task<Response<User>> GetUserByUserId(int userId)
         {
             var dict = new Dictionary<string, string>();
             dict.Add("friendId",userId.ToString());
-            var getMyFriendsCommand = new GetByUserIdCommand(_httpClient,dict);
+            var getMyFriendsCommand = _commandProvider.GetCommand<GetByUserIdCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(getMyFriendsCommand, true);
         }
 
@@ -164,21 +164,21 @@ namespace LittlePlace.Api.Infrastructure
             dict.Add("lastname",updatedUser.LastName);
             dict.Add("telephonenumber",updatedUser.TelephoneNumber);
             dict.Add("email",updatedUser.Email);
-            var getMyFriendsCommand = new UpdateMeCommand(_httpClient,dict);
+            var getMyFriendsCommand=_commandProvider.GetCommand<UpdateMeCommand>(_httpClient, dict);
             var result= await _executerService.ExecuteCommand(getMyFriendsCommand, false);
-            _cacheService.RemoveCacheResult(new GetMeCommand(_httpClient));
+            _cacheService.RemoveCacheResult(_commandProvider.GetCommand<GetMeCommand>(_httpClient,new Dictionary<string, string>()));
             return result;
         }
 
         public async Task<Response<List<FriendPositionResult>>> GetAllFriendsPosition()
         {
-            var getMyFriendsCommand = new GetAllFriendsPositionCommand(_httpClient);
+            var getMyFriendsCommand = _commandProvider.GetCommand<GetAllFriendsPositionCommand>(_httpClient, new Dictionary<string, string>());
             return await _executerService.ExecuteCommand(getMyFriendsCommand, true);
         }
 
         public async Task<Response<List<NewsResult>>> GetAllNews()
         {
-            var getMyFriendsCommand = new GetAllNewsCommand(_httpClient);
+            var getMyFriendsCommand = _commandProvider.GetCommand<GetAllNewsCommand>(_httpClient, new Dictionary<string, string>());
             return await _executerService.ExecuteCommand(getMyFriendsCommand, false);
         }
 
@@ -186,7 +186,7 @@ namespace LittlePlace.Api.Infrastructure
         {
             var dict = new Dictionary<string, string>();
            dict.Add("newsId",newsId.ToString());
-            var getnewsById = new GetNewsByIdCommand(_httpClient,dict);
+            var getnewsById = _commandProvider.GetCommand<GetNewsByIdCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(getnewsById, false);
         }
 
@@ -195,7 +195,7 @@ namespace LittlePlace.Api.Infrastructure
             var dict = new Dictionary<string, string>();
             dict.Add("latitude",latitude.ToString());
             dict.Add("longitude",longitude.ToString());
-            var addPosition = new AddMyPositionCommand(_httpClient,dict);
+            var addPosition = _commandProvider.GetCommand<AddMyPositionCommand>(_httpClient, dict);
            return await _executerService.ExecuteCommand(addPosition,false);
         }
 
@@ -203,7 +203,7 @@ namespace LittlePlace.Api.Infrastructure
         {
             var dict = new Dictionary<string, string>();
             dict.Add("friendId",friendId.ToString());
-            var getFriendPosition = new GetFriendPositionCommand(_httpClient,dict);
+            var getFriendPosition = _commandProvider.GetCommand<GetFriendPositionCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(getFriendPosition,false);
         }
 
@@ -211,13 +211,15 @@ namespace LittlePlace.Api.Infrastructure
 
         public async Task<Response<List<Event>>> GetMyOwnEventsCommand()
         {
-            var command = new GetMyOwnEventsCommand(_httpClient);
+            var command = _commandProvider.GetCommand<GetMyOwnEventsCommand>(_httpClient, new Dictionary<string, string>());
             return await _executerService.ExecuteCommand(command, true);
         }
 
         public async Task<Response<List<Event>>> GetMyInvitedEventsCommand()
         {
-            var command = new GetMyInvitedEventsCommand(_httpClient);
+
+            var command = _commandProvider.GetCommand<GetMyInvitedEventsCommand>(_httpClient,
+                new Dictionary<string, string>());
             return await _executerService.ExecuteCommand(command, false);
         }
 
@@ -226,7 +228,7 @@ namespace LittlePlace.Api.Infrastructure
             var dict = new Dictionary<string, string>();
             dict.Add("friendId",friend.UserId.ToString());
             dict.Add("eventId",ev.EventId.ToString());
-            var command = new AddFriendToEventCommand(_httpClient,dict);
+            var command = _commandProvider.GetCommand<AddFriendToEventCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
@@ -246,7 +248,8 @@ namespace LittlePlace.Api.Infrastructure
             var dict = new Dictionary<string, string>();
             dict.Add("friends",str);
             dict.Add("eventId",ev.EventId.ToString());
-            var command = new AddFriendsToEventCommand(_httpClient,dict);
+
+            var command = _commandProvider.GetCommand<AddFriendsToEventCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
@@ -261,7 +264,7 @@ namespace LittlePlace.Api.Infrastructure
             dict.Add("address",ev.Address);
             dict.Add("description",ev.Description);
             dict.Add("imageurl",ev.ImageUrl);
-            var command = new AddEventCommand(_httpClient,dict);
+            var command = _commandProvider.GetCommand<AddEventCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
@@ -270,7 +273,7 @@ namespace LittlePlace.Api.Infrastructure
             var dict = new Dictionary<string, string>();
             dict.Add("message", message);
             dict.Add("eventid", ev.EventId.ToString());
-            var command = new AddMessageToEventCommand(_httpClient, dict);
+            var command = _commandProvider.GetCommand<AddMessageToEventCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
@@ -278,7 +281,7 @@ namespace LittlePlace.Api.Infrastructure
         {
             var dict = new Dictionary<string, string>();
             dict.Add("eventid", ev.EventId.ToString());
-            var command = new GetMessagesFromEventCommand(_httpClient, dict);
+            var command = _commandProvider.GetCommand<GetMessagesFromEventCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
@@ -286,23 +289,22 @@ namespace LittlePlace.Api.Infrastructure
         {
             var dict = new Dictionary<string, string>();
             dict.Add("eventId", ev.EventId.ToString());
-            var command = new GetFriendsFromEventCommand(_httpClient, dict);
+            var command = _commandProvider.GetCommand<GetFriendsFromEventCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
-     
-
         public async Task<Response<List<Dialog>>> GetMyDialogs()
         {
-            var command = new GetMyDialogsCommand(_httpClient);
-            return await _executerService.ExecuteCommand(command, false);
+
+            var command = _commandProvider.GetCommand<GetMyDialogsCommand>(_httpClient, new Dictionary<string, string>());
+            return await _executerService.ExecuteCommand(command, true);
         }
 
         public async Task<Response<Dialog>> GetMyDialogById(string id)
         {
             var dict = new Dictionary<string, string>();
             dict.Add("id",id);
-            var command = new GetDialogByIdCommand(_httpClient,dict);
+            var command = _commandProvider.GetCommand<GetDialogByIdCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
@@ -311,7 +313,7 @@ namespace LittlePlace.Api.Infrastructure
             var dict = new Dictionary<string, string>();
             dict.Add("toid", toid.ToString());
             dict.Add("message", message);
-            var command = new SentPrivateMessageCommand(_httpClient, dict);
+            var command = _commandProvider.GetCommand<SentPrivateMessageCommand>(_httpClient, dict);
             return await _executerService.ExecuteCommand(command, false);
         }
 
@@ -322,7 +324,7 @@ namespace LittlePlace.Api.Infrastructure
             handler.CookieContainer = _cookies;
             handler.UseCookies = true;
          
-           var client= new HttpClient(handler);
+            var client= new HttpClient(handler);
             return client;
         }
     }

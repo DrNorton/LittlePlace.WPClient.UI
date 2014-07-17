@@ -18,8 +18,8 @@ namespace LittlePlace.Api.ApiRequest.Commands.Upload
 
         public byte[] Image { get; set; }
 
-        public UploadEventImageCommand(HttpClient httpclient)
-            : base("upload", httpclient,new Dictionary<string, string>())
+        public UploadEventImageCommand(HttpClient httpclient,Dictionary<string,string> dict )
+            : base("upload", httpclient,dict)
         {
             
         }

@@ -16,8 +16,8 @@ namespace LittlePlace.Api.ApiRequest.Commands.News
             get { return "getallnews"; }
         }
 
-        public GetAllNewsCommand(HttpClient httpClient)
-            :base("news",httpClient,new Dictionary<string, string>())
+        public GetAllNewsCommand(HttpClient httpClient,Dictionary<string,string> dict )
+            :base("news",httpClient,dict)
         {
             this.IsCached = true;
         }

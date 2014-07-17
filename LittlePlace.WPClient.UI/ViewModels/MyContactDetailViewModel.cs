@@ -8,6 +8,7 @@ using Caliburn.Micro;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.Api.Models;
+using LittlePlace.WPClient.UI.ViewModels.Auth;
 using LittlePlace.WPClient.UI.ViewModels.Base;
 using Microsoft.Phone.Tasks;
 

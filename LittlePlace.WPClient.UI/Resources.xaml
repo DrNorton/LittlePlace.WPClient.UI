@@ -1,0 +1,80 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+    <Color x:Key="ElkFgColor">#964160</Color>
+    <Color x:Key="ElkAppbarColor">#964160</Color>
+
+    <SolidColorBrush x:Key="ElkHeaderBrush" Color="#542436" />
+    <SolidColorBrush x:Key="ElkFgBrush" Color="{StaticResource ElkFgColor}" />
+    <SolidColorBrush x:Key="ElkBgBrush" Color="#EBECEC" />
+    <SolidColorBrush x:Key="ElkButtonBrush" Color="#964160" />
+    <SolidColorBrush x:Key="ElkSubtleBrush" Color="#9DA0A4" />
+    
+    
+    <Style x:Key="ElkTextTitle" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextTitle1Style}">
+        <Setter Property="Foreground" Value="{StaticResource ElkFgBrush}" />
+    </Style>
+
+    <Style x:Key="ElkTextHeader" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextNormalStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ElkHeaderBrush}" />
+        <Setter Property="Margin" Value="0, 0, 0, -4" />
+    </Style>
+
+    <Style x:Key="ElkTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource ElkFgBrush}" />
+        <Setter Property="Margin" Value="-12, 0" />
+    </Style>
+
+    <Style x:Key="ElkPasswordBox" TargetType="PasswordBox">
+        <Setter Property="Foreground" Value="{StaticResource ElkFgBrush}" />
+        <Setter Property="Margin" Value="-12, 0" />
+    </Style>
+
+
+    <Style x:Key="ElkButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource ElkButtonBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ElkButtonBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ButtonBase">
+                    <Grid Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ElkBgBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ElkButtonBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ElkSubtleBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ElkSubtleBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ButtonBackground" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0" Background="{TemplateBinding Background}" Margin="0, 12" >
+                            <ContentControl x:Name="ContentContainer" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Padding="{TemplateBinding Padding}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
+    

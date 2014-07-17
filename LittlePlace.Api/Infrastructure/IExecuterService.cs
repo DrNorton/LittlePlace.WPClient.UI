@@ -6,6 +6,6 @@ namespace LittlePlace.Api.Infrastructure
 {
     public interface IExecuterService
     {
-        Task<T> ExecuteCommand<T>(ICommand<T> command,bool useCache) where T:IResponse;
+        Task<T> ExecuteCommand<T>(ICommand<T> command, bool useCache) where T : IResponse, new();
     }
 }

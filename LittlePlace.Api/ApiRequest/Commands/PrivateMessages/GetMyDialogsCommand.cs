@@ -16,8 +16,10 @@ namespace LittlePlace.Api.ApiRequest.Commands.PrivateMessages
             get { return "getmydialogs"; }
         }
 
-        public GetMyDialogsCommand(HttpClient restClient)
-            :base("message",restClient,new Dictionary<string,string>())
+
+
+        public GetMyDialogsCommand(HttpClient restClient,Dictionary<string,string> dict )
+            :base("message",restClient,dict)
         {
             
         }

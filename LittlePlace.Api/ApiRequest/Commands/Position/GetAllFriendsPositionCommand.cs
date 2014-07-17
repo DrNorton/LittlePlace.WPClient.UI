@@ -14,8 +14,8 @@ namespace LittlePlace.Api.ApiRequest.Commands.Position
             get { return "getallfriendsposition"; }
         }
 
-        public GetAllFriendsPositionCommand(HttpClient httpClient)
-            : base("position", httpClient,new Dictionary<string, string>())
+        public GetAllFriendsPositionCommand(HttpClient httpClient,Dictionary<string,string> dict )
+            : base("position", httpClient,dict)
         {
             this.IsCached = true;
         }

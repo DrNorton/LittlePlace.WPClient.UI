@@ -17,5 +17,19 @@ namespace LittlePlace.WPClient.UI.Extensions
             byte[] imageBytes = ms.ToArray();
             return imageBytes;
         }
+
+        public static BitmapImage BytesToImage(byte[] bytes)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(bytes))
+                {
+                    bitmapImage.SetSource(ms);
+                    return bitmapImage;
+                }
+            }
+            finally { bitmapImage = null; }
+        }
     }
 }
