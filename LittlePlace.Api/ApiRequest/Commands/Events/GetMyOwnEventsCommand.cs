@@ -17,8 +17,8 @@ namespace LittlePlace.Api.ApiRequest.Commands.Events
             get { return "getmyownevents"; }
         }
 
-        public GetMyOwnEventsCommand(HttpClient httpClient)
-            :base("events",httpClient,new Dictionary<string, string>())
+        public GetMyOwnEventsCommand(HttpClient httpClient,Dictionary<string,string> dict )
+            :base("events",httpClient,dict)
         {
             this.IsCached = true;
         }

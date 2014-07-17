@@ -44,5 +44,6 @@ C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPC
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.Api\bin\Debug\System.Runtime.xml
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.Api\bin\Debug\System.Threading.Tasks.xml
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.Api\obj\Debug\LittlePlace.Api.csproj.App.config
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.Api\obj\Debug\LittlePlace.Api.csprojResolveAssemblyReference.cache
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.Api\obj\Debug\LittlePlace.Api.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.Api\obj\Debug\LittlePlace.Api.pdb

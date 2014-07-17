@@ -130,6 +130,8 @@ C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPC
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Runtime.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Threading.Tasks.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Windows.Interactivity.dll
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Telerik.Windows.Controls.Primitives.dll
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Telerik.Windows.Core.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Yandex.Maps.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Zlib.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\LittlePlace.Api.pdb
@@ -154,6 +156,10 @@ C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPC
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Runtime.xml
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Threading.Tasks.xml
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\System.Windows.Interactivity.xml
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Telerik.Windows.Controls.Primitives.pdb
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Telerik.Windows.Controls.Primitives.xml
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Telerik.Windows.Core.pdb
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Telerik.Windows.Core.xml
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\Yandex.Maps.xml
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\cs-CZ\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\da-DK\Microsoft.Phone.Controls.Toolkit.resources.dll
@@ -177,6 +183,9 @@ C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPC
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\sv-SE\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\zh-CN\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\de-DE\Telerik.Windows.Controls.Primitives.resources.dll
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\fr-FR\Telerik.Windows.Controls.Primitives.resources.dll
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\it-IT\Telerik.Windows.Controls.Primitives.resources.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\ru-RU\Yandex.Maps.resources.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\tr-TR\Yandex.Maps.resources.dll
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\Bin\Debug\uk-UA\Yandex.Maps.resources.dll
@@ -185,8 +194,8 @@ C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPC
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Controls\AddFriendsToEventControl.g.cs
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Controls\TextBoxCaptioned.g.cs
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\AddEventView.g.cs
-C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\AuthView.g.cs
-C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\ChangePasswordView.g.cs
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\Auth\AuthView.g.cs
+C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\Auth\ChangePasswordView.g.cs
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\ContactsView.g.cs
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\DialogView.g.cs
 C:\Users\WinPhone\Documents\Visual Studio 2012\Projects\свои\LittlePlace.WPClient.UI\LittlePlace.WPClient.UI\obj\Debug\Views\EventsListView.g.cs

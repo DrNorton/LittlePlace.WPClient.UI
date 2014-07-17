@@ -18,8 +18,8 @@ namespace LittlePlace.Api.ApiRequest.Commands.Users
             get { return "getmyfriends"; }
         }
 
-        public GetMyFriendsCommand(HttpClient httpClient)
-            :base("user",httpClient,new Dictionary<string, string>())
+        public GetMyFriendsCommand(HttpClient httpClient,Dictionary<string,string> dict )
+            :base("user",httpClient,dict)
         {
             this.IsCached = true;
         }
