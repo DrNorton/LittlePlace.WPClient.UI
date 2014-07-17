@@ -26,8 +26,10 @@
     <AssemblyPart x:Name="System.Runtime" Source="System.Runtime.dll" />
     <AssemblyPart x:Name="System.Threading.Tasks" Source="System.Threading.Tasks.dll" />
     <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.Data" Source="Telerik.Windows.Controls.Data.dll" />
     <AssemblyPart x:Name="Telerik.Windows.Controls.Primitives" Source="Telerik.Windows.Controls.Primitives.dll" />
     <AssemblyPart x:Name="Telerik.Windows.Core" Source="Telerik.Windows.Core.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Data" Source="Telerik.Windows.Data.dll" />
     <AssemblyPart x:Name="Yandex.Maps" Source="Yandex.Maps.dll" />
     <AssemblyPart x:Name="Zlib" Source="Zlib.dll" />
   </Deployment.Parts>

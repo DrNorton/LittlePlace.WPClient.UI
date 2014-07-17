@@ -26,7 +26,7 @@
 
         <telerikDataControls:RadConversationView Grid.Row="1"
                                          x:Name="conversationView"
-                                         SendingMessage="OnSendingMessage">
+                                         >
             <telerikDataControls:RadConversationView.IncomingMessageTemplate>
                 <DataTemplate>
                     <Grid Margin="12">
