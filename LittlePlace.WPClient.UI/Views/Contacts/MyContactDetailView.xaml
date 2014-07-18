@@ -13,7 +13,7 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
     xmlns:extensions="clr-namespace:LittlePlace.WPClient.UI.Extensions"
-    x:Class="LittlePlace.WPClient.UI.Views.MyContactDetailView"
+    x:Class="LittlePlace.WPClient.UI.Views.Contacts.MyContactDetailView"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True" d:DataContext="{d:DesignData /SampleData/ContactsViewModelSampleData.xaml}">

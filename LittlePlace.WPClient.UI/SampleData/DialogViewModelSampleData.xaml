@@ -1,30 +1,130 @@
-<ViewModels:DialogViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" DisplayName="Commodo nulla habitasse" DialogId="Mus blandit" IsNotifying="True" IsInitialized="False" IsAllMenuEnabled="True" IsLoading="False" IsActive="True">
+<ViewModels:DialogViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:DialogModels="clr-namespace:LittlePlace.WPClient.UI.Models.DialogModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" xmlns:System="clr-namespace:System;assembly=mscorlib" DisplayName="Parturient elementum" DialogId="Mus gravida iaculis" IsNotifying="False" IsInitialized="True" IsAllMenuEnabled="False" IsLoading="True" IsActive="False" Message="Nec dignissim" ToId="38">
 	<ViewModels:DialogViewModel.Dialog>
-		<Result:Dialog Id="Cras aenean class mauris duis">
-			<Result:Dialog.Messages>
-				<Result:PrivateMessage FromId="11" Id="Nunc vestibulum nullam curabitur" MessageText="Aliquam maecenas" SentTime="07/16/2014 16:43:54" ToId="32"/>
-				<Result:PrivateMessage FromId="72" Id="Aptent praesent" MessageText="Amet integer" SentTime="07/16/2014 16:43:54" ToId="36"/>
-				<Result:PrivateMessage FromId="53" Id="Nam quisque" MessageText="Auctor ante phasellus" SentTime="07/16/2014 16:43:54" ToId="86"/>
-				<Result:PrivateMessage FromId="28" Id="Adipiscing consequat" MessageText="Arcu diam" SentTime="07/16/2014 16:43:54" ToId="36"/>
-				<Result:PrivateMessage FromId="81" Id="Vivamus accumsan curae convallis" MessageText="Dignissim sed" SentTime="07/16/2014 16:43:54" ToId="85"/>
-				<Result:PrivateMessage FromId="18" Id="Congue eget" MessageText="Parturient cursus dictum dis" SentTime="07/16/2014 16:43:54" ToId="15"/>
-				<Result:PrivateMessage FromId="48" Id="Bibendum elit dictumst" MessageText="Enim lectus elementum" SentTime="07/16/2014 16:43:54" ToId="28"/>
-				<Result:PrivateMessage FromId="97" Id="Libero vestibulum donec est etiam" MessageText="Fusce eleifend" SentTime="07/16/2014 16:43:54" ToId="54"/>
-				<Result:PrivateMessage FromId="82" Id="Erat lorem eros" MessageText="Vestibulum hac aliquam morbi nibh" SentTime="07/16/2014 16:43:54" ToId="94"/>
-				<Result:PrivateMessage FromId="38" Id="Nisi facilisis aliquet fermentum leo" MessageText="Facilisi fringilla" SentTime="07/16/2014 16:43:54" ToId="72"/>
-			</Result:Dialog.Messages>
-			<Result:Dialog.Members>
-				<Result:DialogMember MemberId="82"/>
-				<Result:DialogMember MemberId="60"/>
-				<Result:DialogMember MemberId="23"/>
-				<Result:DialogMember MemberId="19"/>
-				<Result:DialogMember MemberId="21"/>
-				<Result:DialogMember MemberId="15"/>
-				<Result:DialogMember MemberId="48"/>
-				<Result:DialogMember MemberId="22"/>
-				<Result:DialogMember MemberId="28"/>
-				<Result:DialogMember MemberId="71"/>
-			</Result:Dialog.Members>
-		</Result:Dialog>
+		<DialogModels:ExtendedDialog IsNotifying="True" Id="Vestibulum aenean nam mauris class">
+			<DialogModels:ExtendedDialog.LastMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Curae curabitur sed" Text="Cubilia fames felis habitant" Type="Incoming" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Dis est" FirstName="Cras hac adipiscing" LastName="Maecenas duis phasellus" Login="Aliquam integer donec" NameWithSurname="Quisque vivamus parturient consequat aliquam" PhotoUrl="Nullam vestibulum" RawPhotoString="Etiam convallis" TelephoneNumber="Dignissim vestibulum" TextStatus="Aptent praesent" UserId="47"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Accumsan bibendum" FirstName="Adipiscing elementum dictumst leo fusce" LastName="Mus eleifend aliquet lorem" Login="Morbi facilisi" NameWithSurname="Parturient nunc nulla blandit proin" PhotoUrl="Augue nec amet ante" RawPhotoString="Commodo non conubia auctor" TelephoneNumber="Per dolor vestibulum" TextStatus="Vestibulum arcu sed faucibus" UserId="18"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+			</DialogModels:ExtendedDialog.LastMessage>
+			<DialogModels:ExtendedDialog.Member>
+				<Result:User Email="Lobortis lectus vestibulum" FirstName="Nascetur laoreet natoque est" LastName="Pharetra posuere libero massa" Login="Hac himenaeos nibh placerat" NameWithSurname="Nisi leo ligula nisl mus" PhotoUrl="Nec pulvinar metus vestibulum imperdiet" RawPhotoString="Adipiscing malesuada litora non" TelephoneNumber="Potenti penatibus" TextStatus="Luctus pretium nunc" UserId="33">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</DialogModels:ExtendedDialog.Member>
+			<DialogModels:ExtendedDialog.Me>
+				<Result:User Email="Congue diam cursus eget elit" FirstName="Facilisis adipiscing dapibus egestas fermentum" LastName="Euismod fringilla parturient ipsum" Login="Feugiat inceptos justo" NameWithSurname="Gravida dictum sem vestibulum enim" PhotoUrl="Erat sit vel" RawPhotoString="Nam habitasse lacus lorem interdum" TelephoneNumber="Sed iaculis vestibulum lacinia eros" TextStatus="Dis hendrerit adipiscing parturient magna" UserId="38">
+					<Result:User.PhotoRaw>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+						<System:Byte/>
+					</Result:User.PhotoRaw>
+				</Result:User>
+			</DialogModels:ExtendedDialog.Me>
+			<DialogModels:ExtendedDialog.PrivateMessages>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Magnis rhoncus" Text="Vestibulum vulputate" Type="Incoming" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Morbi mattis mauris mollis" FirstName="Per odio sagittis parturient" LastName="Neque vestibulum senectus" Login="Porttitor vestibulum sed" NameWithSurname="Sem montes tincidunt tristique" PhotoUrl="Netus sit orci vel adipiscing" RawPhotoString="Sodales sociosqu" TelephoneNumber="Viverra aliquam nam" TextStatus="Suscipit parturient integer torquent" UserId="87"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Ultrices pede vestibulum" FirstName="Quisque vestibulum vehicula" LastName="Adipiscing parturient" Login="Vestibulum nostra" NameWithSurname="Vivamus ultricies" PhotoUrl="Quam sed ornare dis" RawPhotoString="Platea nulla" TelephoneNumber="Volutpat maecenas venenatis primis" TextStatus="Porta quis aliquam" UserId="45"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Rutrum aliquet praesent" Text="Iaculis lacinia erat turpis sit" Type="Incoming" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Urna sapien semper est hac" FirstName="Accumsan leo blandit commodo mus" LastName="Adipiscing sociis" Login="Nec curabitur" NameWithSurname="Taciti non purus conubia" PhotoUrl="Cras tellus cubilia risus" RawPhotoString="Duis phasellus consequat" TelephoneNumber="Velit convallis bibendum" TextStatus="Parturient per vestibulum tempor" UserId="38"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Vitae nunc amet" FirstName="Ante class" LastName="Arcu sed dictumst" Login="Vestibulum adipiscing" NameWithSurname="Dignissim dapibus" PhotoUrl="Elementum tempus curae egestas eleifend" RawPhotoString="Euismod feugiat diam donec eget" TelephoneNumber="Sem facilisis elit gravida" TextStatus="Enim fermentum parturient tortor" UserId="58"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Vestibulum facilisi etiam faucibus" Text="Lacus pede quam pharetra" Type="Outgoing" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Eros laoreet varius natoque habitant" FirstName="Posuere inceptos vel aenean vestibulum" LastName="Fusce nam mauris" Login="Nullam interdum nibh nisi" NameWithSurname="Nisl lorem sed fringilla" PhotoUrl="Adipiscing nunc habitasse" RawPhotoString="Potenti morbi nulla aptent" TelephoneNumber="Auctor proin congue" TextStatus="Parturient cursus" UserId="90"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Hendrerit dictum lobortis vestibulum pretium" FirstName="Augue dolor" LastName="Rhoncus sodales" Login="Himenaeos imperdiet" NameWithSurname="Viverra lectus" PhotoUrl="Odio dis" RawPhotoString="Libero fames vestibulum nascetur felis" TelephoneNumber="Ipsum adipiscing orci" TextStatus="Justo aliquam parturient" UserId="76"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Est integer" Text="Porta ornare dis" Type="Outgoing" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Ligula quisque vivamus vestibulum" FirstName="Hac quis aliquam malesuada vestibulum" LastName="Litora urna leo lorem" Login="Cras mus" NameWithSurname="Duis nunc" PhotoUrl="Adipiscing amet luctus placerat aliquet" RawPhotoString="Nec parturient ante magna magnis" TelephoneNumber="Pulvinar non per massa vestibulum" TextStatus="Penatibus metus arcu" UserId="55"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Porttitor sagittis diam mattis" FirstName="Sed mauris vestibulum" LastName="Mollis tincidunt senectus sem adipiscing" Login="Morbi tristique eget sit" NameWithSurname="Neque montes sociosqu ultricies" PhotoUrl="Venenatis nostra suscipit torquent" RawPhotoString="Vulputate curabitur" TelephoneNumber="Parturient phasellus consequat vel" TextStatus="Netus nulla nam sed" UserId="31"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Blandit est hac" Text="Adipiscing etiam tempor himenaeos" Type="Incoming" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Convallis elit" FirstName="Purus enim erat risus leo" LastName="Dignissim elementum" Login="Mus nec platea eros" NameWithSurname="Commodo primis" PhotoUrl="Velit vestibulum" RawPhotoString="Rutrum ultrices vitae" TelephoneNumber="Sapien nibh" TextStatus="Conubia vehicula" UserId="34"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Class facilisis" FirstName="Vestibulum curae cubilia volutpat" LastName="Adipiscing fermentum donec" Login="Maecenas non praesent nisi semper" NameWithSurname="Dapibus sociis accumsan per parturient" PhotoUrl="Fringilla sed vestibulum nisl taciti" RawPhotoString="Egestas vestibulum tellus bibendum habitasse" TelephoneNumber="Hendrerit euismod dictumst" TextStatus="Eleifend feugiat" UserId="19"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Fusce sem nunc lorem sit" Text="Integer aptent" Type="Outgoing" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Tempus gravida imperdiet" FirstName="Vel iaculis malesuada morbi" LastName="Lacinia nulla" Login="Odio facilisi faucibus" NameWithSurname="Tortor laoreet natoque habitant" PhotoUrl="Posuere proin orci" RawPhotoString="Parturient potenti nam" TelephoneNumber="Augue vestibulum inceptos" TextStatus="Pretium pede sed" UserId="51"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Vestibulum penatibus" FirstName="Porttitor interdum" LastName="Lobortis tincidunt nascetur adipiscing" Login="Tristique ultricies parturient vestibulum rhoncus" NameWithSurname="Dolor quam turpis" PhotoUrl="Vestibulum adipiscing varius venenatis vulputate" RawPhotoString="Dis pharetra curabitur parturient" TelephoneNumber="Aenean sodales mauris quis phasellus" TextStatus="Nullam est viverra urna aliquam" UserId="28"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Hac vestibulum" Text="Diam hendrerit" Type="Incoming" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Placerat consequat quisque" FirstName="Vestibulum pulvinar fames felis ipsum" LastName="Cras adipiscing parturient leo convallis" Login="Mus auctor duis" NameWithSurname="Vestibulum nunc" PhotoUrl="Vestibulum dignissim" RawPhotoString="Justo amet" TelephoneNumber="Lacus elementum adipiscing congue parturient" TextStatus="Lorem cursus sagittis senectus" UserId="19"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Nec facilisis vestibulum fermentum" FirstName="Vestibulum magna non adipiscing" LastName="Vivamus aliquam per massa" Login="Aliquet ante" NameWithSurname="Fringilla sociosqu parturient sed" PhotoUrl="Sem suscipit metus dictum morbi" RawPhotoString="Blandit lectus commodo habitasse" TelephoneNumber="Sit neque libero vel" TextStatus="Vestibulum conubia arcu vestibulum" UserId="90"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Netus cubilia himenaeos imperdiet eget" Text="Pretium ornare parturient" Type="Outgoing" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Ligula elit enim malesuada" FirstName="Torquent dapibus erat penatibus adipiscing" LastName="Nulla porta parturient purus" Login="Egestas euismod risus litora luctus" NameWithSurname="Magnis nam ultrices sed feugiat" PhotoUrl="Eros porttitor velit vitae gravida" RawPhotoString="Tincidunt vehicula iaculis" TelephoneNumber="Nibh vestibulum nisi dis" TextStatus="Est mattis lacinia tristique class" UserId="33"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Ultricies mauris" FirstName="Laoreet venenatis" LastName="Natoque posuere vestibulum" Login="Curae volutpat" NameWithSurname="Mollis vulputate nisl" PhotoUrl="Donec maecenas montes" RawPhotoString="Etiam praesent hac leo" TelephoneNumber="Nostra nunc potenti mus" TextStatus="Fusce accumsan odio adipiscing nec" UserId="30"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Curabitur rhoncus orci" Text="Inceptos aliquam sit" Type="Incoming" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Pede lorem" FirstName="Sodales phasellus bibendum morbi" LastName="Platea vestibulum vestibulum nulla consequat" Login="Primis convallis proin dignissim dictumst" NameWithSurname="Rutrum sapien viverra" PhotoUrl="Semper non augue sociis" RawPhotoString="Quam per taciti aliquam" TelephoneNumber="Elementum facilisis" TextStatus="Quis tellus sed" UserId="44"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Integer urna tempor" FirstName="Cras fermentum" LastName="Adipiscing dolor" Login="Eleifend parturient fames quisque" NameWithSurname="Facilisi tempus" PhotoUrl="Duis felis faucibus ipsum" RawPhotoString="Fringilla vestibulum vivamus justo" TelephoneNumber="Sem nunc" TextStatus="Vestibulum habitasse lacus habitant amet" UserId="72"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+				<DialogModels:ExtendedPrivateMessage FormattedTimeStamp="Interdum hendrerit" Text="Feugiat convallis adipiscing" Type="Incoming" TimeStamp="07/18/2014 12:49:19">
+					<DialogModels:ExtendedPrivateMessage.FromId>
+						<Result:User Email="Himenaeos adipiscing lobortis imperdiet nascetur" FirstName="Malesuada aliquet vel" LastName="Penatibus tortor" Login="Porttitor pharetra tincidunt" NameWithSurname="Placerat parturient ante tristique" PhotoUrl="Blandit vestibulum" RawPhotoString="Lorem vestibulum pulvinar" TelephoneNumber="Turpis adipiscing commodo magna" TextStatus="Conubia arcu diam" UserId="73"/>
+					</DialogModels:ExtendedPrivateMessage.FromId>
+					<DialogModels:ExtendedPrivateMessage.ToId>
+						<Result:User Email="Nam massa" FirstName="Eget parturient ultricies sagittis metus" LastName="Cubilia venenatis senectus vestibulum varius" Login="Dapibus egestas sociosqu" NameWithSurname="Aenean elit sed euismod vulputate" PhotoUrl="Dis curabitur est hac" RawPhotoString="Mauris vestibulum leo nullam suscipit" TelephoneNumber="Morbi neque" TextStatus="Netus nulla phasellus consequat enim" UserId="24"/>
+					</DialogModels:ExtendedPrivateMessage.ToId>
+				</DialogModels:ExtendedPrivateMessage>
+			</DialogModels:ExtendedDialog.PrivateMessages>
+		</DialogModels:ExtendedDialog>
 	</ViewModels:DialogViewModel.Dialog>
 </ViewModels:DialogViewModel>

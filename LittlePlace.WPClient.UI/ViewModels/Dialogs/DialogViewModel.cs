@@ -1,28 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Threading;
-using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Infrastructure;
+using LittlePlace.WPClient.UI.Models.DialogModels;
 using LittlePlace.WPClient.UI.ViewModels.Base;
+using Telerik.Windows.Controls;
 
-namespace LittlePlace.WPClient.UI.ViewModels
+namespace LittlePlace.WPClient.UI.ViewModels.Dialogs
 {
     public class DialogViewModel:LoadingScreen
     {
         private readonly ILittlePlaceApiService _littlePlaceApiService;
-        private Dialog _dialog;
+        private ExtendedDialog _dialog;
         public string DialogId { get; set; }
         public int ToId { get; set; }
         private string _message;
         private IObservable<long> _observable;
 
 
-        public Dialog Dialog
+        public ExtendedDialog Dialog
         {
             get { return _dialog; }
             set
@@ -45,7 +40,7 @@ namespace LittlePlace.WPClient.UI.ViewModels
         public DialogViewModel(ILittlePlaceApiService littlePlaceApiService)
         {
             _littlePlaceApiService = littlePlaceApiService;
-           _observable = Observable.Interval(TimeSpan.FromSeconds(2));
+        //   _observable = Observable.Interval(TimeSpan.FromSeconds(2));
            
             // Subscribe the obserable to the task on execution.
         
@@ -65,17 +60,21 @@ namespace LittlePlace.WPClient.UI.ViewModels
         protected async override void DataLoading(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             await GetDialog();
-            _observable.Subscribe(async x => await GetDialog());
+          //  _observable.Subscribe(async x => await GetDialog());
         }
 
         private async Task GetDialog()
         {
-             Dialog = (await _littlePlaceApiService.GetMyDialogById(DialogId)).Result;
+             var dialog = (await _littlePlaceApiService.GetMyDialogById(DialogId)).Result;
+            var friends = (await _littlePlaceApiService.GetMyFriends()).Result;
+            var me=(await _littlePlaceApiService.GetMe()).Result;
+           Dialog= ExtendedDialog.CreateExtendedDialog(friends, me, dialog);
         }
 
-        public async void SentMessage()
+        public async void SentMessage(ConversationViewMessageEventArgs args)
         {
-            var result=await _littlePlaceApiService.SentPrivateMessage(ToId,Message);
+            var message = (ConversationViewMessage) args.Message;
+            var result=await _littlePlaceApiService.SentPrivateMessage(ToId,message.Text);
             await GetDialog();
         }
 

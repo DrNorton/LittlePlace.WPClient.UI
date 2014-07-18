@@ -97,7 +97,7 @@
                             <Image VerticalAlignment="Top"
                                        Stretch="Uniform"
                                        Source="{Binding Member.RawPhotoString,Converter={StaticResource Base64ToImageConverter},Mode=TwoWay}"/>
-                            <TextBlock Text="{Binding LastMessage.MessageText,Mode=TwoWay}"
+                            <TextBlock Text="{Binding LastMessage.Text,Mode=TwoWay}"
                                            TextWrapping="Wrap"
                                            Margin="12, 0, 0, 0"
                                            Grid.Column="1"

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using LittlePlace.Api.ApiRequest.Commands.Result;
+﻿using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.WPClient.UI.ViewModels.Base;
 
-namespace LittlePlace.WPClient.UI.ViewModels
+namespace LittlePlace.WPClient.UI.ViewModels.Contacts
 {
     public class SingleNewsViewModel:LoadingScreen
     {

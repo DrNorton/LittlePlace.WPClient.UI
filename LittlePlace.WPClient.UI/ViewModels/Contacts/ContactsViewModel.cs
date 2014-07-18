@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Caliburn.Micro;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Infrastructure;
 using LittlePlace.WPClient.UI.Extensions;
 using LittlePlace.WPClient.UI.ViewModels.Base;
 
-namespace LittlePlace.WPClient.UI.ViewModels
+namespace LittlePlace.WPClient.UI.ViewModels.Contacts
 {
     public class ContactsViewModel:LoadingScreen
     {

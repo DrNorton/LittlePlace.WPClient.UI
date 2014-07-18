@@ -12,6 +12,7 @@ using LittlePlace.WPClient.UI.EventMessages;
 using LittlePlace.WPClient.UI.EventMessages.Maps;
 using LittlePlace.WPClient.UI.Models.MapModels;
 using LittlePlace.WPClient.UI.ViewModels.Base;
+using LittlePlace.WPClient.UI.ViewModels.Contacts;
 using LittlePlace.WPClient.UI.Views;
 using Yandex.Maps;
 using Yandex.Positioning;

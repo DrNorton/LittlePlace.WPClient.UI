@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Windows.Media.Imaging;
 using Caliburn.Micro;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Infrastructure;
-using LittlePlace.Api.Models;
 using LittlePlace.WPClient.UI.ViewModels.Auth;
 using LittlePlace.WPClient.UI.ViewModels.Base;
 using Microsoft.Phone.Tasks;
 
-namespace LittlePlace.WPClient.UI.ViewModels
+namespace LittlePlace.WPClient.UI.ViewModels.Contacts
 {
     public class MyContactDetailViewModel:LoadingScreen
     {

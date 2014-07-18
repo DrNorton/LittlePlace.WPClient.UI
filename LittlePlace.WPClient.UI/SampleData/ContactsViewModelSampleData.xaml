@@ -1,5 +1,7 @@
-﻿<ViewModels:ContactsViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" xmlns:System="clr-namespace:System;assembly=mscorlib" DisplayName="Lobortis imperdiet orci" IsNotifying="False" IsInitialized="True" IsLoading="True" IsActive="False">
-	<ViewModels:ContactsViewModel.Friends>
+﻿<contacts:ContactsViewModel xmlns:ViewModels="clr-namespace:LittlePlace.WPClient.UI.ViewModels" xmlns:Result="clr-namespace:LittlePlace.Api.ApiRequest.Commands.Result;assembly=LittlePlace.Api" xmlns:System="clr-namespace:System;assembly=mscorlib"
+                              xmlns:contacts="clr-namespace:LittlePlace.WPClient.UI.ViewModels.Contacts"
+                              DisplayName="Lobortis imperdiet orci" IsNotifying="False" IsInitialized="True" IsLoading="True" IsActive="False">
+	<contacts:ContactsViewModel.Friends>
 		<Result:User Email="someone@example.com" FirstName="Aaberg, Jesper" LastName="Aaberg, Jesper" Login="Quisque nam praesent" NameWithSurname="Accumsan curae consequat convallis donec" PhotoUrl="Amet aenean bibendum vestibulum adipiscing" RawPhotoString="Vivamus dictumst sed" TelephoneNumber="(111) 555-0100" TextStatus="Lorem mauris morbi" UserId="58">
 			<Result:User.PhotoRaw>
 				<System:Byte/>
@@ -90,8 +92,8 @@
 				<System:Byte/>
 			</Result:User.PhotoRaw>
 		</Result:User>
-	</ViewModels:ContactsViewModel.Friends>
-	<ViewModels:ContactsViewModel.Profile>
+	</contacts:ContactsViewModel.Friends>
+	<contacts:ContactsViewModel.Profile>
 		<Result:User Email="user-8@fabrikam.com" FirstName="Perry, Brian" LastName="Perry, Brian" Login="Habitant nisi nisl vestibulum" NameWithSurname="Libero ligula pretium rhoncus nunc" PhotoUrl="Vestibulum adipiscing parturient sodales hendrerit" RawPhotoString="Viverra lorem" TelephoneNumber="(222) 555-0110" TextStatus="Litora interdum hac" UserId="20">
 			<Result:User.PhotoRaw>
 				<System:Byte/>
@@ -106,5 +108,5 @@
 				<System:Byte/>
 			</Result:User.PhotoRaw>
 		</Result:User>
-	</ViewModels:ContactsViewModel.Profile>
-</ViewModels:ContactsViewModel>
+	</contacts:ContactsViewModel.Profile>
+</contacts:ContactsViewModel>

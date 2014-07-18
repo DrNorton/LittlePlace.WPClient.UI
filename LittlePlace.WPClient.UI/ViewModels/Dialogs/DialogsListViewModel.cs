@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using Caliburn.Micro;
 using LittlePlace.Api.ApiRequest.Commands.Result;
 using LittlePlace.Api.Infrastructure;
-using LittlePlace.Api.Models;
-using LittlePlace.WPClient.UI.Models;
 using LittlePlace.WPClient.UI.Models.DialogModels;
 using LittlePlace.WPClient.UI.ViewModels.Base;
 
-namespace LittlePlace.WPClient.UI.ViewModels
+namespace LittlePlace.WPClient.UI.ViewModels.Dialogs
 {
     public class DialogsListViewModel:LoadingScreen
     {

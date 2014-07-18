@@ -1,6 +1,6 @@
 ﻿using Microsoft.Phone.Controls;
 
-namespace LittlePlace.WPClient.UI.Views
+namespace LittlePlace.WPClient.UI.Views.Contacts
 {
     public partial class MyContactDetailView : PhoneApplicationPage
     {

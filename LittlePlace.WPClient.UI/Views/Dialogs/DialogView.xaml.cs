@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
+﻿using System.Windows.Controls;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 
-namespace LittlePlace.WPClient.UI.Views
+namespace LittlePlace.WPClient.UI.Views.Dialogs
 {
     public partial class DialogView : PhoneApplicationPage
     {

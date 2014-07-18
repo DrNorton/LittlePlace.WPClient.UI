@@ -9,6 +9,8 @@ using LittlePlace.WPClient.UI.Services;
 using LittlePlace.WPClient.UI.Services.Base;
 using LittlePlace.WPClient.UI.ViewModels;
 using LittlePlace.WPClient.UI.ViewModels.Auth;
+using LittlePlace.WPClient.UI.ViewModels.Contacts;
+using LittlePlace.WPClient.UI.ViewModels.Dialogs;
 using Microsoft.Phone.Controls;
 
 using ISettingService = LittlePlace.Api.Infrastructure.ISettingService;

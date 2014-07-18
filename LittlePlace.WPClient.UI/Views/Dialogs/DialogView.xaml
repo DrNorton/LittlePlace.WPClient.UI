@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="LittlePlace.WPClient.UI.Views.DialogView"
+    x:Class="LittlePlace.WPClient.UI.Views.Dialogs.DialogView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -14,19 +14,63 @@
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:phoneTextBox="clr-namespace:Telerik.Windows.Controls.PhoneTextBox;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerikDataControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
+    xmlns:converterts="clr-namespace:LittlePlace.WPClient.UI.Converterts"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True" d:DataContext="{d:DesignData /SampleData/DialogViewModelSampleData.xaml}">
-
+<phone:PhoneApplicationPage.Resources>
+        <converterts:Base64ToImageConverter x:Key="Base64ToImageConverter"/>
+</phone:PhoneApplicationPage.Resources>
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource ElkBgBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <telerikDataControls:RadConversationView Grid.Row="1"
+        <StackPanel HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+            <Image Width="60"
+                   Height="60"
+                   Margin="12"
+                   Source="{Binding Dialog.Member.RawPhotoString,Converter={StaticResource Base64ToImageConverter}}"/>
+            <TextBlock Text="{Binding Dialog.Member.Login}"
+                       Margin="0, 5, 12, 12"
+                       VerticalAlignment="Top"
+                       Style="{StaticResource ElkTextHeader}"
+                       FontSize="{StaticResource PhoneFontSizeNormal}"
+                       FontWeight="Black"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+            <TextBlock Text="Я"
+                       Margin="12, 5, 0, 12"
+                       FontSize="{StaticResource PhoneFontSizeNormal}"
+                       FontWeight="Black"
+                       Style="{StaticResource ElkTextHeader}"
+                       VerticalAlignment="Top"/>
+            <Image Width="60"
+                   Height="60"
+                   Margin="12"
+                    Source="{Binding Dialog.Me.RawPhotoString,Converter={StaticResource Base64ToImageConverter}}"/>
+        </StackPanel>
+
+        <telerikDataControls:RadConversationView Grid.Row="1" 
                                          x:Name="conversationView"
-                                         >
+                                                 ItemsSource="{Binding Dialog.PrivateMessages,Mode=TwoWay}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SendingMessage">
+                    <micro:ActionMessage MethodName="SentMessage" >
+                        <micro:Parameter Value="$eventArgs"/>
+                        </micro:ActionMessage>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <telerikDataControls:RadConversationView.IncomingMessageTemplate>
                 <DataTemplate>
                     <Grid Margin="12">
@@ -39,9 +83,10 @@
                             <TextBlock Text="{Binding Path=FormattedTimeStamp}"
                                        Margin="0, 0, 0, 4"
                                        HorizontalAlignment="Right"
+                                       Style="{StaticResource ElkTextHeader}"
                                        Foreground="{StaticResource PhoneSubtleBrush}"/>
 
-                            <primitives:RadPointerContentControl Background="#A200FF"
+                            <primitives:RadPointerContentControl Background="{StaticResource ElkButtonBrush}"
                                                                  TargetPoint="-120,-300"
                                                                  Foreground="White">
                                 <primitives:RadPointerContentControl.PointerTemplate>
@@ -50,7 +95,7 @@
                                                  Height="24"
                                                  Points="0,0 12,0 12,12 0,24"
                                                  StrokeThickness="0"
-                                                 Fill="#A200FF"
+                                                 Fill="{StaticResource ElkButtonBrush}"
                                                  RenderTransformOrigin="0.5, 0.5">
                                             <Polygon.RenderTransform>
                                                 <ScaleTransform ScaleX="-1"/>
@@ -82,7 +127,7 @@
                                        HorizontalAlignment="Left"
                                        Foreground="{StaticResource PhoneSubtleBrush}"/>
 
-                            <primitives:RadPointerContentControl Background="#849A01"
+                            <primitives:RadPointerContentControl Background="{StaticResource ElkButtonBrush}"
                                                                  TargetPoint="130, -300"
                                                                  Foreground="White">
                                 <primitives:RadPointerContentControl.PointerTemplate>
@@ -91,7 +136,7 @@
                                                  Height="24"
                                                  Points="0,0 12,0 12,12 0,24"
                                                  StrokeThickness="0"
-                                                 Fill="#849A01"
+                                                 Fill="{StaticResource ElkButtonBrush}"
                                                  RenderTransformOrigin="0.5, 0.5">
                                         </Polygon>
                                     </DataTemplate>
@@ -154,10 +199,10 @@
                 </DataTemplate>
             </telerikDataControls:RadConversationView.TextBoxTemplate>
         </telerikDataControls:RadConversationView>
-        <extensions:EnabledBindableAppBar IsEnabled="{Binding IsAllMenuEnabled, Mode=TwoWay}" x:Name="AppBar" BarOpacity="1.0" >
-            <bindableAppBar:BindableAppBarButton x:Name="SentMessage" IconUri="/Content/Icons/friend.png" Text="друзья" />
-        </extensions:EnabledBindableAppBar>
+        <TextBlock x:Name="typingTextBlock" 
+                   Margin="12,435,12,25" Foreground="#A200FF" Grid.RowSpan="2"
+                   IsHitTestVisible="False"/>
     </Grid>
-    
+
 
 </phone:PhoneApplicationPage>

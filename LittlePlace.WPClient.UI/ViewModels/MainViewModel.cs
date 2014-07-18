@@ -20,6 +20,8 @@ using LittlePlace.WPClient.UI.Models;
 using LittlePlace.WPClient.UI.Models.DialogModels;
 using LittlePlace.WPClient.UI.ViewModels.Auth;
 using LittlePlace.WPClient.UI.ViewModels.Base;
+using LittlePlace.WPClient.UI.ViewModels.Contacts;
+using LittlePlace.WPClient.UI.ViewModels.Dialogs;
 using LittlePlace.WPClient.UI.Views;
 
 namespace LittlePlace.WPClient.UI.ViewModels
@@ -44,7 +46,8 @@ namespace LittlePlace.WPClient.UI.ViewModels
             _cacheService = cacheService;
             _commandProvider = commandProvider;
             _littlePlaceApiService = littlePlaceApiService;
-            _dialogs = new ObservableCollection<ExtendedDialog>();
+           
+            
             AutorityIfNeeded();
         }
 
@@ -62,11 +65,13 @@ namespace LittlePlace.WPClient.UI.ViewModels
 
         private async Task CreateDialogList()
         {
+            
             var cachedResult =
                 _cacheService.GetCachedResult(_commandProvider.GetCommand<GetMyDialogsCommand>(new HttpClient(),
                     new Dictionary<string, string>()));
             if (cachedResult != null)
             {
+                Dialogs=new ObservableCollection<ExtendedDialog>();
                 var dialogs = cachedResult.Result;
                 foreach (var dialog in dialogs)
                 {
